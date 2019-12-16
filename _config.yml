@@ -98,6 +98,6 @@ theme: cactus
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-type: git
-repository: https://github.com/arieslx/arieslx.github.io
-branch: master
+  type: git
+  repository: https://github.com/arieslx/arieslx.github.io
+  branch: master
