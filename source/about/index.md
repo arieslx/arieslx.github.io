@@ -10,5 +10,3 @@ Skills:
 
 - React
 - Graphql
-
-:smile::heart:
