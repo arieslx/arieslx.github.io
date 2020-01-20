@@ -5,7 +5,7 @@
 # Link to a page that gives an overview of all your projects.
 # This can be an external link (e.g., to you GitHub profile) or to another
 # page within your website.
-projects_url: http://github.com/probberechts
+# projects_url: http://github.com/probberechts
 
 # Set the page direction to RTL or LTR. default is LTR. (if you set it 'rtl', the 'vazir' font will be loaded.)
 direction: ltr
@@ -17,7 +17,7 @@ nav:
   home: /
   about: /about/
   articles: /archives/
-  projects: projects_url
+  # projects: projects_url
 
 
 # Links to your social media accounts.
@@ -25,11 +25,8 @@ nav:
 # (see https://fontawesome.com/icons?d=gallery&s=brands);
 # only 'mail' is an exception.
 social_links:
-  github: http://github.com/probberechts/cactus-dark
-  twitter: /
-  facebook: /
-  linkedin: /
-  mail: mailto:name@email.com
+  github: https://github.com/arieslx
+  mail: mailto:arieslxliu@gmail.com
 
 # Customize the overview with displaying a tagcloud on the index page.
 # Options: https://hexo.io/docs/helpers.html#tagcloud
@@ -131,13 +128,13 @@ open_graph:
 
 # Fill in your Disqus Comments Shortname to enable Disqus comments.
 disqus:
-  enabled: false
+  enabled: true
   shortname: cactus-1
 
 # Fill in your Google Analytics tracking ID to enable Google Analytics.
 google_analytics:
   enabled: false
-  id: UA-86660611-1
+  id: UA-156521632-1
 
 # Fill in your Baidu Analytics tracking ID to enable Baidu Analytics.
 baidu_analytics:
@@ -147,4 +144,4 @@ baidu_analytics:
 # Fill in you Gravatar user id / email if you want to use your gravatar as the
 # logo and/or favicons of you website.
 gravatar:
-  email: name@email.com
+  email: arieslxliu@gmail.com
