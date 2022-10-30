@@ -1,6 +1,6 @@
 ---
 title: About Arieslx
-date: 2020-01-20 15:59:47
+date: 2022-10-30 17:59:47
 ---
 
 
@@ -10,3 +10,5 @@ Skills:
 
 - React
 - Graphql
+- Nodejs
+- Dev ops
