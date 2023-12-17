@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/2023-Nov-book.md",
+                "file": "source/_posts/2023-Nov-summary.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/2023-Nov-book.md",
+                "file": "source/_posts/2023-Nov-summary.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/2023-Nov-book.md",
+                "file": "source/_posts/2023-Nov-summary.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/2023-Nov-book.md"
+                "file": "source/_posts/2023-Nov-summary.md"
               }
             }
           }
@@ -148,8 +148,17 @@
   },
   "active": "56c832edd11508c2",
   "lastOpenFiles": [
-    "source/_posts/2023-Nov-summary.md",
     "source/_posts/2023-Nov-book.md",
+    "source/_posts/2023-Nov-summary.md",
+    "source/_posts/2023-May-tech.md",
+    "public/2023/12/17/2023-Nov-book/index.html",
+    "public/2023/12/17/2023-Nov-book",
+    "public/2023/12/17",
+    "public/2023/12",
+    "public/2023/10/25/2023-Nov-summary/index.html",
+    "public/2023/10/25/2023-Nov-summary",
+    "public/archives/2023/12/index.html",
+    "public/archives/2023/12",
     "source/tags/index.md",
     "source/_posts/2023-Oct-summary.md",
     "source/_posts/2023-Oct-book.md",
