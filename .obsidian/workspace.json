@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "be07f21fa23f261a",
+        "id": "261b4027f8d13c20",
         "type": "tabs",
         "children": [
           {
-            "id": "56c832edd11508c2",
+            "id": "e9f06ba4ad855745",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/_posts/2023-Nov-summary.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/2023-Nov-summary.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/2023-Nov-summary.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,17 +118,14 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "source/_posts/2023-Nov-summary.md"
-              }
+              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,22 +137,45 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "56c832edd11508c2",
+  "active": "e9f06ba4ad855745",
   "lastOpenFiles": [
+    "public/2024/01/29/2024-Jan-tech/index.html",
+    "public/2024/01/29/2024-Jan-tech",
+    "source/_posts/2024-Jan-tech.md",
+    "public/2024/06/10/2024-May-book/index.html",
+    "public/2024/06/09/2024-coding-part1/index.html",
+    "public/2024/06/09/2024-coding-part1",
+    "public/2024/06/09",
+    "public/2024/06/10/2024-May-book",
+    "source/_posts/互联网生活｜独立开发还在卷“日记”、“记账”、“TODO”三件套？聊聊独立开发的坑和新思路。.md",
+    "source/_posts/2024-coding-part1.md",
+    "source/_posts/2024年｜五月读书小记.md",
+    "source/_posts/2024-May-book.md",
+    "public/2024/06/10/2024年｜五月读书小记/index.html",
+    "public/2024/02/05/互联网生活｜独立开发还在卷“日记”、“记账”、“TODO”三件套？聊聊独立开发的坑和新思路。/index.html",
+    "public/2024/02/04/NAS使用体验｜两个月/index.html",
+    "public/2024/01/29/2024-Jan-tech-summary/index.html",
+    "Pasted image 20240608201016.png",
+    "source/_posts/2024-06-07.md",
+    "未命名.canvas",
+    "source/_posts/2024-06-04.md",
+    "source/_posts/NAS使用体验｜两个月.md",
+    "source/_posts/2023-Jun-book-summary.md",
+    "source/_posts/2023-Dec-summary.md",
     "source/_posts/2023-Nov-book.md",
+    "source/_posts/2023-Dec-book-summary.md",
+    "source/_posts/2023-Feb-book-summary.md",
+    "source/_posts/2023-yearly-summary.md",
+    "source/_posts/2024-Jan-tech-summary.md",
+    "source/_posts/2023-April-tech.md",
+    "source/_posts/2023-Aug-summary.md",
+    "source/_posts/2023-April-summary.md",
     "source/_posts/2023-Nov-summary.md",
-    "source/_posts/2023-May-tech.md",
-    "public/2023/12/17/2023-Nov-book/index.html",
-    "public/2023/12/17/2023-Nov-book",
-    "public/2023/12/17",
-    "public/2023/12",
-    "public/2023/10/25/2023-Nov-summary/index.html",
-    "public/2023/10/25/2023-Nov-summary",
-    "public/archives/2023/12/index.html",
-    "public/archives/2023/12",
-    "source/tags/index.md",
+    "source/_posts/2023-yearly-book-summary.md",
+    "source/_posts/2021年度总结.md",
     "source/_posts/2023-Oct-summary.md",
-    "source/_posts/2023-Oct-book.md",
+    "source/_posts/2023-Sept-summary.md",
+    "source/_posts/2023-Jan-summary.md",
     "source/_posts/2023-Jul-summary.md"
   ]
 }
