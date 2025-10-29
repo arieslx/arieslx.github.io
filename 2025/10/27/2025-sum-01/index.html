@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="问题关键点路由,hash路由,History路由,无刷新,SPA 路由是什么 路由（Routing） 是指根据不同的 URL 地址（路径）来显示不同的内容或页面的机制。 服务端路由（Server Routing）：URL 发送到服务器，由服务器决定返回哪个页面或数据。 前端路由（Client-side Routing）：在浏览器端，根据 URL 的变化动态切换页面内容，而无需重新加载整个页面。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025年｜浏览器前端路由实现">
+<meta property="og:url" content="http://yoursite.com/2025/10/27/2025-sum-01/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="问题关键点路由,hash路由,History路由,无刷新,SPA 路由是什么 路由（Routing） 是指根据不同的 URL 地址（路径）来显示不同的内容或页面的机制。 服务端路由（Server Routing）：URL 发送到服务器，由服务器决定返回哪个页面或数据。 前端路由（Client-side Routing）：在浏览器端，根据 URL 的变化动态切换页面内容，而无需重新加载整个页面。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-10-27T10:17:59.000Z">
+<meta property="article:modified_time" content="2025-10-27T12:40:03.454Z">
+<meta property="article:tag" content="2025">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>2025年｜浏览器前端路由实现</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2025/10/29/2025-sum-02/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2025/01/22/2024-summary/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/10/27/2025-sum-01/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2025/10/27/2025-sum-01/&text=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/10/27/2025-sum-01/&is_video=false&description=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜浏览器前端路由实现&body=Check out this article: http://yoursite.com/2025/10/27/2025-sum-01/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/10/27/2025-sum-01/&name=2025年｜浏览器前端路由实现&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/10/27/2025-sum-01/&t=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题关键点"><span class="toc-number">1.</span> <span class="toc-text">问题关键点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由是什么"><span class="toc-number">2.</span> <span class="toc-text">路由是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由的实现方式和实现原理"><span class="toc-number">3.</span> <span class="toc-text">前端路由的实现方式和实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由和服务端路由的区别"><span class="toc-number">4.</span> <span class="toc-text">前端路由和服务端路由的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由的优势"><span class="toc-number">5.</span> <span class="toc-text">前端路由的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由的不足"><span class="toc-number">6.</span> <span class="toc-text">前端路由的不足</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        2025年｜浏览器前端路由实现
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-10-27T10:17:59.000Z" itemprop="datePublished">2025-10-27</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/2025/" rel="tag">2025</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="问题关键点"><a href="#问题关键点" class="headerlink" title="问题关键点"></a>问题关键点</h3><p><code>路由</code>,<code>hash路由</code>,<code>History路由</code>,<code>无刷新</code>,<code>SPA</code></p>
+<h3 id="路由是什么"><a href="#路由是什么" class="headerlink" title="路由是什么"></a>路由是什么</h3><ul>
+<li>路由（Routing） 是指根据不同的 URL 地址（路径）来显示不同的内容或页面的机制。</li>
+<li>服务端路由（Server Routing）：URL 发送到服务器，由服务器决定返回哪个页面或数据。</li>
+<li>前端路由（Client-side Routing）：在浏览器端，根据 URL 的变化动态切换页面内容，而无需重新加载整个页面。</li>
+</ul>
+<p>路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动。对于 Web 开发来说，路由的实质是 URL 到对应的处理程序的映射。Web路由既可以由服务端，也可以由前端实现。其中前端路由根据实现方式的不同，可以分为<code>Hash</code>路由和<code>History</code>路由。<br>前端路由对于服务端路由来说，最显著的特点是页面可以在无刷新的情况下进行页面的切换。基于前端路由的这一特点，诞生了一种无刷新的单页应用开发模式SPA。<code>SPA</code>通过前端路由避免了页面的切换打断用户体验，让Web应用的体验更接近一个桌面应用程序。</p>
+<h3 id="前端路由的实现方式和实现原理"><a href="#前端路由的实现方式和实现原理" class="headerlink" title="前端路由的实现方式和实现原理"></a>前端路由的实现方式和实现原理</h3><ul>
+<li>前端路由主要通过 监听 URL 的变化 来控制页面内容的渲染，常见实现方式有两种：<br>方法一：Hash 模式</li>
+<li>URL 中带 #（例如：<a href="https://music.163.com/?from=infinity#/song?id=5308028）" target="_blank" rel="noopener">https://music.163.com/?from=infinity#/song?id=5308028）</a></li>
+<li>浏览器不会向服务器发送 # 后面的内容</li>
+<li>通过监听 window.onhashchange 来捕捉 URL 变化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  foo:&#x2F;&#x2F;example.com:8042&#x2F;over&#x2F;there?name&#x3D;ferret#nose</span><br><span class="line">  \_&#x2F;   \______________&#x2F;\_________&#x2F; \_________&#x2F; \__&#x2F;</span><br><span class="line">   |           |            |            |        |</span><br><span class="line">scheme     authority       path        query   fragment</span><br><span class="line">   |   _____________________|__</span><br><span class="line">  &#x2F; \ &#x2F;                        \</span><br><span class="line">  urn:example:animal:ferret:nose</span><br></pre></td></tr></table></figure>
+fragment 本质是用来标识次级资源，fragment 有以下特点：</li>
+<li>修改 fragment 的内容不会触发网页重载。</li>
+<li>修改 fragment 的内容会改变浏览器的历史记录。</li>
+<li>修改 fragment 的内容会触发浏览器的 onhashchange 事件。</li>
+<li>基于 fragment 的以上特点，可实现基于 Hash 的前端路由。<br>原理：</li>
+<li>用户点击链接 → 改变 hash</li>
+<li>hashchange 事件触发</li>
+<li>根据 hash 渲染对应的页面内容</li>
+<li>优点：兼容性好，不会刷新页面, 无需服务端配置</li>
+<li>缺点：URL不够美观，无法完全利用浏览器历史API，服务端无法获取<code>hash</code>部分内容,可能和锚点功能冲突，SEO不友好。<br>M1<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'hashchange'</span>, () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> route = location.hash.slice(<span class="number">1</span>); <span class="comment">// 去掉 #</span></span><br><span class="line">  render(route);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+M2<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 解析 hash</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="variable">hash</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseHash</span>(<span class="params">hash</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 去除 # 号</span></span><br><span class="line">  hash = hash.replace(<span class="regexp">/^#/</span>, <span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 简单解析示例</span></span><br><span class="line">  <span class="keyword">const</span> parsed = hash.split(<span class="string">"?"</span>);</span><br><span class="line">  <span class="comment">//如果 hash 中没有 ?，search 会是 undefined。</span></span><br><span class="line">  <span class="comment">// 返回 hash 的 path 和 query</span></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    pathname: parsed[<span class="number">0</span>],</span><br><span class="line">    search: parsed[<span class="number">1</span>],</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//如果URL hash是#page?foo=1&amp;bar=2</span></span><br><span class="line">  <span class="comment">//const parsedHashRes =  parseHash("#page?foo=1&amp;bar=2");</span></span><br><span class="line">  <span class="comment">//console.log(parsedHashRes);</span></span><br><span class="line">  <span class="comment">// &#123; pathname: "page", search: "foo=1&amp;bar=2" &#125;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//const params = new URLSearchParams(parsedHashRes.search);</span></span><br><span class="line">  <span class="comment">//console.log(params.get("foo")) // "1"</span></span><br><span class="line">  <span class="comment">//console.log(params.get("bar")) // "2"</span></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  for (const [key, value] of params) &#123;</span></span><br><span class="line"><span class="comment">  console.log(key, value);</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  **/</span></span><br><span class="line">  <span class="comment">//foo 1</span></span><br><span class="line">  <span class="comment">//bar 2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 监听 hash 变化</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onHashChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 解析 hash</span></span><br><span class="line">  <span class="keyword">const</span> &#123; pathname, search &#125; = parseHash(location.hash);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 切换页面内容</span></span><br><span class="line">  <span class="keyword">switch</span> (pathname) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">"/home"</span>:</span><br><span class="line">      <span class="built_in">document</span>.body.innerHTML = <span class="string">`Hello <span class="subst">$&#123;search&#125;</span>`</span>;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"hashchange"</span>, onHashChange);</span><br></pre></td></tr></table></figure>
+方法二：History 模式（HTML5 History API）</li>
+<li>URL 看起来像正常路径（例如：<a href="http://example.com/home）" target="_blank" rel="noopener">http://example.com/home）</a></li>
+<li>利用 history.pushState() 和 history.replaceState() 修改浏览器历史记录</li>
+<li>history.pushState：将给定的 Data 添加到当前标签页的历史记录栈中。</li>
+<li>history.replaceState：将给定的 Data 更新到历史记录栈中最新的一条记录中。</li>
+<li>监听 popstate 事件来检测浏览器前进/后退<br>原理：</li>
+<li>用户点击链接 → 调用 pushState 改变 URL</li>
+<li>渲染对应页面内容</li>
+<li>用户按浏览器回退 → 触发 popstate 事件 → 渲染对应页面</li>
+<li>优点：前端监控友好,SEO相对Hash路由友好,服务端可获取完整的链接和参数。</li>
+<li>缺点：兼容性稍弱。,刷新页面会请求服务器，服务器需要配置重定向到入口页（各 path 均指向同一个 HTML如 index.html）<br>M1<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'popstate'</span>, () =&gt; &#123;</span><br><span class="line">  render(location.pathname);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">navigate</span>(<span class="params">path</span>) </span>&#123;</span><br><span class="line">  history.pushState(&#123;&#125;, <span class="string">''</span>, path);</span><br><span class="line">  render(path);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+M2<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onHistoryChange</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;pathname, search&#125; = location;</span><br><span class="line">    <span class="keyword">switch</span>()&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"/home"</span>:</span><br><span class="line">            <span class="built_in">document</span>.body.innnerHTML = <span class="string">`Hello <span class="subst">$&#123;search.replace(<span class="regexp">/^\?/</span>,<span class="string">""</span>)&#125;</span>`</span></span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="built_in">document</span>.body.innerHTML = <span class="string">"hello world"</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">pushState</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">    history.pushState(<span class="literal">null</span>, <span class="string">""</span>, target);</span><br><span class="line">    onHistoryChange()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    pushState(<span class="string">"/home?name=HZSDD"</span>)</span><br><span class="line">&#125;,<span class="number">3000</span>)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    history.back()</span><br><span class="line">&#125;,<span class="number">6000</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"popstate"</span>, onHistoryChange)</span><br></pre></td></tr></table></figure>
+<h3 id="前端路由和服务端路由的区别"><a href="#前端路由和服务端路由的区别" class="headerlink" title="前端路由和服务端路由的区别"></a>前端路由和服务端路由的区别</h3><table>
+<thead>
+<tr>
+<th>特性</th>
+<th>前端路由</th>
+<th>服务端路由</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>页面刷新</td>
+<td>页面不刷新，只渲染局部</td>
+<td>每次请求 URL 都刷新页面</td>
+</tr>
+<tr>
+<td>URL 变化</td>
+<td>浏览器地址栏变化，但请求不发送到服务器</td>
+<td>URL 变化时，浏览器向服务器发请求</td>
+</tr>
+<tr>
+<td>响应速度</td>
+<td>快，局部渲染</td>
+<td>慢，需要重新加载整个页面</td>
+</tr>
+<tr>
+<td>SEO</td>
+<td>不太友好（除非使用 SSR）</td>
+<td>好，搜索引擎可直接抓取</td>
+</tr>
+<tr>
+<td>技术实现</td>
+<td>JS + hash/history API</td>
+<td>服务器端路由框架（Express、Django、Rails 等）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="前端路由的优势"><a href="#前端路由的优势" class="headerlink" title="前端路由的优势"></a>前端路由的优势</h3><ul>
+<li>体验更流畅：页面不刷新，用户操作即时响应</li>
+<li>减少服务器压力：不需要每次请求都重新渲染整个页面</li>
+<li>灵活控制页面渲染：可以按需加载组件或模块，提高性能</li>
+<li>便于构建单页应用（SPA）：结合 Vue、React、Angular 等框架使用<h3 id="前端路由的不足"><a href="#前端路由的不足" class="headerlink" title="前端路由的不足"></a>前端路由的不足</h3></li>
+<li>首次加载慢：单页应用需要一次性加载 JS 包</li>
+<li>SEO不友好：搜索引擎抓取困难，需要 SSR 或 prerender 解决</li>
+<li>浏览器刷新问题：History 模式下刷新会向服务器发请求，服务器需配置重定向</li>
+<li>JS 依赖：如果用户禁用 JS，页面可能无法正常访问</li>
+</ul>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://febook.hzfe.org/awesome-interview/book4/browser-router" target="_blank" rel="noopener">剑指前端 Offer-前端路由实现</a></li>
+<li>chatgpt 4</li>
+<li>Hash嵌套路由解析 -&gt; *Prac.<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseHash</span>(<span class="params">hash</span>) </span>&#123;</span><br><span class="line">  hash = hash.replace(<span class="regexp">/^#/</span>, <span class="string">""</span>);</span><br><span class="line">  <span class="keyword">const</span> [pathname, search] = hash.split(<span class="string">"?"</span>);</span><br><span class="line">  <span class="keyword">const</span> query = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (search) &#123;</span><br><span class="line">    <span class="keyword">const</span> params = <span class="keyword">new</span> URLSearchParams(search);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> [key, value] <span class="keyword">of</span> params) &#123;</span><br><span class="line">      <span class="keyword">const</span> keys = key.split(<span class="regexp">/[\[\]]+/</span>).filter(<span class="built_in">Boolean</span>);</span><br><span class="line">      <span class="keyword">let</span> parsedValue;</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 改进的类型转换逻辑</span></span><br><span class="line">      <span class="keyword">if</span> (value === <span class="string">""</span>) &#123;</span><br><span class="line">        parsedValue = <span class="string">""</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!<span class="built_in">isNaN</span>(value) &amp;&amp; value.trim() !== <span class="string">""</span> &amp;&amp; value.trim() !== <span class="string">"NaN"</span>) &#123;</span><br><span class="line">        <span class="comment">// 避免将 "NaN" 转换为数字</span></span><br><span class="line">        <span class="keyword">const</span> num = <span class="built_in">Number</span>(value);</span><br><span class="line">        parsedValue = <span class="built_in">String</span>(num) === value.trim() ? num : value;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value.toLowerCase() === <span class="string">"true"</span>) &#123;</span><br><span class="line">        parsedValue = <span class="literal">true</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value.toLowerCase() === <span class="string">"false"</span>) &#123;</span><br><span class="line">        parsedValue = <span class="literal">false</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value === <span class="string">"null"</span>) &#123;</span><br><span class="line">        parsedValue = <span class="literal">null</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value === <span class="string">"undefined"</span>) &#123;</span><br><span class="line">        parsedValue = <span class="literal">undefined</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        parsedValue = value;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">let</span> current = query;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; keys.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> k = keys[i];</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 处理数组语法：tags[] 或 tags[0]</span></span><br><span class="line">        <span class="keyword">const</span> isArrayKey = k === <span class="string">""</span> || (!<span class="built_in">isNaN</span>(k) &amp;&amp; k !== <span class="string">""</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (i === keys.length - <span class="number">1</span>) &#123;</span><br><span class="line">          <span class="comment">// 最终赋值</span></span><br><span class="line">          <span class="keyword">if</span> (isArrayKey) &#123;</span><br><span class="line">            <span class="comment">// 如果是数组语法，确保父级是数组</span></span><br><span class="line">            <span class="keyword">const</span> parentKey = keys[i - <span class="number">1</span>];</span><br><span class="line">            <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; current[parentKey] &amp;&amp; !<span class="built_in">Array</span>.isArray(current[parentKey])) &#123;</span><br><span class="line">              current[parentKey] = [current[parentKey]];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(current)) &#123;</span><br><span class="line">              current.push(parsedValue);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              current[k] = parsedValue;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> <span class="keyword">if</span> (current[k] !== <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="comment">// 处理重复键名</span></span><br><span class="line">            <span class="keyword">if</span> (!<span class="built_in">Array</span>.isArray(current[k])) &#123;</span><br><span class="line">              current[k] = [current[k]];</span><br><span class="line">            &#125;</span><br><span class="line">            current[k].push(parsedValue);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            current[k] = parsedValue;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          <span class="comment">// 遍历嵌套对象</span></span><br><span class="line">          <span class="keyword">if</span> (!current[k] || <span class="keyword">typeof</span> current[k] !== <span class="string">"object"</span>) &#123;</span><br><span class="line">            current[k] = isArrayKey ? [] : &#123;&#125;;</span><br><span class="line">          &#125;</span><br><span class="line">          current = current[k];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123; pathname, query &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 增强的测试用例</span></span><br><span class="line"><span class="keyword">const</span> testCases = [</span><br><span class="line">  <span class="string">"#page?foo=1&amp;bar=2&amp;bar=3&amp;tags[]=a&amp;tags[]=b&amp;empty&amp;flag=true&amp;count=0&amp;user[name]=Alice&amp;user[age]=20"</span>,</span><br><span class="line">  <span class="string">"#home?ids[0]=1&amp;ids[1]=2&amp;filter[name]=John&amp;filter[active]=true"</span>,</span><br><span class="line">  <span class="string">"#test?single=hello&amp;number=42&amp;bool=false&amp;nullval=null"</span>,</span><br><span class="line">  <span class="string">"#empty"</span>,</span><br><span class="line">  <span class="string">"#path?arr=1&amp;arr=2&amp;obj[a]=1&amp;obj[b]=2"</span></span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">testCases.forEach(<span class="function"><span class="params">test</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(test);</span><br><span class="line">  <span class="built_in">console</span>.log(parseHash(test));</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"---"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#问题关键点"><span class="toc-number">1.</span> <span class="toc-text">问题关键点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由是什么"><span class="toc-number">2.</span> <span class="toc-text">路由是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由的实现方式和实现原理"><span class="toc-number">3.</span> <span class="toc-text">前端路由的实现方式和实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由和服务端路由的区别"><span class="toc-number">4.</span> <span class="toc-text">前端路由和服务端路由的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由的优势"><span class="toc-number">5.</span> <span class="toc-text">前端路由的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端路由的不足"><span class="toc-number">6.</span> <span class="toc-text">前端路由的不足</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/10/27/2025-sum-01/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2025/10/27/2025-sum-01/&text=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/10/27/2025-sum-01/&is_video=false&description=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜浏览器前端路由实现&body=Check out this article: http://yoursite.com/2025/10/27/2025-sum-01/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2025/10/27/2025-sum-01/&title=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/10/27/2025-sum-01/&name=2025年｜浏览器前端路由实现&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/10/27/2025-sum-01/&t=2025年｜浏览器前端路由实现" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2025 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
