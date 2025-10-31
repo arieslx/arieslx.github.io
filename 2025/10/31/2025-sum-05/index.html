@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="前端面试：BFC（块级格式化上下文）全面解析1. 核心概念：什么是BFC？标准回答：BFC（Block Formatting Context）是 CSS 渲染过程中的一个独立区域。它决定了块级盒如何布局，并且与这个区域的外部毫不相干。简单来说，一个创建了 BFC 的元素，就像一个被隔离出来的独立容器，里面的子元素不会在布局上影响到外面的元素。 通俗解释：“可以把它理解成 Web 页面里的一个’结界">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025年｜BFC">
+<meta property="og:url" content="http://yoursite.com/2025/10/31/2025-sum-05/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="前端面试：BFC（块级格式化上下文）全面解析1. 核心概念：什么是BFC？标准回答：BFC（Block Formatting Context）是 CSS 渲染过程中的一个独立区域。它决定了块级盒如何布局，并且与这个区域的外部毫不相干。简单来说，一个创建了 BFC 的元素，就像一个被隔离出来的独立容器，里面的子元素不会在布局上影响到外面的元素。 通俗解释：“可以把它理解成 Web 页面里的一个’结界">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-10-31T07:17:59.000Z">
+<meta property="article:modified_time" content="2025-10-31T07:09:38.249Z">
+<meta property="article:tag" content="2025">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>2025年｜BFC</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2025/10/29/2025-sum-04/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/10/31/2025-sum-05/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2025/10/31/2025-sum-05/&text=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/10/31/2025-sum-05/&is_video=false&description=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜BFC&body=Check out this article: http://yoursite.com/2025/10/31/2025-sum-05/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/10/31/2025-sum-05/&name=2025年｜BFC&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/10/31/2025-sum-05/&t=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端面试：BFC（块级格式化上下文）全面解析"><span class="toc-number">1.</span> <span class="toc-text">前端面试：BFC（块级格式化上下文）全面解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-核心概念：什么是BFC？"><span class="toc-number">1.1.</span> <span class="toc-text">1. 核心概念：什么是BFC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-如何触发-创建BFC？"><span class="toc-number">1.2.</span> <span class="toc-text">2. 如何触发&#x2F;创建BFC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-BFC的布局规则-特性"><span class="toc-number">1.3.</span> <span class="toc-text">3. BFC的布局规则&#x2F;特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-BFC的常见应用场景"><span class="toc-number">1.4.</span> <span class="toc-text">4. BFC的常见应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景一：解决外边距重叠（Margin-Collapse）"><span class="toc-number">1.4.1.</span> <span class="toc-text">场景一：解决外边距重叠（Margin Collapse）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景二：清除浮动，防止父元素高度塌陷"><span class="toc-number">1.4.2.</span> <span class="toc-text">场景二：清除浮动，防止父元素高度塌陷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）"><span class="toc-number">1.4.3.</span> <span class="toc-text">场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-面试官可能追问的问题"><span class="toc-number">1.5.</span> <span class="toc-text">5. 面试官可能追问的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-overflow-hidden-创建-BFC-有什么缺点？"><span class="toc-number">1.5.1.</span> <span class="toc-text">Q: overflow: hidden 创建 BFC 有什么缺点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-BFC-和-IFC（内联格式化上下文）有什么区别？"><span class="toc-number">1.5.2.</span> <span class="toc-text">Q: BFC 和 IFC（内联格式化上下文）有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-BFC-和-Flex-Grid-布局有什么关系？"><span class="toc-number">1.5.3.</span> <span class="toc-text">Q: BFC 和 Flex&#x2F;Grid 布局有什么关系？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-总结回答思路"><span class="toc-number">1.6.</span> <span class="toc-text">6. 总结回答思路</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        2025年｜BFC
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-10-31T07:17:59.000Z" itemprop="datePublished">2025-10-31</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/2025/" rel="tag">2025</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="前端面试：BFC（块级格式化上下文）全面解析"><a href="#前端面试：BFC（块级格式化上下文）全面解析" class="headerlink" title="前端面试：BFC（块级格式化上下文）全面解析"></a>前端面试：BFC（块级格式化上下文）全面解析</h1><h2 id="1-核心概念：什么是BFC？"><a href="#1-核心概念：什么是BFC？" class="headerlink" title="1. 核心概念：什么是BFC？"></a>1. 核心概念：什么是BFC？</h2><p><strong>标准回答：</strong><br>BFC（Block Formatting Context）是 CSS 渲染过程中的一个独立区域。它决定了块级盒如何布局，并且与这个区域的外部毫不相干。简单来说，一个创建了 BFC 的元素，就像一个被隔离出来的独立容器，里面的子元素不会在布局上影响到外面的元素。</p>
+<p><strong>通俗解释：</strong><br>“可以把它理解成 Web 页面里的一个’结界’。在这个’结界’内部，元素按照自己的规则进行排列，不受外部影响，同时内部的元素也不会跑出去影响外面的布局。”</p>
+<h2 id="2-如何触发-创建BFC？"><a href="#2-如何触发-创建BFC？" class="headerlink" title="2. 如何触发/创建BFC？"></a>2. 如何触发/创建BFC？</h2><p>一个元素在满足以下任一条件时即可创建 BFC：</p>
+<ul>
+<li><strong>根元素</strong>（<code>&lt;html&gt;</code>） - 整个页面就是一个最大的BFC</li>
+<li><strong>浮动元素</strong> - <code>float</code> 的值不是 <code>none</code></li>
+<li><strong>绝对定位元素</strong> - <code>position</code> 的值是 <code>absolute</code> 或 <code>fixed</code></li>
+<li><strong><code>display</code> 为特定值</strong> - <code>inline-block</code>、<code>table-cell</code>、<code>table-caption</code>、<code>flex</code>、<code>inline-flex</code>、<code>grid</code>、<code>inline-grid</code></li>
+<li><strong><code>overflow</code> 值不是 <code>visible</code></strong> - 如 <code>overflow: hidden</code>、<code>scroll</code>、<code>auto</code>（最常用且副作用较小的方式之一）</li>
+<li><strong><code>contain</code> 值为 <code>layout</code>、<code>content</code>、<code>paint</code> 的元素</strong></li>
+<li><strong><code>display: flow-root</code></strong>（<strong>现代推荐方式</strong>，专门用于创建BFC，无副作用）</li>
+</ul>
+<blockquote>
+<p><strong>面试技巧：</strong> 说完以上列表后，可以补充：”在实际开发中，我最常用的是 <code>overflow: hidden</code> 和 <code>display: flow-root</code>，因为 <code>flow-root</code> 是专门为创建BFC而设计的，没有任何副作用。”</p>
+</blockquote>
+<h2 id="3-BFC的布局规则-特性"><a href="#3-BFC的布局规则-特性" class="headerlink" title="3. BFC的布局规则/特性"></a>3. BFC的布局规则/特性</h2><p>一个BFC区域内的布局遵循以下规则：</p>
+<ol>
+<li><strong>垂直排列</strong> - 内部的块级盒会在垂直方向上一个接一个地放置</li>
+<li><strong>外边距重叠</strong> - 垂直方向上的距离由 <code>margin</code> 决定。属于同一个BFC的两个相邻块级盒的 <code>margin</code> 会发生重叠</li>
+<li><strong>接触包含块边界</strong> - 每个元素的左外边距与包含块的左边界相接触（对于从左往右的格式化），即使存在浮动也是如此</li>
+<li><strong>不与浮动重叠</strong> - BFC的区域不会与浮动元素重叠</li>
+<li><strong>独立容器</strong> - BFC是一个独立的容器，容器里面的子元素不会影响到外面的元素，反之亦然</li>
+<li><strong>包含浮动元素</strong> - 计算BFC的高度时，浮动元素也参与计算</li>
+</ol>
+<h2 id="4-BFC的常见应用场景"><a href="#4-BFC的常见应用场景" class="headerlink" title="4. BFC的常见应用场景"></a>4. BFC的常见应用场景</h2><h3 id="场景一：解决外边距重叠（Margin-Collapse）"><a href="#场景一：解决外边距重叠（Margin-Collapse）" class="headerlink" title="场景一：解决外边距重叠（Margin Collapse）"></a>场景一：解决外边距重叠（Margin Collapse）</h3><p><strong>问题代码：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>; <span class="attribute">background</span>: lightblue; <span class="attribute">margin</span>: <span class="number">50px</span>; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>两个 <code>.box</code> 之间的垂直距离是 <code>50px</code>，而不是 <code>100px</code>，因为它们的 <code>margin</code> 发生了重叠。</p>
+<p><strong>BFC解决方案：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.box</span> &#123; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>; <span class="attribute">background</span>: lightblue; <span class="attribute">margin</span>: <span class="number">50px</span>; &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.bfc</span> &#123; <span class="attribute">overflow</span>: hidden; <span class="comment">/* 触发BFC */</span> &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bfc"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>现在两个 <code>.box</code> 之间的垂直距离就是 <code>100px</code>，因为它们的 <code>margin</code> 处于不同的BFC中，不会重叠。</p>
+<h3 id="场景二：清除浮动，防止父元素高度塌陷"><a href="#场景二：清除浮动，防止父元素高度塌陷" class="headerlink" title="场景二：清除浮动，防止父元素高度塌陷"></a>场景二：清除浮动，防止父元素高度塌陷</h3><p><strong>问题代码：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.parent</span> &#123; <span class="attribute">border</span>: <span class="number">5px</span> solid red; &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child</span> &#123; <span class="attribute">float</span>: left; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>; <span class="attribute">background</span>: blue; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>由于 <code>.child</code> 浮动脱离了文档流，<code>.parent</code> 的高度会塌陷为0。</p>
+<p><strong>BFC解决方案：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.parent</span> &#123; <span class="attribute">border</span>: <span class="number">5px</span> solid red; <span class="attribute">overflow</span>: hidden; <span class="comment">/* 触发BFC */</span> &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.child</span> &#123; <span class="attribute">float</span>: left; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">100px</span>; <span class="attribute">background</span>: blue; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>根据BFC规则：计算BFC的高度时，浮动元素也参与计算。所以父元素 <code>.parent</code> 的高度被撑开了。</p>
+<h3 id="场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）"><a href="#场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）" class="headerlink" title="场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）"></a>场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）</h3><p><strong>问题代码：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.aside</span> &#123; <span class="attribute">float</span>: left; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">150px</span>; <span class="attribute">background</span>: lightgreen; &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.main</span> &#123; <span class="attribute">height</span>: <span class="number">200px</span>; <span class="attribute">background</span>: lightblue; &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aside"</span>&gt;</span>侧边栏<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span>主内容区<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>主内容区 <code>.main</code> 会被浮动元素 <code>.aside</code> 覆盖一部分。</p>
+<p><strong>BFC解决方案：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.aside</span> &#123; <span class="attribute">float</span>: left; <span class="attribute">width</span>: <span class="number">100px</span>; <span class="attribute">height</span>: <span class="number">150px</span>; <span class="attribute">background</span>: lightgreen; &#125;</span></span><br><span class="line"><span class="css">  <span class="selector-class">.main</span> &#123; <span class="attribute">height</span>: <span class="number">200px</span>; <span class="attribute">background</span>: lightblue; <span class="attribute">overflow</span>: hidden; <span class="comment">/* 触发BFC */</span> &#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>根据BFC规则：BFC的区域不会与浮动元素重叠。所以 <code>.main</code> 会紧贴着 <code>.aside</code> 的右边框，形成两栏自适应布局。</p>
+<h2 id="5-面试官可能追问的问题"><a href="#5-面试官可能追问的问题" class="headerlink" title="5. 面试官可能追问的问题"></a>5. 面试官可能追问的问题</h2><h3 id="Q-overflow-hidden-创建-BFC-有什么缺点？"><a href="#Q-overflow-hidden-创建-BFC-有什么缺点？" class="headerlink" title="Q: overflow: hidden 创建 BFC 有什么缺点？"></a>Q: <code>overflow: hidden</code> 创建 BFC 有什么缺点？</h3><p><strong>A:</strong> 可能会意外地剪裁掉定位在容器之外的内容（如工具提示）。所以 <code>display: flow-root</code> 是更安全的选择。</p>
+<h3 id="Q-BFC-和-IFC（内联格式化上下文）有什么区别？"><a href="#Q-BFC-和-IFC（内联格式化上下文）有什么区别？" class="headerlink" title="Q: BFC 和 IFC（内联格式化上下文）有什么区别？"></a>Q: BFC 和 IFC（内联格式化上下文）有什么区别？</h3><p><strong>A:</strong> BFC 是针对块级元素的布局环境，规则是垂直排列；IFC 是针对内联元素的，规则是水平排列。</p>
+<h3 id="Q-BFC-和-Flex-Grid-布局有什么关系？"><a href="#Q-BFC-和-Flex-Grid-布局有什么关系？" class="headerlink" title="Q: BFC 和 Flex/Grid 布局有什么关系？"></a>Q: BFC 和 Flex/Grid 布局有什么关系？</h3><p><strong>A:</strong> Flex容器和Grid容器本身会为它们的子项创建新的格式化上下文（FFC/GFC），这些上下文同样具有隔离性，可以解决类似BFC的问题（如margin重叠，清除浮动）。</p>
+<h2 id="6-总结回答思路"><a href="#6-总结回答思路" class="headerlink" title="6. 总结回答思路"></a>6. 总结回答思路</h2><p>当被问到BFC时，建议按照以下逻辑链回答：</p>
+<ol>
+<li><strong>下定义</strong> - BFC是一个独立的渲染区域，内外互不影响</li>
+<li><strong>讲创建</strong> - 列举多种触发BFC的方式，指出常用和推荐的</li>
+<li><strong>说规则</strong> - 阐述BFC的核心布局规则</li>
+<li><strong>举例子</strong> - 结合代码说明BFC如何解决实际开发中的三大经典问题</li>
+</ol>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前端面试：BFC（块级格式化上下文）全面解析"><span class="toc-number">1.</span> <span class="toc-text">前端面试：BFC（块级格式化上下文）全面解析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-核心概念：什么是BFC？"><span class="toc-number">1.1.</span> <span class="toc-text">1. 核心概念：什么是BFC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-如何触发-创建BFC？"><span class="toc-number">1.2.</span> <span class="toc-text">2. 如何触发&#x2F;创建BFC？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-BFC的布局规则-特性"><span class="toc-number">1.3.</span> <span class="toc-text">3. BFC的布局规则&#x2F;特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-BFC的常见应用场景"><span class="toc-number">1.4.</span> <span class="toc-text">4. BFC的常见应用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#场景一：解决外边距重叠（Margin-Collapse）"><span class="toc-number">1.4.1.</span> <span class="toc-text">场景一：解决外边距重叠（Margin Collapse）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景二：清除浮动，防止父元素高度塌陷"><span class="toc-number">1.4.2.</span> <span class="toc-text">场景二：清除浮动，防止父元素高度塌陷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）"><span class="toc-number">1.4.3.</span> <span class="toc-text">场景三：阻止元素被浮动元素覆盖（实现两栏自适应布局）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-面试官可能追问的问题"><span class="toc-number">1.5.</span> <span class="toc-text">5. 面试官可能追问的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-overflow-hidden-创建-BFC-有什么缺点？"><span class="toc-number">1.5.1.</span> <span class="toc-text">Q: overflow: hidden 创建 BFC 有什么缺点？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-BFC-和-IFC（内联格式化上下文）有什么区别？"><span class="toc-number">1.5.2.</span> <span class="toc-text">Q: BFC 和 IFC（内联格式化上下文）有什么区别？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q-BFC-和-Flex-Grid-布局有什么关系？"><span class="toc-number">1.5.3.</span> <span class="toc-text">Q: BFC 和 Flex&#x2F;Grid 布局有什么关系？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-总结回答思路"><span class="toc-number">1.6.</span> <span class="toc-text">6. 总结回答思路</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/10/31/2025-sum-05/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2025/10/31/2025-sum-05/&text=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/10/31/2025-sum-05/&is_video=false&description=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜BFC&body=Check out this article: http://yoursite.com/2025/10/31/2025-sum-05/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2025/10/31/2025-sum-05/&title=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/10/31/2025-sum-05/&name=2025年｜BFC&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/10/31/2025-sum-05/&t=2025年｜BFC" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2025 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
