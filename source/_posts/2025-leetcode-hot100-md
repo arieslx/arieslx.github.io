@@ -1,0 +1,47 @@
+---
+title: 2025年｜Leetcode hot100 typescript
+date: 2025-10-31 23:40:59
+tags:
+  - 2025
+---
+
+[1. Two Sum](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+
+```ts
+function twoSum(nums: number[], target: number): number[]{
+    let helperMap: Map<number, number> = new Map();
+    let index: number | undefined;
+    let resArr: number[] = [];
+    for(let i=0, length=nums.length;i<length;i++){
+        index = helperMap.get(target-nums[i]);
+        if(index!==undefined){
+            resArr= [i, index];
+            break;
+        }
+        helperMap.set(nums[i], i);
+    }
+    return resArr;
+}
+
+```
+
+
+[49. Group Anagrams](https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked)
+
+```ts
+
+function groupAnagrams(strs: string[]): string[][] {
+    let map: Map<string, Array<string>> = new Map();
+    for(let i=0; i<strs.length; i++){
+        let key = strs[i].split("").sort().join("")
+        if(!map.has(key)){
+            map.set(key, [])
+        }
+        map.get(key)!.push(strs[i])
+    }
+    return [...map.values()]
+}
+
+```
+
+sad about sth..
