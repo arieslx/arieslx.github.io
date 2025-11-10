@@ -12,3 +12,4 @@ Skills:
 - Graphql
 - Nodejs
 - Dev ops
+- gRPC
