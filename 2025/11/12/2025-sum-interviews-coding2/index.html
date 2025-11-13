@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="call，apply，bind函数常见面试题12345for(var i&#x3D;0;i&lt;&#x3D;5;i++)&amp;#123;  setTimeout(function(i)&amp;#123;    console.log(i)  &amp;#125;.bind(null, i), i*1000)&amp;#125;  javascript手写call，apply，bind函数，尤其是bind函数12345678910111213">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025年｜还是一些来自前端内参的编码题目">
+<meta property="og:url" content="http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="call，apply，bind函数常见面试题12345for(var i&#x3D;0;i&lt;&#x3D;5;i++)&amp;#123;  setTimeout(function(i)&amp;#123;    console.log(i)  &amp;#125;.bind(null, i), i*1000)&amp;#125;  javascript手写call，apply，bind函数，尤其是bind函数12345678910111213">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-11-12T09:17:59.000Z">
+<meta property="article:modified_time" content="2025-11-13T14:24:51.968Z">
+<meta property="article:tag" content="2025">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>2025年｜还是一些来自前端内参的编码题目</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2025/11/11/2025-sum-interviews-coding/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&text=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&is_video=false&description=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜还是一些来自前端内参的编码题目&body=Check out this article: http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&name=2025年｜还是一些来自前端内参的编码题目&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&t=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#call，apply，bind函数"><span class="toc-number">1.</span> <span class="toc-text">call，apply，bind函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见面试题"><span class="toc-number">1.1.</span> <span class="toc-text">常见面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript手写call，apply，bind函数，尤其是bind函数"><span class="toc-number">1.2.</span> <span class="toc-text">javascript手写call，apply，bind函数，尤其是bind函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-number">2.</span> <span class="toc-text">循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for，forEach，map"><span class="toc-number">2.1.</span> <span class="toc-text">for，forEach，map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-number">2.2.</span> <span class="toc-text">reduce</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深拷贝"><span class="toc-number">3.</span> <span class="toc-text">深拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#柯里化"><span class="toc-number">4.</span> <span class="toc-text">柯里化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reflect和proxy"><span class="toc-number">5.</span> <span class="toc-text">reflect和proxy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据绑定和响应式"><span class="toc-number">5.1.</span> <span class="toc-text">数据绑定和响应式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志记录"><span class="toc-number">5.2.</span> <span class="toc-text">日志记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权限控制"><span class="toc-number">5.3.</span> <span class="toc-text">权限控制</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        2025年｜还是一些来自前端内参的编码题目
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-11-12T09:17:59.000Z" itemprop="datePublished">2025-11-12</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/2025/" rel="tag">2025</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="call，apply，bind函数"><a href="#call，apply，bind函数" class="headerlink" title="call，apply，bind函数"></a>call，apply，bind函数</h2><h3 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;=<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">  &#125;.bind(<span class="literal">null</span>, i), i*<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="javascript手写call，apply，bind函数，尤其是bind函数"><a href="#javascript手写call，apply，bind函数，尤其是bind函数" class="headerlink" title="javascript手写call，apply，bind函数，尤其是bind函数"></a>javascript手写call，apply，bind函数，尤其是bind函数</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.myCall = <span class="function"><span class="keyword">function</span>(<span class="params">thisArg, ...arr</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(thisArg === <span class="literal">null</span> || thisArg === <span class="literal">undefined</span>)&#123;</span><br><span class="line">    thisArg = <span class="built_in">window</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    thisArg = <span class="built_in">Object</span>(thisArg);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> specialMethod = <span class="built_in">Symbol</span>(<span class="string">'anything'</span>);</span><br><span class="line">  thisArg[specialMethod] = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">let</span> result = thisArg[specialMethod](...arr);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">delete</span> thisArg[specialMethod];</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  name: <span class="string">"coffe1891"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func.myCall(obj)</span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.myApply = <span class="function"><span class="keyword">function</span>(<span class="params">thisArg</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(thisArg === <span class="literal">null</span> || thisArg === <span class="literal">undefined</span>)&#123;</span><br><span class="line">    thisArg = <span class="built_in">window</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    thisArg = <span class="built_in">Object</span>(thisArg)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">isArrayLike</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(o &amp;&amp; <span class="keyword">typeof</span> o === <span class="string">"object"</span> &amp;&amp; <span class="built_in">isFinite</span>(o.length) &amp;&amp; o.length &gt;= <span class="number">0</span> &amp;&amp; o.length === <span class="built_in">Math</span>.floor(o.length) &amp;&amp; o.length &lt; <span class="number">4294967296</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> specialMethod = <span class="built_in">Symbol</span>(<span class="string">"anything"</span>)</span><br><span class="line">  thisArg[specialMethod] = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> args = <span class="built_in">arguments</span>[<span class="number">1</span>]</span><br><span class="line">  <span class="keyword">let</span> result;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(args)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="built_in">Array</span>.isArray(args) &amp;&amp; !isArrayLike(args))&#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">"args must be an array-like object"</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">      args = <span class="built_in">Array</span>.from(args);</span><br><span class="line">      result = thisArg[specialMethod](...args);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    result = thisArg[speacialMethod]</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">delete</span> thisArg[specialMethod]</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span>(<span class="params">objThis, ...params</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">const</span> thisFn = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">let</span> funcForBind = <span class="function"><span class="keyword">function</span>(<span class="params">...secondParams</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> isNew = <span class="keyword">this</span> <span class="keyword">instanceof</span> funcForBind;</span><br><span class="line">    <span class="keyword">const</span> thisArg = isNew ? <span class="keyword">this</span> : objThis;</span><br><span class="line">    <span class="keyword">return</span> thisFn.call(thisArg, ...params, ...secondParams)</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  funcForBind.prototype = <span class="built_in">Object</span>.create(thisFn.prototype)</span><br><span class="line">  <span class="keyword">return</span> funcForBind;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> func = <span class="function"><span class="keyword">function</span>(<span class="params">p,secondParams</span>)</span>&#123;<span class="comment">//其实测试用的func其参数可以是任意多个</span></span><br><span class="line">    <span class="built_in">console</span>.log(p.name);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">    <span class="built_in">console</span>.log(secondParams);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj=&#123;</span><br><span class="line">    name:<span class="string">"1891"</span></span><br><span class="line">&#125;</span><br><span class="line">func.myBind(obj,&#123;<span class="attr">name</span>:<span class="string">"coffe"</span>&#125;)(<span class="string">"二次传参"</span>);</span><br><span class="line"><span class="comment">//&gt;&gt; coffe</span></span><br><span class="line"><span class="comment">//&gt;&gt; 1891</span></span><br><span class="line"><span class="comment">//&gt;&gt; 二次传参</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h2><h3 id="for，forEach，map"><a href="#for，forEach，map" class="headerlink" title="for，forEach，map"></a>for，forEach，map</h3><p>如果使用箭头函数表达式来传入thisArg 参数会被忽略，因为箭头函数在词法上绑定了<code>this</code>值。<br>for循环满足特定条件时跳出循环体，或者跳出本次循环直接进入下一次循环。</p>
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p><code>initialValue</code>可选作为第一次调用<code>callback</code>函数时的第一个参数的值。 如果没有提供初始值，则将使用数组中的第一个元素（也即针对数组的arr循环计算少一次，千万要注意这点）。 在没有初始值的空数组上调用<code>reduce</code>将报错。</p>
+<p>数组—-&gt;对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr  = [</span><br><span class="line">    &#123;</span><br><span class="line">        username:    <span class="string">'makai'</span>,</span><br><span class="line">        displayname: <span class="string">'馆长'</span>,</span><br><span class="line">        email:       <span class="string">'guanzhang@coffe1891.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        username:    <span class="string">'xiaoer'</span>,</span><br><span class="line">        displayname: <span class="string">'小二'</span>,</span><br><span class="line">        email:       <span class="string">'xiaoer@coffe1891.com'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        username:    <span class="string">'zhanggui'</span>,</span><br><span class="line">        displayname: <span class="string">'掌柜'</span>,</span><br><span class="line">        email:       <span class="literal">null</span></span><br><span class="line">    &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cb1</span>(<span class="params">acc, person</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;...acc, [person.username]: person&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> obj = arr.reduce(cb1, &#123;&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="深拷贝"><a href="#深拷贝" class="headerlink" title="深拷贝"></a>深拷贝</h2><p>缺点：</p>
+<ul>
+<li>会忽略<code>undefined</code>；</li>
+<li>会忽略<code>symbol</code>；</li>
+<li>如果对象的属性为<code>Function</code>，因为JSON格式字符串不支持<code>Function</code>，在序列化的时候会自动删除；</li>
+<li>诸如 <code>Map</code>, <code>Set</code>, <code>RegExp</code>, <code>Date</code>, <code>ArrayBuffer</code>和其他内置类型在进行序列化时会丢失；</li>
+<li>不支持循环引用对象的拷贝。<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">x</span>: <span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">JSON</span>.sringiy(a)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>缺点：<br>对象嵌套层次超过2层，就会出现浅拷贝的状况；<br>非可枚举的属性无法被拷贝。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123;<span class="attr">x</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">let</span> b = <span class="built_in">Object</span>.assign(&#123;&#125;, a)</span><br></pre></td></tr></table></figure>
+
+<p>缺点：<br>这个方法是异步的；<br>拷贝有函数的对象时，还是会报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 有undefined + 循环引用</span></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: &#123;</span><br><span class="line">    c: <span class="number">2</span>,</span><br><span class="line">    d: <span class="number">3</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  f: <span class="literal">undefined</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.c = obj.b;</span><br><span class="line">obj.e = obj.a;</span><br><span class="line">obj.b.c = obj.c;</span><br><span class="line">obj.b.d = obj.b;</span><br><span class="line">obj.b.e = obj.b.c;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> &#123;port1, port2&#125; = <span class="keyword">new</span> MessageChannel();</span><br><span class="line">    port2.onmessage = <span class="function"><span class="params">ev</span> =&gt;</span> resolve(ev.data);</span><br><span class="line">    port1.postMessage(obj);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">deepClone(obj).then(<span class="function">(<span class="params">copy</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> copyObj = copy;</span><br><span class="line">  <span class="built_in">console</span>.log(copyObj, obj)</span><br><span class="line">  <span class="built_in">console</span>.log(copyObj == obj)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj, parent = null</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = &#123;&#125;;</span><br><span class="line">  <span class="keyword">let</span> keys = <span class="built_in">Object</span>.keys(obj),</span><br><span class="line">      key = <span class="literal">null</span>,</span><br><span class="line">      temp = <span class="literal">null</span>,</span><br><span class="line">      _parent = parent;</span><br><span class="line">  <span class="keyword">while</span>(_parent)&#123;</span><br><span class="line">    <span class="keyword">if</span>(_parent.originalParent === obj)&#123;</span><br><span class="line">      <span class="keyword">return</span> _parent.currentParent</span><br><span class="line">    &#125;</span><br><span class="line">    _parent = _parent.parent</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;keys.length; i++)&#123;</span><br><span class="line">    key = keys[i];</span><br><span class="line">    temp = obj[key]</span><br><span class="line">    <span class="keyword">if</span>(temp &amp;&amp; <span class="keyword">typeof</span> temp === <span class="string">'object'</span>)&#123;</span><br><span class="line">      result[key] = deepClone(temp, &#123;</span><br><span class="line">        originalParent: obj,</span><br><span class="line">        currentParent: result,</span><br><span class="line">        parent: parent</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      result[key] = temp</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepClone</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">dp</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> result = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> keys = <span class="literal">null</span>,</span><br><span class="line">    key = <span class="literal">null</span>,</span><br><span class="line">    temp = <span class="literal">null</span>,</span><br><span class="line">    existsObj = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    existObj = map.get(obj)</span><br><span class="line">    <span class="keyword">if</span>(existObj)&#123;</span><br><span class="line">      reurn existObj</span><br><span class="line">    &#125;</span><br><span class="line">    keys = <span class="built_in">Object</span>.keys(obj);</span><br><span class="line">    result = &#123;&#125;;</span><br><span class="line">    map.set(obj, result);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;keys.length; i++)&#123;</span><br><span class="line">      key = keys[i];</span><br><span class="line">      temp = obj[key];</span><br><span class="line">      <span class="keyword">if</span>(temp &amp;&amp; <span class="keyword">typeof</span> temp === <span class="string">'object'</span>)&#123;</span><br><span class="line">        result[key] = dp(temp)</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        result[key] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> dp(obj)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p>终极方案是lodash的cloneDeep。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_cloneDeep(&#123;<span class="attr">xx</span>:<span class="number">11</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="柯里化"><a href="#柯里化" class="headerlink" title="柯里化"></a>柯里化</h2><p>bind的柯里化</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.bind = <span class="function"><span class="keyword">function</span>(<span class="params">context</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">let</span> _this = <span class="keyword">this</span>;</span><br><span class="line">  <span class="keyword">let</span> args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _this.apply(context, args)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>给定一个函数fn，设计一个通用封装（currying函数）作用于这个fn，让这个fn可以支持柯里化，该怎么实现呢？思路：</p>
+<p>要让fn(a,b)等价于fn(a)(b)，那么fn(a)要返回一个函数，这个函数接受参数b，并返回与fn(a,b)相同的结果。</p>
+<p>设计一个currying函数，它接受第一个参数是要被柯里化的函数fn，第2~N个参数是原本要传递给fn的参数（这个可用rest操作符实现）。</p>
+<p>柯里化主要围绕“处理参数”思考，不管怎么变化传参形式，柯里化之后的函数要把之前函数的参数都统统处理完毕才算合格。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> promaryCurrying = <span class="function"><span class="keyword">function</span>(<span class="params">fn, length</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">  length = length || fn.length;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args2</span>)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(args2.length &lt; length)&#123;</span><br><span class="line">      <span class="keyword">var</span> combinedArgs = [fn].concat(args2)</span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> curry(primaryCurrying.apply(<span class="keyword">this</span>, coombinedArgs), length - args2.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> fn.apply(<span class="keyword">this</span>, args2)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>// 实现一个add方法，使计算结果能够满足如下预期：<br>add(1)(2)(3) = 6;<br>add(1, 2, 3)(4) = 10;<br>add(1)(2)(3)(4)(5) = 15;</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> _args = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br><span class="line">  <span class="keyword">var</span> _addr = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    _args.push(...arguments)</span><br><span class="line">    <span class="keyword">return</span> _addr;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  _adder.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> _args.reduce(<span class="function"><span class="keyword">function</span> (<span class="params">acc, cur</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">return</span> acc + cur;</span><br><span class="line">    &#125;, <span class="number">0</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> _adder;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="reflect和proxy"><a href="#reflect和proxy" class="headerlink" title="reflect和proxy"></a>reflect和proxy</h2><h3 id="数据绑定和响应式"><a href="#数据绑定和响应式" class="headerlink" title="数据绑定和响应式"></a>数据绑定和响应式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createReactive</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">    <span class="keyword">get</span>(target, prop)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'reading'</span>+ prop)</span><br><span class="line">      <span class="keyword">return</span> target[prop]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="keyword">set</span>(target, prop, value)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'setting'</span>, value)</span><br><span class="line">      target[prop] = value;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> data = createReactive(&#123; <span class="attr">count</span>: <span class="number">0</span> &#125;);</span><br><span class="line">data.count;</span><br><span class="line">data.count = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="日志记录"><a href="#日志记录" class="headerlink" title="日志记录"></a>日志记录</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createLoggingProxy</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">    <span class="keyword">get</span>(target, prop)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'get'</span>, [prop])</span><br><span class="line">      <span class="keyword">return</span> target[prop]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">set</span>(target, prop, value)&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`setting <span class="subst">$&#123;prop&#125;</span> = <span class="subst">$&#123;value&#125;</span>`</span>)</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target, prop, value)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createSecureProxy</span>(<span class="params">obj, allowedProps</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(obj, &#123;</span><br><span class="line">    <span class="keyword">get</span>(target, prop) &#123;</span><br><span class="line">      <span class="keyword">if</span>(allowedProps.includes(prop))&#123;</span><br><span class="line">        <span class="keyword">return</span> target[prop]</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">`Not allowed to access <span class="subst">$&#123;prop&#125;</span>`</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#call，apply，bind函数"><span class="toc-number">1.</span> <span class="toc-text">call，apply，bind函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常见面试题"><span class="toc-number">1.1.</span> <span class="toc-text">常见面试题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript手写call，apply，bind函数，尤其是bind函数"><span class="toc-number">1.2.</span> <span class="toc-text">javascript手写call，apply，bind函数，尤其是bind函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#循环"><span class="toc-number">2.</span> <span class="toc-text">循环</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#for，forEach，map"><span class="toc-number">2.1.</span> <span class="toc-text">for，forEach，map</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reduce"><span class="toc-number">2.2.</span> <span class="toc-text">reduce</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深拷贝"><span class="toc-number">3.</span> <span class="toc-text">深拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#柯里化"><span class="toc-number">4.</span> <span class="toc-text">柯里化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reflect和proxy"><span class="toc-number">5.</span> <span class="toc-text">reflect和proxy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据绑定和响应式"><span class="toc-number">5.1.</span> <span class="toc-text">数据绑定和响应式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日志记录"><span class="toc-number">5.2.</span> <span class="toc-text">日志记录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#权限控制"><span class="toc-number">5.3.</span> <span class="toc-text">权限控制</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&text=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&is_video=false&description=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜还是一些来自前端内参的编码题目&body=Check out this article: http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&title=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&name=2025年｜还是一些来自前端内参的编码题目&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/11/12/2025-sum-interviews-coding2/&t=2025年｜还是一些来自前端内参的编码题目" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2025 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
