@@ -158,3 +158,405 @@ class LRUCache {
     }
 }
 ```
+
+# 数组扁平化与去重
+
+## 数组扁平化（数组降维）
+
+### Array.prototype.flat() 方法
+
+MDN：`flat()` 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。
+
+```javascript
+const test = ["a", ["b", "c"], ["d", ["e", ["f"]], "g"]]
+
+// 不传参数时，默认扁平化一层
+test.flat()
+// ["a", "b", "c", "d", ["e", ["f"]], "g"]
+
+// 传入一个整数参数，整数即扁平化的层数
+test.flat(2)
+// ["a", "b", "c", "d", "e", ["f"], "g"]
+
+// Infinity 关键字作为参数时，无论多少层嵌套，都会转为一维数组
+test.flat(Infinity)
+// ["a", "b", "c", "d", "e", "f", "g"]
+
+// 传入 <=0 的整数将返回原数组，不扁平化
+test.flat(0)
+test.flat(-10)
+// ["a", ["b", "c"], ["d", ["e", ["f"]], "g"]]
+
+// 如果原数组有空位，flat()方法会跳过空位。
+["a", "b", "c", "d",,].flat()
+// ["a", "b", "c", "d"]
+```
+
+### Array.prototype.flat() 特性总结
+
+- 用于将嵌套的数组扁平化，变成一维的数组
+- 该方法返回一个新数组，对原数据没有影响
+- 不传参数时，默认扁平化一层
+- 可以传入一个整数，表示想要扁平化的层数
+- 传入 <=0 的整数将返回原数组，不扁平化
+- `Infinity` 关键字作为参数时，无论多少层嵌套，都会转为一维数组
+- 如果原数组有空位，`Array.prototype.flat()` 会跳过空位
+
+## 手动实现扁平化方法
+
+### 方法一：使用 reduce 方法
+
+#### 一次性扁平化所有
+
+```javascript
+function flattenDeep(arr) { 
+    return Array.isArray(arr)
+      ? arr.reduce( (acc, cur) => [...acc, ...flattenDeep(cur)] , [])
+      : [arr]
+}
+
+// 测试
+var test = ["a", ["b", "c"], ["d", ["e", ["f"]], "g"]]
+flattenDeep(test)
+// ["a", "b", "c", "d", "e", "f", "g"]
+```
+
+#### 实现 flat 函数
+
+```javascript
+function flat(arr, depth = 1) {
+    return depth > 0
+        ? arr.reduce((acc, cur) => {
+        if(Array.isArray(cur)) {
+            return [...acc, ...flat(cur, depth-1)]
+        }
+        return [...acc, cur]
+    } , [])
+      : arr
+}
+
+// 测试
+var test = ["a", ["b", "c"], ["d", ["e", ["f"]], "g"]]
+
+// 不传参数时，默认扁平化一层
+flat(test)
+// ["a", "b", "c", "d", ["e", ["f"]], "g"]
+
+// 传入一个整数参数，整数即扁平化的层数
+flat(test, 2)
+// ["a", "b", "c", "d", "e", ["f"], "g"]
+
+// Infinity 关键字作为参数时，无论多少层嵌套，都会转为一维数组
+flat(test, Infinity)
+// ["a", "b", "c", "d", "e", "f", "g"]
+
+// 传入 <=0 的整数将返回原数组，不扁平化
+flat(test, 0)
+flat(test, -10)
+// ["a", ["b", "c"], ["d", ["e", ["f"]], "g"]];
+
+// 如果原数组有空位，flat()方法会跳过空位。
+var arr = ["a", "b", "c", "d",,]
+flat(arr)
+// ["a", "b", "c", "d"]
+```
+
+### 方法二：使用栈
+
+#### 一次性降维所有
+
+```javascript
+function flattenDeep(arr) {
+  const result = [] 
+  // 将数组元素拷贝至栈，直接赋值会改变原数组
+  const stack = [...arr]
+  // 如果栈不为空，则循环遍历
+  while (stack.length !== 0) {
+    const val = stack.pop() 
+    if (Array.isArray(val)) {
+      // 如果是数组再次入栈，并且展开了一层
+      stack.push(...val) 
+    } else {
+      // 如果不是数组，就用头插法插入到结果数组中
+      result.unshift(val)
+    }
+  }
+  return result
+}
+
+// 测试
+var test = ["a", ["b", "c"], ["d", ["e", ["f"]], "g"]]
+flattenDeep(test)
+// ["a", "b", "c", "d", "e", "f", "g"]
+```
+
+## 数组去重
+
+### 方式一：Set（ES6）
+
+```javascript
+function unique(arr) {
+    return Array.from(new Set(arr))
+}
+// 或者
+var unique = arr => [...new Set(arr)]
+
+// 测试
+var arr = [1, 2, 2, 3]
+unique(arr); // [1, 2, 3]
+```
+
+### 方式二：reduce
+
+```javascript
+function unique (arr) {
+    return arr.sort().reduce((acc, cur) => {
+    	if (acc.length === 0 || acc[acc.length - 1] !== cur) {
+        	acc.push(cur);
+    	}
+    	return acc
+	}, [])
+}
+
+// 测试
+var arr = [1, 2, 2, 3]
+unique(arr); // [1, 2, 3]
+```
+
+### 方法三：filter
+
+```javascript
+function unique(arr) { 
+    return arr.filter( (element, index, array) => {
+    	return array.indexOf(element) === index
+	})
+}
+
+// 测试
+var arr = [1, 2, 2, 3]
+unique(arr); // [1, 2, 3]
+```
+
+# 数组原地去重方法
+
+## 方法一：排序去重
+
+```javascript
+const removeDuplicates = (nums) => {
+    // 原地排序
+    nums.sort()
+    // 去重
+    let len = 1
+    for (let i = 1; i < nums.length; i++)
+        if (nums[i] != nums[i-1]) nums[len++] = nums[i];
+    // 删除重复项
+    nums.splice(len)
+    return nums
+}
+
+// 测试
+removeDuplicates([1, 2, 3, 1, 3])
+// [1, 2, 3]
+```
+
+**特点：**
+- 使用 `sort()` 方法进行原地排序
+- 通过双指针技巧在排序后的数组中去除重复项
+- 最后使用 `splice()` 删除多余的重复元素
+
+## 方法二：优化版本
+
+```javascript
+const removeDuplicates = (nums) => {
+    let len = nums.length - 1
+    for(let i = len; i>=0; i--) {
+        if(nums.indexOf(nums[i]) != i) {
+            nums[i] = nums[len --]
+        }
+    }
+    // 删除重复项
+    nums.splice(len+1)
+    return nums
+}
+
+// 测试
+removeDuplicates([1, 2, 3, 1, 3])
+// [1, 2, 3]
+```
+
+**特点：**
+- 从后向前遍历数组
+- 使用 `indexOf` 检查当前元素是否为重复项
+- 将重复元素与数组末尾元素交换，然后缩短数组长度
+- 最后使用 `splice()` 删除末尾的重复元素
+
+## 两种方法的比较
+
+| 方法 | 优点 | 缺点 | 是否保持原顺序 |
+|------|------|------|----------------|
+| 排序去重 | 效率较高 | 改变元素原始顺序 | 否 |
+| 优化版本 | 保持元素原始顺序 | 效率相对较低 | 是 |
+
+# 数组去重函数（支持对象和数组元素）
+
+## 需求说明
+
+实现一个数组去重函数，能够处理包含对象、数组等复杂类型的元素：
+
+- 输入：`[123, "meili", "123", "mogu", 123]`
+- 输出：`[123, "meili", "123", "mogu"]`
+
+- 输入：`[123, [1, 2, 3], [1, "2", 3], [1, 2, 3], "meili"]`
+- 输出：`[123, [1, 2, 3], [1, "2", 3], "meili"]`
+
+- 输入：`[123, {a: 1}, {a: {b: 1}}, {a: "1"}, {a: {b: 1}}, "meili"]`
+- 输出：`[123, {a: 1}, {a: {b: 1}}, {a: "1"}, "meili"]`
+
+## 基础解法：使用 JSON.stringify
+
+```javascript
+const removeDuplicates = (arr) => {
+    let map = new Map()
+    arr.forEach(item => {
+        map.set(JSON.stringify(item), item)
+    })
+    return [...map.values()]
+}
+
+// 测试
+removeDuplicates([123, "meili", "123", "mogu", 123])
+// [123, "meili", "123", "mogu"]
+
+removeDuplicates([123, [1, 2, 3], [1, "2", 3], [1, 2, 3], "meili"])
+// [123, [1, 2, 3], [1, "2", 3], "meili"]
+
+removeDuplicates([123, {a: 1}, {a: {b: 1}}, {a: "1"}, {a: {b: 1}}, "meili"])
+// [123, {a: 1}, {a: {b: 1}}, {a: "1"}, "meili"]
+```
+
+## 问题分析
+
+使用 `JSON.stringify` 的局限性：
+
+```javascript
+let o1 = {a:1, b:2}
+let o2 = {b:2, a:1}
+
+JSON.stringify(o1)
+// "{"a":1,"b":2}"
+
+JSON.stringify(o2)
+// "{"b":2,"a":1}"
+
+JSON.stringify(o1) === JSON.stringify(o2)
+// false
+```
+
+**问题**：对象键顺序不同会被认为是不同的元素。
+
+## 解决方案
+
+### 解决思路
+
+一个数组（包含对象等类型元素）去重函数，需要在基础类型判断相等条件下满足以下条件：
+
+- 如果元素是数组类型，则需要数组中的每一项相等
+- 如果元素是对象类型，则需要对象中的每个键值对相等
+
+去重本身就是遍历数组，然后比较数组中的每一项是否相等而已，所以关键步骤有两步：**比较**、**去重**
+
+**比较**：
+1. 首先判断类型是否一致，类型不一致则认为两个数组元素是不同的
+2. 如果是数组类型，则递归比较数组中的每个元素是否相等
+3. 如果是对象类型，则递归比较对象中的每个键值对是否相等
+4. 否则，直接 `===` 比较
+
+**去重**：
+- 采用 `reduce` 去重，初始 `accumulator` 为 `[]`
+- 采用 `findIndex` 找到 `accumulator` 是否包含相同元素
+- 如果不包含则加入，否则不加入
+- 返回最终的 `accumulator`，则为去重后的数组
+
+### 代码实现
+
+```javascript
+// 获取类型
+const getType = (function() {
+    const class2type = {
+        '[object Boolean]': 'boolean', 
+        '[object Number]': 'number', 
+        '[object String]': 'string', 
+        '[object Function]': 'function', 
+        '[object Array]': 'array', 
+        '[object Date]': 'date', 
+        '[object RegExp]': 'regexp', 
+        '[object Object]': 'object', 
+        '[object Error]': 'error', 
+        '[object Symbol]': 'symbol' 
+    }
+
+    return function getType(obj) {
+        if (obj == null) {
+            return obj + ''
+        }
+        // javascript高级程序设计中提供了一种方法,可以通用的来判断原始数据类型和引用数据类型
+        const str = Object.prototype.toString.call(obj)
+        return typeof obj === 'object' || typeof obj === 'function' ? class2type[str] || 'object' : typeof obj
+    };
+})();
+
+/**
+ * 判断两个元素是否相等
+ * @param {any} o1 比较元素
+ * @param {any} o2 其他元素
+ * @returns {Boolean} 是否相等
+ */
+const isEqual = (o1, o2) => {
+    const t1 = getType(o1)
+    const t2 = getType(o2)
+
+    // 比较类型是否一致
+    if (t1 !== t2) return false
+    
+    // 类型一致
+    if (t1 === 'array') {
+        // 首先判断数组包含元素个数是否相等
+        if (o1.length !== o2.length) return false 
+        // 比较两个数组中的每个元素
+        return o1.every((item, i) => {
+            return isEqual(item, o2[i])
+        })
+    }
+
+    if (t1 === 'object') {
+        // object类型比较类似数组
+        const keysArr = Object.keys(o1)
+        if (keysArr.length !== Object.keys(o2).length) return false
+        // 比较每一个元素
+        return keysArr.every(k => {
+            return isEqual(o1[k], o2[k])
+        })
+    }
+
+    return o1 === o2
+}
+
+// 数组去重
+const removeDuplicates = (arr) => {
+    return arr.reduce((accumulator, current) => {
+        const hasIndex = accumulator.findIndex(item => isEqual(current, item))
+        if (hasIndex === -1) {
+            accumulator.push(current)
+        }
+        return accumulator
+    }, [])
+}
+
+// 测试
+removeDuplicates([123, {a: 1}, {a: {b: 1}}, {a: "1"}, {a: {b: 1}}, "meili", {a:1, b:2}, {b:2, a:1}])
+// [123, {a: 1}, {a: {b: 1}}, {a: "1"}, "meili", {a: 1, b: 2}]
+```
+
+## 总结
+
+这种方法解决了 `JSON.stringify` 在面对对象键顺序不同时的局限性，通过深度比较实现了真正的对象内容去重。
