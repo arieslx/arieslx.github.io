@@ -7,22 +7,22 @@ tags:
 
 ## 你在长列表优化中做了哪些具体的事情？
 
-思路是避免同时渲染大量的DOM节点，DOM节点的创建、渲染和内存占用都是非常消耗性能的。
-1.采用非渲染优化
+- 思路是避免同时渲染大量的DOM节点，DOM节点的创建、渲染和内存占用都是非常消耗性能的。
+1. 采用非渲染优化
 1. 虚拟滚动：
-计算可视的区域：监听容器的滚动事件：`scrollTop`和`scrollTop + clientHeight`。
-计算渲染区间：根据上一步的可视区域、每个列表项的高度，计算出需要渲染的起始索引`startIndex`和结束索引`endIndex`。通常会渲染比可视区域更多一些的项（上下多渲染5-10个），以防止滚动时出现白屏。
+- 计算可视的区域：监听容器的滚动事件：`scrollTop`和`scrollTop + clientHeight`。
+- 计算渲染区间：根据上一步的可视区域、每个列表项的高度，计算出需要渲染的起始索引`startIndex`和结束索引`endIndex`。通常会渲染比可视区域更多一些的项（上下多渲染5-10个），以防止滚动时出现白屏。
 动态渲染和定位：
-只渲染`[startIndex, endIndex]`这个区间的列表项。
+- 只渲染`[startIndex, endIndex]`这个区间的列表项。
 为了保持滚动条的准确性，容器的高度必须设置为所有列表项的总高度。这通常通过一个具有总高度的“撑开容器”来实现。
-对渲染的列表项实用`position: about`属性或者`transform: translateY(...)`，并设置`top`属性为列表项的索引乘以列表项的高度。`
+对渲染的列表项实用`position: about`属性或者`transform: translateY(...)`，并设置`top`属性为列表项的索引乘以列表项的高度。
 性能优化：
 实用虚拟滚动，并使用`requestAnimationFrame`来优化动画或Interaction Observer来优化滚动监听，避免频繁的样式计算和布局。
 缓存已计算的位置，对于高度固定的列表项，可以提前计算好，对于动态高度的列表，需要在渲染列表之后测量好并缓存高度，以便下次快速计算。
 使用的库/技术：
-React: react-window, react-virtualized
-Vue: vue-virtual-scroller
-有时也会根据业务需求，使用`Intersection Observer API`自己实现一个简化版。
+- React: react-window, react-virtualized
+- Vue: vue-virtual-scroller
+- 有时也会根据业务需求，使用`Intersection Observer API`自己实现一个简化版。
 2. 分页和无限滚动。
 分页/无限滚动
 这是两种更业务层面的策略。
@@ -43,12 +43,12 @@ Vue: vue-virtual-scroller
 为什么：这能帮助框架（React/Vue）更准确地识别哪些节点可以被复用、移动或销毁，从而最大限度地减少不必要的 DOM 操作。
 避免内联对象和函数
 做了什么：
-将内联的样式对象 (style={{ color: 'red' }}) 和函数 (onClick={() => {...}}) 提取到组件外部或使用 useCallback/useMemo 进行记忆化。
+- 将内联的样式对象`(style={{ color: 'red' }}) 和函数 (onClick={() => {...}}) 提取到组件外部或使用 useCallback/useMemo`进行记忆化。
 为什么：内联的引用类型（对象、函数）每次渲染都会创建一个新的引用，导致子组件即使 props 内容没变，也会因为引用不同而进行不必要的重渲染。
-简化子组件/使用 PureComponent 或 React.memo
+简化子组件/使用`PureComponent`或`React.memo`。
 做了什么：
 将列表项拆分成独立的、轻量的子组件。
-使用 React.memo（函数组件）或 PureComponent（类组件）来包裹它们。这些组件会对 props 进行浅比较，只有在 props 真正变化时才会重新渲染。
+使用`React.memo（函数组件）`或`PureComponent（类组件）`来包裹它们。这些组件会对props进行浅比较，只有在 props 真正变化时才会重新渲染。
 为什么：当父列表组件因为状态更新而重渲染时，可以阻止所有子项都跟着重渲染。
 不可变数据与结构共享
 做了什么：在更新列表数据时（如增、删、改），使用不可变数据的方式（如 ES6 扩展运算符 ...， Immer.js 等）来创建新的数据引用。
