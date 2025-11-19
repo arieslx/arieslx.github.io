@@ -20,8 +20,8 @@ tags:
 实用虚拟滚动，并使用`requestAnimationFrame`来优化动画或Interaction Observer来优化滚动监听，避免频繁的样式计算和布局。
 缓存已计算的位置，对于高度固定的列表项，可以提前计算好，对于动态高度的列表，需要在渲染列表之后测量好并缓存高度，以便下次快速计算。
 使用的库/技术：
-- `React: react-window, react-virtualized`
-- `Vue: vue-virtual-scroller`
+- `React: react-window, react-virtualized`。
+- `Vue: vue-virtual-scroller`。
 - 有时也会根据业务需求，使用`Intersection Observer API`自己实现一个简化版。
 2. 分页和无限滚动。
 分页/无限滚动
