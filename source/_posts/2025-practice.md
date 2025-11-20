@@ -560,3 +560,156 @@ removeDuplicates([123, {a: 1}, {a: {b: 1}}, {a: "1"}, {a: {b: 1}}, "meili", {a:1
 ## 总结
 
 这种方法解决了 `JSON.stringify` 在面对对象键顺序不同时的局限性，通过深度比较实现了真正的对象内容去重。
+
+### 
+
+```js
+
+// 模拟异步数据获取
+async function* asyncNumberGenerator() {
+  yield await Promise.resolve(1);
+  yield await Promise.resolve(2);
+  yield await Promise.resolve(3);
+}
+
+// 使用 for await...of 遍历
+async function processNumbers() {
+  for await (const num of asyncNumberGenerator()) {
+    console.log(num); // 依次输出: 1, 2, 3
+  }
+}
+processNumbers();
+
+```
+
+```js
+// 模拟多个异步操作
+const fetchUserData = (id, delay) => 
+  new Promise(resolve => 
+    setTimeout(() => resolve(`用户${id}的数据`), delay)
+  );
+
+const promises = [
+  fetchUserData(1, 1000),
+  fetchUserData(2, 500),
+  fetchUserData(3, 1500)
+];
+
+async function processUsers() {
+  console.log('开始获取用户数据...');
+  
+  for await (const userData of promises) {
+    console.log('收到:', userData);
+    // 按完成顺序输出，不是按数组顺序
+  }
+  
+  console.log('所有数据获取完成');
+}
+processUsers();
+
+```
+```js
+// Node.js 文件系统示例
+import { createReadStream } from 'fs';
+import { createInterface } from 'readline';
+
+async function readLargeFile() {
+  const fileStream = createReadStream('large-file.txt');
+  const rl = createInterface({
+    input: fileStream,
+    crlfDelay: Infinity
+  });
+
+  let lineCount = 0;
+  
+  for await (const line of rl) {
+    lineCount++;
+    console.log(`第${lineCount}行:`, line);
+    
+    // 可以在这里处理每一行，不会阻塞其他操作
+    if (lineCount >= 10) {
+      console.log('只显示前10行');
+      break;
+    }
+  }
+  
+  console.log(`总共处理了 ${lineCount} 行`);
+}
+```
+
+```js
+
+// 同步 vs 异步迭代对比
+async function compareIteration() {
+  const syncArray = [1, 2, 3];
+  const asyncArray = [
+    Promise.resolve(1),
+    Promise.resolve(2),
+    Promise.resolve(3)
+  ];
+
+  console.log('=== 同步迭代 ===');
+  for (const item of syncArray) {
+    console.log(item); // 立即输出 1, 2, 3
+  }
+
+  console.log('=== 异步迭代 ===');
+  for await (const item of asyncArray) {
+    console.log(item); // 等待 Promise 解决后输出 1, 2, 3
+  }
+}
+compareIteration();
+
+```
+
+### 手写aysnc和await
+
+```js
+
+ffunction asyncToGenerator(genFunc) {
+  return function (...args) {
+    const gen = genFunc.apply(this, args);
+
+    return new Promise((resolve, reject) => {
+      function step(key, arg) {
+        let result;
+        try {
+          result = gen[key](arg);
+        } catch (err) {
+          return reject(err);
+        }
+
+        const { value, done } = result;
+
+        if (done) {
+          return resolve(value);
+        }
+
+        Promise.resolve(value).then(
+          val => step("next", val),
+          err => step("throw", err)
+        );
+      }
+
+      step("next");
+    });
+  };
+}
+
+// ----------------------------
+// 测试代码
+// ----------------------------
+function* testGen() {
+  const a = yield Promise.resolve(1);
+  const b = yield Promise.resolve(a + 1);
+  return b + 1;
+}
+
+const test = asyncToGenerator(testGen);
+
+test().then(res => {
+  console.log("结果: ", res); // 3
+});
+
+
+```
