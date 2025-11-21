@@ -4,8 +4,7 @@ title: 2025年｜前端面试练习题
 date: 2025-11-18 15:17:59
 tags:
   - 2025
-  - 面试
-  - 前端
+  - front-end-interview
 
 ---
 
@@ -710,6 +709,28 @@ const test = asyncToGenerator(testGen);
 test().then(res => {
   console.log("结果: ", res); // 3
 });
+
+
+```
+
+
+### 合并两个有序数组
+
+```js
+
+let merge = function(nums1, m, nums2, n){
+    let len1 = m-1,
+        len2 = n-1,
+        len = m+n-1
+    while(len2 >=0){
+        if(len1<0){
+            nums1[len--] = nums2[len2--]
+            continue
+        }
+        nums1[len--] = nums1[len1] >= nums2[len2] ? nums1[len1--] : nums2[len2--]
+    }
+
+}
 
 
 ```

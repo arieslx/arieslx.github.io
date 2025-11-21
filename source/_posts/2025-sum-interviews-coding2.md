@@ -3,6 +3,7 @@ title: 2025年｜还是一些来自前端内参的编码题目
 date: 2025-11-12 17:17:59
 tags:
   - 2025
+  - front-end-interview
 ---
 
 ## call，apply，bind函数

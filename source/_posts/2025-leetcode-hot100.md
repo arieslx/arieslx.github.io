@@ -3,6 +3,7 @@ title: 2025年｜Leetcode hot100 typescript
 date: 2025-10-31 23:40:59
 tags:
   - 2025
+  - front-end-interview
 ---
 
 [1. Two Sum](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)

@@ -3,6 +3,7 @@ title: 2025年｜手写promise
 date: 2025-10-31 17:17:59
 tags:
   - 2025
+  - front-end-interview
 ---
 
 ### 基础架子
