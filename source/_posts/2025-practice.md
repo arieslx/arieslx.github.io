@@ -10,7 +10,7 @@ tags:
 
 ## 你在长列表优化中做了哪些具体的事情？
 
-**核心思路**：避免同时渲染大量的 DOM 节点，因为 DOM 节点的创建、渲染和内存占用都非常消耗性能。
+**核心思路**：避免同时渲染大量的`DOM`节点，因为`DOM`节点的创建、渲染和内存占用都非常消耗性能。
 
 ### 1. 虚拟滚动
 
@@ -32,19 +32,19 @@ tags:
 
 #### 分页
 - **实现方式**：明确将数据分成多页，用户通过点击页码或"加载更多"按钮请求新数据
-- **优点**：实现简单，SEO 友好，内存压力小
+- **优点**：实现简单，`SEO`友好，内存压力小
 - **缺点**：交互不连贯，需要用户主动操作
 
 #### 无限滚动
 - **实现方式**：当用户滚动到底部附近时，自动加载下一页数据并追加到当前列表
 - **优点**：用户体验流畅，适合内容流（社交媒体、商品列表）
 - **缺点**：实现复杂，需要管理滚动位置和加载状态；性能随滚动逐渐下降；页脚可能无法到达
-- **优化点**：可与虚拟滚动结合，即使加载很多数据，DOM 节点数也保持恒定
+- **优化点**：可与虚拟滚动结合，即使加载很多数据，`DOM`节点数也保持恒定
 
 ### 3. 微观优化：必须渲染长列表时
 
-- **优化 `key` 属性**：
-  - 使用唯一且稳定的 key（如数据中的 id），而不是数组的 index
+- **优化`key`属性**：
+  - 使用唯一且稳定的`key`（如数据中的 id），而不是数组的index
   - 帮助框架准确识别哪些节点可被复用、移动或销毁
 
 - **避免内联对象和函数**：
@@ -158,7 +158,7 @@ class LRUCache {
 }
 ```
 
-# 数组扁平化与去重
+## 数组扁平化与去重
 
 ## 数组扁平化（数组降维）
 
@@ -186,7 +186,7 @@ test.flat(0)
 test.flat(-10)
 // ["a", ["b", "c"], ["d", ["e", ["f"]], "g"]]
 
-// 如果原数组有空位，flat()方法会跳过空位。
+// 如果原数组有空位，******flat()方法会跳过空位。
 ["a", "b", "c", "d",,].flat()
 // ["a", "b", "c", "d"]
 ```
@@ -336,7 +336,7 @@ var arr = [1, 2, 2, 3]
 unique(arr); // [1, 2, 3]
 ```
 
-# 数组原地去重方法
+## 数组原地去重方法
 
 ## 方法一：排序去重
 
@@ -396,9 +396,9 @@ removeDuplicates([1, 2, 3, 1, 3])
 | 排序去重 | 效率较高 | 改变元素原始顺序 | 否 |
 | 优化版本 | 保持元素原始顺序 | 效率相对较低 | 是 |
 
-# 数组去重函数（支持对象和数组元素）
+## 数组去重函数（支持对象和数组元素）
 
-## 需求说明
+###  需求说明
 
 实现一个数组去重函数，能够处理包含对象、数组等复杂类型的元素：
 
@@ -733,4 +733,274 @@ let merge = function(nums1, m, nums2, n){
 }
 
 
+```
+
+## js判断数据类型
+
+`typeof 判断`
+`Array.isArray()`
+`instanceof`
+`Object.prototype.toString.call()`
+
+```js
+typeof 123          // "number"
+typeof "abc"        // "string"
+typeof true         // "boolean"
+typeof undefined    // "undefined"
+typeof {}           // "object"
+typeof []           // "object"  ⚠️数组也返回 object
+typeof null         // "object"  ⚠️历史 bug
+typeof function(){} // "function"
+
+
+Array.isArray([])   // true
+Array.isArray({})   // false
+
+[] instanceof Array      // true
+{} instanceof Object     // true
+new Date() instanceof Date // true
+
+Object.prototype.toString.call(123)        // "[object Number]"
+Object.prototype.toString.call("abc")      // "[object String]"
+Object.prototype.toString.call(true)       // "[object Boolean]"
+Object.prototype.toString.call([])         // "[object Array]"
+Object.prototype.toString.call({})         // "[object Object]"
+Object.prototype.toString.call(null)       // "[object Null]"
+Object.prototype.toString.call(undefined)  // "[object Undefined]"
+Object.prototype.toString.call(new Date()) // "[object Date]"
+Object.prototype.toString.call(/abc/)      // "[object RegExp]"
+
+```
+
+## map实现reduce
+
+```js
+function myReduceMap(arr, callback, initialValue) {
+  let hasInitial = arguments.length > 2;
+  let accumulator = hasInitial ? initialValue : arr[0];
+
+  arr.forEach((item, index) => {
+    // 如果没有初始值，跳过第一个元素
+    if (!hasInitial && index === 0) return;
+    accumulator = callback(accumulator, item, index, arr);
+  });
+
+  return accumulator;
+}
+
+// 测试
+const arr = [1, 2, 3, 4];
+
+const sum = myReduceMap(arr, (acc, cur) => acc + cur, 0);
+console.log(sum); // 10
+
+const sumNoInit = myReduceMap(arr, (acc, cur) => acc + cur);
+console.log(sumNoInit); // 10
+
+const product = myReduceMap(arr, (acc, cur) => acc * cur, 1);
+console.log(product); // 24
+function myReduceMap(arr, callback, initialValue) {
+  let hasInitial = arguments.length > 2;
+  let accumulator = hasInitial ? initialValue : arr[0];
+
+  arr.forEach((item, index) => {
+    // 如果没有初始值，跳过第一个元素
+    if (!hasInitial && index === 0) return;
+    accumulator = callback(accumulator, item, index, arr);
+  });
+
+  return accumulator;
+}
+
+// 测试
+const arr = [1, 2, 3, 4];
+
+const sum = myReduceMap(arr, (acc, cur) => acc + cur, 0);
+console.log(sum); // 10
+
+const sumNoInit = myReduceMap(arr, (acc, cur) => acc + cur);
+console.log(sumNoInit); // 10
+
+const product = myReduceMap(arr, (acc, cur) => acc * cur, 1);
+console.log(product); // 24
+
+function myReduce(arr, callback, initialValue) {
+  let hasInitial = arguments.length > 2; // 判断是否传了初始值
+  let accumulator = hasInitial ? initialValue : arr[0];
+  let startIndex = hasInitial ? 0 : 1;
+
+  for (let i = startIndex; i < arr.length; i++) {
+    accumulator = callback(accumulator, arr[i], i, arr);
+  }
+
+  return accumulator;
+}
+
+// 测试
+const arr = [1, 2, 3, 4];
+
+const sum = myReduce(arr, (acc, cur) => acc + cur, 0);
+console.log(sum); // 10
+
+const sumNoInit = myReduce(arr, (acc, cur) => acc + cur);
+console.log(sumNoInit); // 10
+
+const product = myReduce(arr, (acc, cur) => acc * cur, 1);
+console.log(product); // 24
+
+
+function mapReduce(arr, callback, initialValue){
+  if(arr.length === 0) return initialValue;
+  const accArray = arr.map((item, index) => {
+    if(index === 0) {
+      return callback(initialValue, item, index, arr)
+    }
+
+    return callback(accArray[index-1], item, index, arr)
+  })
+
+  return accArray[accArray.length-1];
+}
+
+function functionalReduce(arr, callback, initialValue) {
+  if (arr.length === 0) return initialValue;
+
+  const accArray = arr.map((item, index) =>
+    index === 0
+      ? callback(initialValue, item, index, arr)        // 第一项累加初始值
+      : callback(accArray[index - 1], item, index, arr) // 后续项累加上前一步
+  );
+
+  return accArray[arr.length - 1];
+}
+
+// 测试
+const arr = [1, 2, 3, 4];
+
+const sum = functionalReduce(arr, (acc, cur) => acc + cur, 0);
+console.log(sum); // 10
+
+const product = functionalReduce(arr, (acc, cur) => acc * cur, 1);
+console.log(product); // 24
+
+```
+
+
+## Jsx和React.createElement()
+
+```js
+
+const name = 'Alice';
+const element = <h1>Hello, {name}</h1>;
+
+const element = React.createElement(
+  'h1',
+  null,
+  `Hello, ${name}` // 注意这是 JS 表达式求值后的结果
+)
+
+```
+```
++------------------------------------------------------+
+|                      JSON                            |
+|------------------------------------------------------|
+| {                                                    |
+|   "type": "BinaryExpression",                        |
+|   "operator": "+",                                   |
+|   "left": { "type": "NumericLiteral", "value": 1 },  |
+|   "right": { "type": "NumericLiteral", "value": 2 }  |
+| }                                                    |
++------------------------------------------------------+
+                          |
+                          v
++------------------------------------------------------+
+|                        AST                            |
+|------------------------------------------------------|
+|                BinaryExpression                       |
+|                   /           \                       |
+|    NumericLiteral(1)     NumericLiteral(2)            |
++------------------------------------------------------+
+                          |
+                          v
++------------------------------------------------------+
+|                   Babel Parser                        |
++------------------------------------------------------+
+                          |
+                          v
++------------------------------------------------------+
+|                    JavaScript                         |
+|------------------------------------------------------|
+|                const a = 1 + 2;                       |
++------------------------------------------------------+
+```
+
+低代码平台的核心就是“配置转代码”和“代码回流配置”。
+用户拖拽产生的是 JSON Schema，我会把这个 Schema 转成 AST，使用 Babel Types 生成 JSX，再用 Generator 输出 React/Vue 代码。
+用户修改代码时，我反向用`Babel Parser`把代码解析成AST，再还原成`JSON Schema`，这样可视化和代码能双向同步。
+事件表达式、安全校验、自动 import、属性补全、跨端转换（React → H5/Native）也都是基于`AST`的遍历和重写完成的。
+所以AST是低代码的“编译器基础设施”.
+
+## AST转换
+
+为什么前端`AST`转换用`DFS`？
+因为Babel、ESLint都是基于`DFS preOrder + postOrder`的。
+
+```js
+const ast = {
+  type: "BinaryExpression",
+  operator: "+",
+  left: {
+    type: "NumericLiteral",
+    value: 1
+  },
+  right: {
+    type: "BinaryExpression",
+    operator: "*",
+    left: { type: "NumericLiteral", value: 2 },
+    right: { type: "NumericLiteral", value: 3 }
+  }
+}
+
+
+function traverse(node, callback){
+  if(!node) return;
+  callback(node)
+  if(node.left) traverse(node.left, callback)
+  if(node.right) traverse(node.right, callback)
+}
+
+traverse(ast, (node) => {
+  console.log("visit:", node.type);
+});
+```
+
+## 预加载
+
+❓“preload 和 prefetch 区别是什么？”
+完美回答：
+preload 是为当前页面做的高优先级加载；
+prefetch 是为未来页面做的低优先级加载。
+preload 立即加载并参与渲染；
+prefetch 在空闲时间加载，不阻塞当前渲染。
+❓“preload 字体为什么要加 crossorigin？”
+因为字体是跨域资源，浏览器需要使用 CORS 才能缓存。
+否则会重复下载两次。
+❓“什么时候用 preconnect？”
+当你要请求第三方域名（CDN、API、字体）时，提前建好连接，可以减少 50~300ms 的延迟。
+
+7. 最佳实践（实际项目中这样写）
+🌟 推荐的 HTML 头部
+```html
+<!-- 提前解析 DNS -->
+<link rel="dns-prefetch" href="//cdn.example.com">
+
+<!-- 提前建立连接 -->
+<link rel="preconnect" href="https://cdn.example.com" crossorigin>
+
+<!-- 首屏关键 CSS / JS -->
+<link rel="preload" href="/static/main.css" as="style">
+<link rel="preload" href="/static/main.js" as="script">
+
+<!-- 字体 -->
+<link rel="preload" href="/fonts/myfont.woff2" as="font" crossorigin>
 ```

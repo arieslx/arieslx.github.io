@@ -26,3 +26,27 @@ tags:
 [MDN Web Docs](https://developer.mozilla.org/en-US/search?q=Browser+Rendering+Pipeline)
 1. [Browser Rendering Pipeline](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work)
 2. HTTP/3协议
+
+### 面试技巧
+
+1. 类比法（很有效）
+你不会 Webpack 原理 → 类比 Vite → 类比 ESBuild → 引导到你会的 bundler 经验。
+你不会红黑树 → 讲 JS Map 查找复杂度 + GC 优化。
+
+这个知识点我记不全，但如果让我推断，我会从 XX 和 XX 逻辑入手
+
+2. 现实工程举例（面试官最爱听）
+你不会 HTTP2 push → 讲 CSR/SSR/预渲染优化。
+你不会微任务细节 → 讲调试 async/await 卡死的经验。
+
+工程落地。
+
+3. 主动给改进建议
+比如问你一个虚拟 DOM 的细节你忘了：
+“虽然我答不全，但基于现在的框架趋势我其实更推荐 signals / fine-grained reactivity，这能解决虚拟 DOM 的一些瓶颈。”
+立刻显得你懂趋势、懂架构。
+
+4. 小结法（让你显得稳）
+“虽然我不能把这个知识点 100% 复述，但我能从原理、关联技术和工程实践三个角度保证我能把它用对。”
+
+5. 动态拆解。这个知识点我没有完全记住/我平时接触不多，但我可以基于原理尝试分析一下。
