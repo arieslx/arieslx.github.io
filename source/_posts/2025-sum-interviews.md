@@ -21,12 +21,6 @@ tags:
 2. 三大框架那些省略了。
 - 瓶子君的博客有关源码和算法的内容讲的特别棒，里面有些错漏需要自己跑代码来排查，不过逻辑上很值得学习，深入浅出，非常好。
 
-### 🍉
-
-[MDN Web Docs](https://developer.mozilla.org/en-US/search?q=Browser+Rendering+Pipeline)
-1. [Browser Rendering Pipeline](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work)
-2. HTTP/3协议
-
 ### 面试技巧
 
 1. 类比法（很有效）
