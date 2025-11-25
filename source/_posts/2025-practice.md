@@ -734,7 +734,6 @@ let merge = function(nums1, m, nums2, n){
 
 
 ```
-
 ## js判断数据类型
 
 `typeof 判断`
@@ -771,7 +770,6 @@ Object.prototype.toString.call(new Date()) // "[object Date]"
 Object.prototype.toString.call(/abc/)      // "[object RegExp]"
 
 ```
-
 ## map实现reduce
 
 ```js
@@ -885,7 +883,6 @@ console.log(product); // 24
 
 ```
 
-
 ## Jsx和React.createElement()
 
 ```js
@@ -939,7 +936,6 @@ const element = React.createElement(
 用户修改代码时，我反向用`Babel Parser`把代码解析成AST，再还原成`JSON Schema`，这样可视化和代码能双向同步。
 事件表达式、安全校验、自动 import、属性补全、跨端转换（React → H5/Native）也都是基于`AST`的遍历和重写完成的。
 所以AST是低代码的“编译器基础设施”.
-
 ## AST转换
 
 为什么前端`AST`转换用`DFS`？
@@ -973,7 +969,6 @@ traverse(ast, (node) => {
   console.log("visit:", node.type);
 });
 ```
-
 ## 预加载
 
 ❓“preload 和 prefetch 区别是什么？”
@@ -1055,3 +1050,165 @@ const obj = {
 obj.self = obj;
 JSON.parse(JSON.stringify(obj)); // 报错：Converting circular structure to JSON
 ```
+## DFS，二叉树，前中后序，以及插入部分BFS的理论知识
+DFS只有先序（pre-order）和后序（post-order），没有“中序”。
+而“前序/中序/后序”是二叉树独有的概念。
+### 👉 DFS 先序 / 后序
+是泛树的概念，只有 “先访问自己 OR 后访问自己”。DFS = Depth First Search（深度优先搜索）
+```js
+// 伪代码
+// DFS先序遍历（pre-order）
+// 当前节点-> 子节点们
+// 特点：
+// “一到节点就访问”。
+// 用在：如构建路径、生成遍历顺序、表达式树生成前缀表达式等。
+function dfs(node){
+ if(!node) return;
+ visit(node)
+ for(let child of node.children){
+  dfs(child)
+ }
+}
+
+// DFS后序遍历（post-order）
+// 子节点们-> 当前节点
+// “处理完所有孩子再处理自己”。
+// 用在：如求文件夹大小（先算子文件夹大小，再汇总到父级）、表达式树计算、树DP。
+function dfs(node){
+  if(!node) return;
+  for(let child of node.children){
+    dfs(child)
+  }
+  visit(node)
+}
+
+// 1. JSON / 配置树结构处理（超高频）
+// 比如权限树、侧边栏菜单、路由表。
+function dfsMenu(tree){
+  for(const node of tree){
+    console.log(node.title)
+    if(node.children){
+      dfsMenu(node.children)
+    }
+  }
+}
+// 2. 虚拟 DOM 遍历（React / Vue）
+// Virtual DOM 的 diff 和 patch 都依赖 DFS。
+// 对每个 vnode → 深度优先往下遍历子节点
+// 一路走到叶子节点
+// 再回溯更新
+// 面试说法：
+// Virtual DOM 的渲染和 diff 都是 DFS 先序遍历（pre-order），因为要先创建父节点再进入子节点。
+
+// 3. AST（抽象语法树）遍历（编译、Babel、ESLint）
+// 代码分析、source-map、webpack loader 都是 AST DFS 遍历。
+// AST是树结构，编译器通过DFS后序遍历生成代码，ESLint 插件通过 DFS 访问和修改节点。
+traverse(ast, {
+  Identifier(path){
+    // Dfs 访问节点
+  }
+})
+
+// 4. 寻找节点路径 / 查找特定节点（如查找面包屑导航）
+function findPath(tree, target){
+  path.push(node);
+  if(node.id === target) return true;
+  for(child of node.children){
+    if(findPaht(child, target)) return true
+  }
+  path.pop();
+}
+
+// 5. 深克隆 JSON / 比较深层对象
+// 例如 lodash 的 cloneDeep。
+```
+### 👉 二叉树前中后序
+是 在 DFS 基础上 针对二叉树的 根、左、右 三者顺序组合出来的。
+```js
+// 都是伪代码
+// 前序：根排最前，根左右
+// 拷贝树、序列化
+function preorder(node){
+  if(!root) return;
+  console.log(root.val)
+  preorder(root.left)
+  preorder(root.right)
+}
+// 中序：根在中间，左根右
+// 在BST（二叉搜索树）中，中序遍历能得到有序数组。（面试高频）
+function inorder(node){
+  if(!root) return
+  preorder(root.left)
+  console.log(root.val)
+  preorder(root.right)
+}
+// 后序：根排最后，左右根
+// 删除树、计算子节点值
+function postorder(node){
+  if(!root) return;
+  preorder(root.left)
+  preorder(root.right)
+  console.log(root.valu)
+}
+```
+
+### BFS应用
+
+```js
+// 伪代码
+function bfs(start){
+  const queue = [start]
+  while(queue.length > 0){
+    const node = queue.shift();
+    visit(node)
+    for(const child of node.children){
+      queue.push(child)
+    }
+  }
+}
+
+```
+
+2. React Fiber 架构（核心点）
+
+React Fiber 不再使用 DFS 递归，而是使用 可中断的 BFS 式遍历。
+逐层遍历每个节点
+并允许中断（时间切片）
+做成可恢复的链表结构
+
+面试说法：
+Fiber 是一个基于链表的可中断的 BFS 遍历，解决了递归 DFS 不能中断导致的卡顿问题。
+
+3. 渲染树（DOM Tree）层级布局计算
+
+浏览器 Layout（布局）阶段是 自上而下 BFS 派发。
+
+4. 聊天 / 评论 / 社交 App 的层级展开
+
+例如查看评论时，要按“楼层”展示。
+
+5. 微前端路由调度、依赖图分析（拓扑排序）
+
+BFS 用于：
+构建依赖图
+层序加载微应用
+构建拓扑排序
+
+### 面试官：DFS和BFS的区别？在前端有哪些场景应用？
+你可以这么回答（非常强的那种👇）：
+DFS 是深度优先，一条路走到底；BFS 是广度优先，按层遍历。
+两者的区别在于遍历策略、数据结构（DFS 用栈，BFS 用队列）、内存占用和是否适合求最短路径。
+在前端工程中 DFS 常用于：
+虚拟DOM深度遍历（Vdom Diff）
+路由树、菜单树、权限树的处理
+AST的遍历（Babel、ESLint、Webpack Loader）
+查找节点路径、深克隆
+BFS 常用于：
+React Fiber的遍历机制
+按层级渲染数据（评论、留言、树组件）
+依赖图、拓扑排序
+查找最近的节点（最近可见元素）
+
+## 十大排序算法
+
+我记不住怎么办，每次从冒泡开始，就像是学习英语，每次只背了个abandon。
