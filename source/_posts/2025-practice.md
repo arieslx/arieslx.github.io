@@ -220,7 +220,9 @@ flattenDeep(test)
 // ["a", "b", "c", "d", "e", "f", "g"]
 ```
 
-#### 实现 flat 函数
+#### 实现 flat 函数 
+
+1. 作业帮一面
 
 ```javascript
 function flat(arr, depth = 1) {

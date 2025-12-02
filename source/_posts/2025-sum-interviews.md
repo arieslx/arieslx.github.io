@@ -44,3 +44,20 @@ tags:
 “虽然我不能把这个知识点 100% 复述，但我能从原理、关联技术和工程实践三个角度保证我能把它用对。”
 
 5. 动态拆解。这个知识点我没有完全记住/我平时接触不多，但我可以基于原理尝试分析一下。
+
+### 作业帮一面
+
+vite和webpack
+content-type
+数组扁平化
+```js
+function flattern(arr, depth){
+  if(depth > 0) {
+    return arr.reduce((acc, cur) => acc.concat(flattern(cur, depth - 1)), [])
+  } else {
+    return arr
+  }
+}
+```
+执行顺序问题
+答的不好。
