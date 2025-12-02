@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="hut毕业设计 最近在重构这个项目，之前的代码库里的代码太臃肿了，可读性也比较差，也没有什么可玩性。上学的时候老田要我做第二版我一直拖着没做，最近有时间才开始做。 Day1重构成nodejs+reactrefactor: 重构老项目  后端php架构修改成nodejs采用express框架-&gt; 没有实现功能，目前只是api输出结果，且不报错。 前端修改成react框架，目前less转css那">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025年｜hut小场景改版01">
+<meta property="og:url" content="http://yoursite.com/2025/11/27/2025-hut-01/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="hut毕业设计 最近在重构这个项目，之前的代码库里的代码太臃肿了，可读性也比较差，也没有什么可玩性。上学的时候老田要我做第二版我一直拖着没做，最近有时间才开始做。 Day1重构成nodejs+reactrefactor: 重构老项目  后端php架构修改成nodejs采用express框架-&gt; 没有实现功能，目前只是api输出结果，且不报错。 前端修改成react框架，目前less转css那">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-11-26T23:15:00.000Z">
+<meta property="article:modified_time" content="2025-11-29T15:44:31.256Z">
+<meta property="article:tag" content="2025">
+<meta property="article:tag" content="十周年纪念版">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>2025年｜hut小场景改版01</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2025/11/28/2025-anti/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2025/11/27/2025-hut-02/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/11/27/2025-hut-01/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2025/11/27/2025-hut-01/&text=2025年｜hut小场景改版01"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/11/27/2025-hut-01/&is_video=false&description=2025年｜hut小场景改版01"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜hut小场景改版01&body=Check out this article: http://yoursite.com/2025/11/27/2025-hut-01/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/11/27/2025-hut-01/&name=2025年｜hut小场景改版01&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/11/27/2025-hut-01/&t=2025年｜hut小场景改版01"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Day1"><span class="toc-number">1.</span> <span class="toc-text">Day1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day2"><span class="toc-number">2.</span> <span class="toc-text">Day2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day3"><span class="toc-number">3.</span> <span class="toc-text">Day3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day4"><span class="toc-number">4.</span> <span class="toc-text">Day4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day5"><span class="toc-number">5.</span> <span class="toc-text">Day5</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        2025年｜hut小场景改版01
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-11-26T23:15:00.000Z" itemprop="datePublished">2025-11-27</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/2025/" rel="tag">2025</a>, <a class="tag-link-link" href="/tags/%E5%8D%81%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E7%89%88/" rel="tag">十周年纪念版</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p><a href="https://gitee.com/zengxiaoluan/the_grand_design" target="_blank" rel="noopener">hut毕业设计</a></p>
+<p>最近在重构这个项目，之前的代码库里的代码太臃肿了，可读性也比较差，也没有什么可玩性。上学的时候老田要我做第二版我一直拖着没做，最近有时间才开始做。</p>
+<h2 id="Day1"><a href="#Day1" class="headerlink" title="Day1"></a>Day1</h2><p><a href="https://gitee.com/git.arieslx.net/the_grand_design/pulls/1" target="_blank" rel="noopener">重构成nodejs+react</a><br>refactor: 重构老项目</p>
+<ul>
+<li>后端php架构修改成nodejs采用express框架-&gt; 没有实现功能，目前只是api输出结果，且不报错。</li>
+<li>前端修改成react框架，目前less转css那块还需要大改，另外App.js里的html代码太多了，需要抽离成组件。</li>
+<li>浏览器上点击事件被我删掉了，目前最小范围修改</li>
+<li>隐藏parallax.js插件，有点消耗新能，便于调试</li>
+<li>注释掉浏览器事件鼠标和拖拽事件，目前有bug</li>
+<li>这个版本的代码还有很多问题，只是大概能跑而已</li>
+</ul>
+<h2 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h2><p><a href="https://gitee.com/git.arieslx.net/the_grand_design/pulls/2" target="_blank" rel="noopener">删减代码+抽子组件</a><br><a href="https://gitee.com/git.arieslx.net/the_grand_design/pulls/3" target="_blank" rel="noopener">删减代码</a></p>
+<ul>
+<li>重构的时候手动改了一遍ul和li的布局，ai在读写的时候生成了极具迷惑性的错误静态资源。</li>
+<li>抽子组件的时候又改了一遍ul和li的布局，我写了一个子组件，让ling参考我的代码和注释抽子组件，它倒是大致完成了，就是又要让我重新检查一遍并并改写。</li>
+</ul>
+<p>这样就花了两天！</p>
+<h2 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h2><p>搭建pixi.js框架，我跟chatgpt互动了几波，让它帮我生成了一个可跨平台，可做离线和pwa，前端用react，node层用express的脚手架的文件结构。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">pixi-hiking&#x2F;</span><br><span class="line">├─ pnpm-workspace.yaml</span><br><span class="line">├─ package.json</span><br><span class="line">├─ README.md</span><br><span class="line">├─ packages&#x2F;</span><br><span class="line">│   ├─ client&#x2F;                     # React + Pixi 前端</span><br><span class="line">│   │   ├─ package.json</span><br><span class="line">│   │   ├─ vite.config.ts</span><br><span class="line">│   │   ├─ public&#x2F;                 </span><br><span class="line">│   │   │   ├─ assets&#x2F;             # PNG&#x2F;GIF&#x2F;占位图</span><br><span class="line">│   │   │   └─ sw.js               # Service Worker</span><br><span class="line">│   │   └─ src&#x2F;</span><br><span class="line">│   │       ├─ app&#x2F;</span><br><span class="line">│   │       │   └─ Main.ts</span><br><span class="line">│   │       ├─ game&#x2F;</span><br><span class="line">│   │       ├─ engine&#x2F;</span><br><span class="line">│   │       ├─ ui&#x2F;</span><br><span class="line">│   │       └─ main.tsx</span><br><span class="line">│   ├─ shared&#x2F;                     </span><br><span class="line">│   └─ server&#x2F;                     </span><br><span class="line">└─ platforms&#x2F;</span><br><span class="line">    ├─ web&#x2F;                        # Web(PWA) 特殊入口</span><br><span class="line">    │   ├─ index.html</span><br><span class="line">    │   └─ manifest.json</span><br><span class="line">    ├─ chrome-extension&#x2F;           </span><br><span class="line">    └─ mobile&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>接着我用copilot生成了代码，但是copilot生成的代码有bug，所以只能自己手动改了，还好错误提示很准确。</p>
+<ul>
+<li>修改vite的静态文件引用路径。</li>
+<li>修复typescript的依赖包。</li>
+<li>接着可以运行了，页面又出现404，然后又改了一些html文件的放置地址。</li>
+<li>运行成功后开始用lingma继续写代码。</li>
+<li>网页终于可以运行了，场景放上去了，我想想该怎么做。</li>
+<li>布局全乱了真是头疼，不会要改第三遍吧，准备先睡了，又到零点。</li>
+</ul>
+<h2 id="Day4"><a href="#Day4" class="headerlink" title="Day4"></a>Day4</h2><p>丢失了一些psd文件，到时候就有点麻烦！脚手架搭好了，场景可以动了，gif取了三帧用三张png代替<br><a href="https://www.cleverpdf.com/cn/gif-to-png" target="_blank" rel="noopener">GIF转PNG</a>,明天解决一下定位问题，我实在是不想改第三次了，这不是技术活这是体力活。</p>
+<p>一觉醒来感觉没干啥就十一点，今天先把我和chatgpt对线的上下文整理下，然后把对话框删掉，那对话框感觉都快卡死了，最近总感觉chatgpt把单对话框的限制放开了。</p>
+<p>分析 Matthew Wagerfield 的 parallax.js 项目 -&gt; 发现还有中实现主要用在电影里，叫做2.5D，我也找了个有意思的案例<a href="https://botnw.com/blog/2019/4/8/drawn-to-animate-dpb34-tz2d6" target="_blank" rel="noopener">2.5D徒步示例</a>，我觉得和我想做的方向完全契合。</p>
+<p>本来我还想做孤岛，每个岛上嵌一个场景，后面觉得互动性和观赏性不算好。接着我有点往超级马里奥方向思考。直接用自然语言和chatgpt对话</p>
+<blockquote>
+<p>我改变我的想法了，我想做一个2.5D的parallax小游戏，路线非常简单，有点像是超级马里奥的简单版本。我现在用我的png多层实现了一个很长的web页面，然后再实现成一个小游戏即可，对了我改了一下框架，把后端改成了express，前端用react框架完成的，你有什么好的建议吗？先不要写代码。</p>
+</blockquote>
+<p>同时我还联想到chrom没有网时的恐龙小游戏。Dino Runner。</p>
+<p>此时chatgpt有些走偏，即使调整。</p>
+<blockquote>
+<p>你记错了，我已经舍弃岛屿这个概念了，直接把我的多层png拼成一个长卷轴，开始时人物不动，然后后面的多层png场景移动。给我一些构思吧，先不要写代码。</p>
+</blockquote>
+<blockquote>
+<p>如果做成爬山小游戏呢？先帮我构思一下，不要写代码，提供一些参考和想法即可。</p>
+</blockquote>
+<blockquote>
+<p>再构思一下徒步小游戏，非常短距离的徒步。</p>
+</blockquote>
+<blockquote>
+<p>我还想加入离线的功能，然后用service worker来进行画面和其他数据存储。继续构思，不写代码。</p>
+</blockquote>
+<blockquote>
+<p>在我的这个长卷轴画布中可以加入gif图片，让画卷更有动态感吗？会不会影响性能？</p>
+</blockquote>
+<blockquote>
+<p>你有点想岔了，我的长卷轴是由多层png构成的，大概每一小段会出现一张gif图片，我还想做黑夜与白天两个模式，来模拟日光。未来可能还会加上下雨</p>
+</blockquote>
+<blockquote>
+<p>多段卷轴如何做“段落过渡动画”</p>
+</blockquote>
+<p>此时根据chatgpt的提示语，分析它提供的解决方案。</p>
+<blockquote>
+<p>深度渐变式，黑白光影过渡我都很喜欢的，你给我分别讲讲吧，不要写代码。</p>
+</blockquote>
+<p>同时更换一些方案。</p>
+<blockquote>
+<p><a href="https://matthew.wagerfield.com/parallax/" target="_blank" rel="noopener">https://matthew.wagerfield.com/parallax/</a> 我还需要用这个项目来实现吗？</p>
+</blockquote>
+<p>阶段性总结。</p>
+<blockquote>
+<p>我来总结一下： 1. 目前我写了个demo我的多层png图片前后拼接可以构成一个大概29500px长的网页。 2. 我想用来做一个徒步小游戏，在徒步的过程中会有一些小小的GIF，点击或者触碰到GIF形成一个小彩蛋，这个彩蛋目前我还没想好。 3. 这个徒步小游戏有黑夜和白天的视觉效果，同时场景之间切换比较丝滑。 4. 我想做成可离线的网页和webapp，或者打包成chrome插件。 5. 游戏角色只有一个人。 6. 我想实现一个可扩展的MVP版本，尽量不要影响后期迭代。 7. 替换parallax.js, 我还没想好用什么替代。 8. 我还没想好具体的架构。 你可以帮我构思一下这个项目的架构，并且帮我看看我的这个想法的可行性，先给我想一下方案，不要写代码。</p>
+</blockquote>
+<blockquote>
+<p>先帮我想一下排期和架构吧，不要写代码！</p>
+</blockquote>
+<blockquote>
+<p>你有什么相关的开源项目可以推荐给我，让我了解一下吗？</p>
+</blockquote>
+<blockquote>
+<p>行，再帮我找找吧</p>
+</blockquote>
+<p>就这样最终定下了pixi，然后刚好看到pixi的示例案件中有个类似的项目。</p>
+<blockquote>
+<p>Pixi.js的官网案例有推荐给我一个叫做right runner的app，可以在ios上下载，请问有类似的开源游戏可以学习吗？</p>
+</blockquote>
+<p>同时还在github上找到一个比较简单的实现，这个仓库也是chatgpt推荐给我的。</p>
+<blockquote>
+<p>pranjalgram/InfiniteRunner 你提供的这个方案学习思路非常好，我要结合这个来做我的功能，我现在开始思考我的项目排期和架构了，怎么样才能更好的迭代呢？</p>
+</blockquote>
+<p>接着最重要的是拿到脚手架设计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">my-hiking-game&#x2F;</span><br><span class="line">├── backend&#x2F;                     # Express 后端</span><br><span class="line">│   ├── server.js                # Express 主入口</span><br><span class="line">│   ├── routes&#x2F;                  # API 路由</span><br><span class="line">│   │   └── resources.js</span><br><span class="line">│   ├── public&#x2F;                  # 静态资源托管（PNG&#x2F;GIF）</span><br><span class="line">│   └── package.json</span><br><span class="line">│</span><br><span class="line">├── frontend&#x2F;                    # React 前端</span><br><span class="line">│   ├── public&#x2F;</span><br><span class="line">│   │   ├── index.html</span><br><span class="line">│   │   └── manifest.json        # PWA</span><br><span class="line">│   ├── src&#x2F;</span><br><span class="line">│   │   ├── assets&#x2F;              # PNG&#x2F;GIF&#x2F;音效</span><br><span class="line">│   │   ├── components&#x2F;          # React UI组件</span><br><span class="line">│   │   │   ├── ScoreBar.jsx</span><br><span class="line">│   │   │   ├── ProgressBar.jsx</span><br><span class="line">│   │   │   └── DayNightToggle.jsx</span><br><span class="line">│   │   ├── game&#x2F;                # Pixi 游戏逻辑</span><br><span class="line">│   │   │   ├── engine.js        # Pixi 主循环</span><br><span class="line">│   │   │   ├── resourceManager.js</span><br><span class="line">│   │   │   ├── parallaxManager.js</span><br><span class="line">│   │   │   ├── playerController.js</span><br><span class="line">│   │   │   └── interactionManager.js</span><br><span class="line">│   │   ├── redux&#x2F;               # Redux 状态管理</span><br><span class="line">│   │   │   ├── store.js</span><br><span class="line">│   │   │   ├── actions.js</span><br><span class="line">│   │   │   └── reducers.js</span><br><span class="line">│   │   ├── serviceWorker.js     # 离线缓存</span><br><span class="line">│   │   ├── App.jsx</span><br><span class="line">│   │   └── index.jsx</span><br><span class="line">│   ├── package.json</span><br><span class="line">│   └── webpack.config.js &#x2F; vite.config.js</span><br><span class="line">│</span><br><span class="line">├── .gitignore</span><br><span class="line">└── README.md</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>你觉得我昨天发你那个开源的案例如何，我可以直接拿来改吗？pranjalgram/InfiniteRunner和SamuelAsherRivello/pixi-project-template</p>
+</blockquote>
+<blockquote>
+<p>资源加载 / 段落数据结构 / 视差配置格式</p>
+</blockquote>
+<blockquote>
+<p>完整的目录结构（非常实用）</p>
+</blockquote>
+<blockquote>
+<p>后续迭代节奏：Roadmap（1 周 / 2 周版本）</p>
+</blockquote>
+<p>🚀 🎯 总目标（2 周）<br>打造一个可以“完整徒步一小段路”的、可离线访问、拥有事件彩蛋的 可玩 Demo。<br>📅 Week 1（核心引擎 + 卷轴 + 资源加载）<br>Day 1 — 架构落地 (核心基础)<br>完成：<br>项目目录搭建（按我给你的结构）<br>React + Pixi.js 初始化<br>Pixi.Application 单例架构<br>Redux store 架起来<br>Express 后端跑起来（静态资源 + 日志端点）<br>Why： 为后续任何逻辑提供稳定地基。</p>
+<p>Day 2 — 资源系统（最重要）<br>完成：<br>ResourceManager（加载 / 缓存 / 分段分类）<br>manifest.json（第一段资源）<br>PNG + GIF 支持测试<br>大资源文件夹结构完善（forest / river / …）<br>Why： 所有段落滚动都建立在资源系统之上。</p>
+<p>Day 3 — 视差层系统（Parallax Engine）<br>完成：<br>ParallaxManager<br>背景层 / 中景层 / 近景层的基本逻辑<br>让一段 3000px 的卷轴可以左右滚动<br>速度差：BG 0.1 / MG 0.5 / FG 1.0<br>Why： 游戏最核心视觉基础。<br>Day 4 — 段落（Segment）系统<br>完成：<br>SegmentScroller（决定何时加载下一段）<br>段落 JSON 的格式确定（图片列表 / 视差深度 / GIF 点）<br>forest.json 示例段落可滚动<br>下一段自动加载（预加载 + 切换）<br>Why： 无限滚动、扩展新段落的关键。</p>
+<p>Day 5 — 基础角色系统<br>完成：<br>Player 显示<br>简单的移动动画（无需骨骼）<br>背景动，角色不动（马里奥风格）<br>碰撞检测初步框架（用于 GIF 点事件）<br>Why： 每个游戏必须有人物概念。</p>
+<p>📅 Week 2（交互 + 日夜 + 事件 + PWA）</p>
+<p>Day 6 — GIF 彩蛋事件系统<br>完成：<br>InteractionManager 识别点击/触碰区域<br>GIF 点触发事件 → Redux eventSlice<br>React 弹窗（恰到好处的小彩蛋）<br>一个简单的“发现⚡彩蛋”的 UI<br>Why： 游戏要有奖励感。</p>
+<p>Day 7 — 日夜模式系统（光照层）<br>完成：<br>LightLayer 实现<br>日夜模式渐变策略（淡色 → 深色）<br>早晨/傍晚过渡滤镜<br>一个简单的 UI Switch（React）<br>Why： 你的游戏风格关键元素之一。</p>
+<p>Day 8 — 段落过渡（Transition Effects）<br>完成：<br>深度渐变（FG/MG/BG 透明度动画）<br>色调渐变（浅绿 → 暗蓝 → 橙黄）<br>黑白淡出 + 淡入（optional）<br>Segment 触发 TransitionManager<br>Why： 多段卷轴不会突兀，风格统一。</p>
+<p>Day 9 — Service Worker + 离线化 (PWA)<br>完成：<br>SW 缓存策略：资源层 + 道具数据层<br>离线启动游戏<br>manifest.json + icon<br>可添加到桌面 / Chrome 插件基础<br>Why： 需要离线可玩。</p>
+<p>Day 10 — 性能优化 + Bug Fix + 小范围测试<br>完成：<br>停止渲染离屏段落（节省 GPU）<br>手动释放未使用的 PNG/GIF<br>限制 FPS 以节能手机端<br>1〜2 个段落做一次全流程测试<br>Why： 真机体验要流畅，特别是你的 20000+ px 长卷轴。</p>
+<p>🔥 Week 2 Extra（如果顺利）</p>
+<p>以下可选：<br>⭐ 天气系统初版<br>雨滴粒子<br>雾（用 Pixi.filters）<br>环境音效<br>⭐ 角色动画更丰富<br>停顿、加速、举手（点击时）<br>🎯 最终产出（两周后你应该拥有）：<br>✔ 一条可徒步的多段高精度卷轴<br>✔ 每段都有视差<br>✔ 有 GIF 彩蛋<br>✔ 日夜模式支持<br>✔ Transition 过渡<br>✔ 离线可玩<br>✔ 基本 UI（React）<br>✔ 可扩展架构：</p>
+<p>新增段落很容易<br>新增事件很容易<br>新增天气很容易<br>这已经是一个可以展示给朋友或公司同事的「小游戏原型」。</p>
+<blockquote>
+<p>架构落地 (核心基础),  每段 JSON 配置格式（非常重要）</p>
+</blockquote>
+<blockquote>
+<p>我今天先开始把架构搭起来，其他的先不考虑那么多，只关心架构和可扩展性即可，不要让程序写得太死板以至于无法扩展。</p>
+</blockquote>
+<blockquote>
+<p>好的，结合SamuelAsherRivello/pixi-project-template来做吧</p>
+</blockquote>
+<blockquote>
+<p>好，你帮我写空架子文件</p>
+</blockquote>
+<blockquote>
+<p>我先请教一下，之后打包文件如何管理，如果我想做多端应用呢，现有的架构是否有考虑到？</p>
+</blockquote>
+<blockquote>
+<p>设计完整的多端 monorepo 结构（含 pnpm workspace），并且帮我写空架子文件，我要马上开始做。</p>
+</blockquote>
+<blockquote>
+<p>结合SamuelAsherRivello/pixi-project-template帮我画一个文件结构图以及monorepo 多端开发 + 构建流程图，先不要写代码。</p>
+</blockquote>
+<p>接着就是一些排错。最后项目用copilot搭建，lingma辅助ai开发。</p>
+<p>十一点到凌晨，了解了一下pixi搭建的小工具ct.js，然后用chatgpt转换less源代码到目标位置json的配置文件。然后就是搭建好场景和人物，出现画面疯狂抖动的bug，更换了lingma，copilot，chatgpt，claude，都没有改好。再想想吧，今天先到这。</p>
+<h2 id="Day5"><a href="#Day5" class="headerlink" title="Day5"></a>Day5</h2><p>还是用了claude解决了jitter的问题。关键注释是jitter。</p>
+<p>Summary of Fixes for Pixi.js Jittering Issue<br>Problems Identified:<br>Sub-pixel Rendering - Sprite and container positions were using fractional pixel values, causing visual instability<br>Missing update() Method - PlayerController was being called but the method didn’t exist, causing runtime errors<br>No Pixel Rounding - Containers and sprites weren’t configured to snap to whole pixels<br>Solutions Implemented:</p>
+<ol>
+<li>ParallaxManager.ts<br>✅ Added Math.round() to scroll calculations (line 31)<br>✅ Enabled roundPixels on layer containers (line 14)</li>
+<li>SegmentManager.ts<br>✅ Enabled roundPixels on scene container (line 55)<br>✅ Enabled roundPixels on segment containers (line 205)<br>✅ Enabled roundPixels on layer containers (line 229)<br>✅ Rounded all container positions using Math.round() (lines 210-211, 230-231)<br>✅ Rounded sprite positions for static sprites (lines 283-284)<br>✅ Rounded sprite positions for animated sprites/GIFs (lines 318-319)</li>
+<li>GameManager.ts<br>✅ Enabled roundPixels on main game container (line 70)</li>
+<li>PlayerController.ts<br>✅ Enabled roundPixels on player sprite (line 28)<br>✅ Added missing update() method (lines 73-106) with:<br>Physics simulation (gravity, velocity)<br>Position rounding to prevent jitter (lines 88-89)<br>Ground collision detection<br>Jump cooldown management<br>Key Principle Applied:<br>Always round positions to whole pixels - This prevents the browser from rendering sprites at fractional coordinates, which causes blurriness and jittering during animation. Your Pixi.js project should now render smoothly without any jittering! 🎮</li>
+</ol>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Day1"><span class="toc-number">1.</span> <span class="toc-text">Day1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day2"><span class="toc-number">2.</span> <span class="toc-text">Day2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day3"><span class="toc-number">3.</span> <span class="toc-text">Day3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day4"><span class="toc-number">4.</span> <span class="toc-text">Day4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Day5"><span class="toc-number">5.</span> <span class="toc-text">Day5</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/11/27/2025-hut-01/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2025/11/27/2025-hut-01/&text=2025年｜hut小场景改版01"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/11/27/2025-hut-01/&is_video=false&description=2025年｜hut小场景改版01"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜hut小场景改版01&body=Check out this article: http://yoursite.com/2025/11/27/2025-hut-01/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2025/11/27/2025-hut-01/&title=2025年｜hut小场景改版01"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/11/27/2025-hut-01/&name=2025年｜hut小场景改版01&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/11/27/2025-hut-01/&t=2025年｜hut小场景改版01"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2025 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="一、核心概念与基础1. 什么是 AI Agent？与传统 AI 模型的根本区别？一句话定义：AI Agent &#x3D; 有目标、有记忆、能推理、能调用工具、能自主执行任务的智能体。 它与传统 AI 模型的区别：    维度 传统 AI 模型 AI Agent    功能 输入→输出（单步） 连续多步推理与行动   是否有“目标” 没有，只是执行推断 有明确目标，能自主规划   是否能主动行动 不能，只能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025年｜ai agent面试题">
+<meta property="og:url" content="http://yoursite.com/2025/11/14/2025-ai-sum/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="一、核心概念与基础1. 什么是 AI Agent？与传统 AI 模型的根本区别？一句话定义：AI Agent &#x3D; 有目标、有记忆、能推理、能调用工具、能自主执行任务的智能体。 它与传统 AI 模型的区别：    维度 传统 AI 模型 AI Agent    功能 输入→输出（单步） 连续多步推理与行动   是否有“目标” 没有，只是执行推断 有明确目标，能自主规划   是否能主动行动 不能，只能">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-11-14T09:17:59.000Z">
+<meta property="article:modified_time" content="2025-12-01T05:56:51.585Z">
+<meta property="article:tag" content="2025">
+<meta property="article:tag" content="ai-interview">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>2025年｜ai agent面试题</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2025/11/14/2025-11-ai/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2025/11/07/2025-wanli-shipwreck/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/11/14/2025-ai-sum/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2025/11/14/2025-ai-sum/&text=2025年｜ai agent面试题"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/11/14/2025-ai-sum/&is_video=false&description=2025年｜ai agent面试题"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜ai agent面试题&body=Check out this article: http://yoursite.com/2025/11/14/2025-ai-sum/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/11/14/2025-ai-sum/&name=2025年｜ai agent面试题&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/11/14/2025-ai-sum/&t=2025年｜ai agent面试题"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">一、核心概念与基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-AI-Agent%EF%BC%9F%E4%B8%8E%E4%BC%A0%E7%BB%9F-AI-%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%A0%B9%E6%9C%AC%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1. 什么是 AI Agent？与传统 AI 模型的根本区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ReAct-%E6%A1%86%E6%9E%B6%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%EF%BC%88Reasoning-Acting%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2. ReAct 框架的核心思想（Reasoning + Acting）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%80%E4%B9%88%E6%98%AF%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%EF%BC%88Tool-Function-Calling%EF%BC%89%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E8%A6%81%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">3. 什么是工具调用（Tool &#x2F; Function Calling），为什么重要？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BB%80%E4%B9%88%E6%98%AF-Agent-%E7%9A%84%E8%A7%84%E5%88%92%EF%BC%88Planning%EF%BC%89%EF%BC%9F%E5%B8%B8%E8%A7%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">4. 什么是 Agent 的规划（Planning）？常见规划方法？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9E%B6%E6%9E%84%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">二、架构与设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%A6%82%E6%9E%9C%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%A4%9A-Agent-%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%8C%E9%9C%80%E8%A6%81%E5%93%AA%E4%BA%9B%E5%85%B3%E9%94%AE%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">1. 如果设计一个多 Agent 协作系统，需要哪些关键组件？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Orchestrator%EF%BC%88%E8%B0%83%E5%BA%A6%E5%99%A8-%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">① Orchestrator（调度器 &#x2F; 控制器）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-%E5%A4%9A%E7%B1%BB-Agent"><span class="toc-number">2.1.2.</span> <span class="toc-text">② 多类 Agent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A2-Memory%EF%BC%88%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="toc-number">2.1.3.</span> <span class="toc-text">③ Memory（记忆系统）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A3-%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.4.</span> <span class="toc-text">④ 工具系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A4-%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%AE%89%E5%85%A8%E5%B1%82"><span class="toc-number">2.1.5.</span> <span class="toc-text">⑤ 监控与安全层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BA%A4%E4%BA%92%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">2.1.6.</span> <span class="toc-text">核心交互流程：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Agent-%E5%A4%84%E7%90%86%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%91%E6%88%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.2.</span> <span class="toc-text">2. Agent 处理长上下文任务的挑战与解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98%EF%BC%9A"><span class="toc-number">2.2.1.</span> <span class="toc-text">挑战：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-number">2.2.2.</span> <span class="toc-text">解决方案：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1-Agent-%E7%9A%84%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%EF%BC%9F"><span class="toc-number">2.3.</span> <span class="toc-text">3. 如何设计 Agent 的记忆系统？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86%EF%BC%88Working-Memory%EF%BC%89"><span class="toc-number">2.3.1.</span> <span class="toc-text">短期记忆（Working Memory）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%EF%BC%88Long-term-Memory%EF%BC%89"><span class="toc-number">2.3.2.</span> <span class="toc-text">长期记忆（Long-term Memory）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%83%BD%E5%8A%9B%EF%BC%9A"><span class="toc-number">2.3.3.</span> <span class="toc-text">关键能力：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E5%8F%AF%E9%9D%A0%EF%BC%9F"><span class="toc-number">2.4.</span> <span class="toc-text">4. 如何保证工具调用安全与可靠？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%B7%A5%E5%85%B7%E7%99%BD%E5%90%8D%E5%8D%95"><span class="toc-number">2.4.1.</span> <span class="toc-text">（1）工具白名单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%BC%BA%E6%A8%A1%E5%BC%8F%E7%9A%84-JSON-schema"><span class="toc-number">2.4.2.</span> <span class="toc-text">（2）强模式的 JSON schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%B2%99%E7%9B%92%E5%8C%96%E6%89%A7%E8%A1%8C"><span class="toc-number">2.4.3.</span> <span class="toc-text">（3）沙盒化执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E5%A4%9A%E8%BD%AE%E9%AA%8C%E8%AF%81"><span class="toc-number">2.4.4.</span> <span class="toc-text">（4）多轮验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E9%99%90%E5%88%B6%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.4.5.</span> <span class="toc-text">（5）限制循环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B7%A5%E7%A8%8B%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">三、工程实现与工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BB%E6%B5%81-Agent-%E6%A1%86%E6%9E%B6%E6%AF%94%E8%BE%83%EF%BC%88%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">1. 主流 Agent 框架比较（面试常问）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8F%90%E5%8D%87%E6%A3%80%E7%B4%A2%E5%99%A8%EF%BC%88Retriever%EF%BC%89%E8%B4%A8%E9%87%8F%E7%9A%84%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7"><span class="toc-number">3.2.</span> <span class="toc-text">2. 提升检索器（Retriever）质量的高级技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Hybrid-Search%EF%BC%88BM25-Vector%EF%BC%89"><span class="toc-number">3.2.1.</span> <span class="toc-text">1. Hybrid Search（BM25 + Vector）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Reranker%EF%BC%88%E5%A6%82-BGE-Reranker%EF%BC%89"><span class="toc-number">3.2.2.</span> <span class="toc-text">2. Reranker（如 BGE-Reranker）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Metadata-Filtering"><span class="toc-number">3.2.3.</span> <span class="toc-text">3. Metadata Filtering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Query-Expansion"><span class="toc-number">3.2.4.</span> <span class="toc-text">4. Query Expansion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Multi-step-Retrieval%EF%BC%88%E5%88%86%E9%98%B6%E6%AE%B5%E6%A3%80%E7%B4%A2%EF%BC%89"><span class="toc-number">3.2.5.</span> <span class="toc-text">5. Multi-step Retrieval（分阶段检索）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Graph-RAG-%E7%BB%93%E6%9E%84%E5%8C%96%E7%B4%A2%E5%BC%95"><span class="toc-number">3.2.6.</span> <span class="toc-text">6. Graph RAG &#x2F; 结构化索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Agent-%E7%9A%84%E5%85%B8%E5%9E%8B%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%80%A7%E8%83%BD%E7%93%B6%E9%A2%88"><span class="toc-number">3.3.</span> <span class="toc-text">3. Agent 的典型工作流程与性能瓶颈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">3.3.1.</span> <span class="toc-text">典型流程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BD%9C%E5%9C%A8%E7%93%B6%E9%A2%88%EF%BC%9A"><span class="toc-number">3.3.2.</span> <span class="toc-text">潜在瓶颈：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5%EF%BC%9A"><span class="toc-number">3.3.3.</span> <span class="toc-text">优化策略：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA-Agent-%E7%B3%BB%E7%BB%9F%EF%BC%9F"><span class="toc-number">3.4.</span> <span class="toc-text">4. 如何评估一个 Agent 系统？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-1%EF%BC%9A%E6%AD%A3%E7%A1%AE%E6%80%A7-%E6%88%90%E5%8A%9F%E7%8E%87"><span class="toc-number">3.4.1.</span> <span class="toc-text">维度 1：正确性 &#x2F; 成功率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-2%EF%BC%9A%E7%A8%B3%E5%81%A5%E6%80%A7"><span class="toc-number">3.4.2.</span> <span class="toc-text">维度 2：稳健性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-3%EF%BC%9A%E6%80%A7%E8%83%BD"><span class="toc-number">3.4.3.</span> <span class="toc-text">维度 3：性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-4%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C"><span class="toc-number">3.4.4.</span> <span class="toc-text">维度 4：用户体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-5%EF%BC%9A%E4%BA%A4%E4%BA%92%E6%80%A7"><span class="toc-number">3.4.5.</span> <span class="toc-text">维度 5：交互性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5"><span class="toc-number">4.</span> <span class="toc-text">四、场景与实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%B5%E5%95%86%E5%AE%A2%E6%9C%8D-Agent-%E7%9A%84%E8%83%BD%E5%8A%9B%E3%80%81%E5%B7%A5%E5%85%B7%E3%80%81%E6%B5%81%E7%A8%8B"><span class="toc-number">4.1.</span> <span class="toc-text">1. 电商客服 Agent 的能力、工具、流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B%EF%BC%9A"><span class="toc-number">4.1.1.</span> <span class="toc-text">核心能力：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E9%9B%86%EF%BC%9A"><span class="toc-number">4.1.2.</span> <span class="toc-text">工具集：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89%EF%BC%9A"><span class="toc-number">4.1.3.</span> <span class="toc-text">工作流程（示例）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BD%93-Agent-%E5%9C%A8%E5%A4%8D%E6%9D%82%E4%BB%BB%E5%8A%A1%E4%B8%AD%E5%A4%B1%E8%B4%A5%EF%BC%8C%E4%BD%A0%E7%9A%84%E8%B0%83%E8%AF%95%E6%80%9D%E8%B7%AF"><span class="toc-number">4.2.</span> <span class="toc-text">2. 当 Agent 在复杂任务中失败，你的调试思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-%E6%98%AF%E5%90%A6%E8%B5%B0%E5%AF%B9%E8%A7%84%E5%88%92%EF%BC%9F"><span class="toc-number">4.2.1.</span> <span class="toc-text">① 是否走对规划？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E5%8F%82%E6%95%B0%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE%EF%BC%9F"><span class="toc-number">4.2.2.</span> <span class="toc-text">② 工具调用参数是否正确？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A2-%E6%8E%A8%E7%90%86%E9%93%BE%E6%98%AF%E5%90%A6%E8%BF%87%E9%95%BF%EF%BC%9F"><span class="toc-number">4.2.3.</span> <span class="toc-text">③ 推理链是否过长？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A3-%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A2%9E%E5%8A%A0%E8%AE%B0%E5%BF%86%E6%88%96%E6%A3%80%E7%B4%A2%EF%BC%9F"><span class="toc-number">4.2.4.</span> <span class="toc-text">④ 是否需要增加记忆或检索？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A4-%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A2%9E%E5%8A%A0-Reranker%EF%BC%9F"><span class="toc-number">4.2.5.</span> <span class="toc-text">⑤ 是否需要增加 Reranker？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A5-%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A4%9A-Agent%EF%BC%9F"><span class="toc-number">4.2.6.</span> <span class="toc-text">⑥ 是否需要多 Agent？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9C%AA%E6%9D%A5-Agent-%E6%8A%80%E6%9C%AF%E7%9A%84%E6%9C%80%E5%A4%A7%E6%8C%91%E6%88%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-number">4.3.</span> <span class="toc-text">3. 未来 Agent 技术的最大挑战是什么？如何解决？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98-1%EF%BC%9A%E9%95%BF%E6%9C%9F%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7%EF%BC%88State-Management%EF%BC%89"><span class="toc-number">4.3.1.</span> <span class="toc-text">挑战 1：长期任务的稳定性（State Management）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98-2%EF%BC%9A%E5%A4%9A%E5%B7%A5%E5%85%B7%E3%80%81%E5%A4%9A-Agent-%E5%8D%8F%E4%BD%9C%E7%9A%84%E5%8F%AF%E6%8E%A7%E6%80%A7"><span class="toc-number">4.3.2.</span> <span class="toc-text">挑战 2：多工具、多 Agent 协作的可控性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98-3%EF%BC%9A%E5%AE%89%E5%85%A8%E4%B8%8E%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C"><span class="toc-number">4.3.3.</span> <span class="toc-text">挑战 3：安全与可信执行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E8%A6%81%EF%BC%8C%E6%88%91%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0%E8%BF%9B%E4%B8%80%E6%AD%A5%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">如果你要，我可以帮你进一步：</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        2025年｜ai agent面试题
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-11-14T09:17:59.000Z" itemprop="datePublished">2025-11-14</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/2025/" rel="tag">2025</a>, <a class="tag-link-link" href="/tags/ai-interview/" rel="tag">ai-interview</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="一、核心概念与基础"><a href="#一、核心概念与基础" class="headerlink" title="一、核心概念与基础"></a>一、核心概念与基础</h1><h2 id="1-什么是-AI-Agent？与传统-AI-模型的根本区别？"><a href="#1-什么是-AI-Agent？与传统-AI-模型的根本区别？" class="headerlink" title="1. 什么是 AI Agent？与传统 AI 模型的根本区别？"></a><strong>1. 什么是 AI Agent？与传统 AI 模型的根本区别？</strong></h2><p><strong>一句话定义：</strong><br><strong>AI Agent = 有目标、有记忆、能推理、能调用工具、能自主执行任务的智能体。</strong></p>
+<p>它与传统 AI 模型的区别：</p>
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>传统 AI 模型</th>
+<th>AI Agent</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>功能</td>
+<td>输入→输出（单步）</td>
+<td>连续多步推理与行动</td>
+</tr>
+<tr>
+<td>是否有“目标”</td>
+<td>没有，只是执行推断</td>
+<td>有明确目标，能自主规划</td>
+</tr>
+<tr>
+<td>是否能主动行动</td>
+<td>不能，只能输出文本</td>
+<td>可以调用工具、API、代码、浏览器等</td>
+</tr>
+<tr>
+<td>是否有记忆</td>
+<td>没有</td>
+<td>有短期记忆 &amp; 长期记忆</td>
+</tr>
+<tr>
+<td>任务类型</td>
+<td>单任务</td>
+<td>多步骤、多工具的复杂任务</td>
+</tr>
+<tr>
+<td>自主性</td>
+<td>0</td>
+<td>高（规划→执行→反馈→迭代）</td>
+</tr>
+</tbody></table>
+<p><strong>一句话总结本质区别：</strong></p>
+<blockquote>
+<p>传统模型是“计算器”，Agent 是“可以自己决策如何完成任务的智能助手”。</p>
+</blockquote>
+<hr>
+<h2 id="2-ReAct-框架的核心思想（Reasoning-Acting）"><a href="#2-ReAct-框架的核心思想（Reasoning-Acting）" class="headerlink" title="2. ReAct 框架的核心思想（Reasoning + Acting）"></a><strong>2. ReAct 框架的核心思想（Reasoning + Acting）</strong></h2><p><strong>核心思想</strong>：</p>
+<blockquote>
+<p>Agent 在执行过程中交替进行 <strong>推理（Reason）</strong> 和 <strong>行动（Act）</strong>，并用行动结果作为下一步推理的依据。</p>
+</blockquote>
+<p>典型结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Thought: 我需要先搜索产品信息</span><br><span class="line">Action: search(product_id)</span><br><span class="line">Observation: 返回了产品详情...</span><br><span class="line">Thought: 需要检查库存</span><br><span class="line">Action: check_stock(product_id)</span><br><span class="line">Observation: 有库存...</span><br><span class="line">Final Answer: 可以发货。</span><br></pre></td></tr></table></figure>
+
+<p>为什么比只 Reason 或只 Act 更强？</p>
+<ul>
+<li><p><strong>只 Reason</strong> → 容易瞎推理，缺乏真实信息</p>
+</li>
+<li><p><strong>只 Act</strong> → 不会规划，不知道先执行什么</p>
+</li>
+<li><p><strong>ReAct</strong> →</p>
+<ul>
+<li>推理决定行动</li>
+<li>行动的结果修正推理</li>
+<li>形成“反馈回路”，大幅降低幻觉</li>
+</ul>
+</li>
+</ul>
+<p><strong>实际效果：</strong> 搜索题、计算题、工具链任务成功率大幅提升（实验中能从 &lt;20% 提到 &gt;70%）。</p>
+<hr>
+<h2 id="3-什么是工具调用（Tool-Function-Calling），为什么重要？"><a href="#3-什么是工具调用（Tool-Function-Calling），为什么重要？" class="headerlink" title="3. 什么是工具调用（Tool / Function Calling），为什么重要？"></a><strong>3. 什么是工具调用（Tool / Function Calling），为什么重要？</strong></h2><p><strong>定义：</strong><br>LLM 通过结构化输出（JSON）触发外部工具执行操作，例如：</p>
+<ul>
+<li>搜索引擎</li>
+<li>数据库查询</li>
+<li>API 调用</li>
+<li>代码执行</li>
+<li>打开浏览器</li>
+<li>本地命令</li>
+</ul>
+<p><strong>为什么对 Agent 至关重要？</strong></p>
+<p>因为 LLM 本身：</p>
+<ul>
+<li>不会实时搜索</li>
+<li>不会执行代码</li>
+<li>不会访问真实世界数据</li>
+<li>不能操作系统、业务系统</li>
+</ul>
+<p><strong>工具调用 = 给 LLM 装上手脚</strong><br>使其真正能解决实际业务问题。</p>
+<hr>
+<h2 id="4-什么是-Agent-的规划（Planning）？常见规划方法？"><a href="#4-什么是-Agent-的规划（Planning）？常见规划方法？" class="headerlink" title="4. 什么是 Agent 的规划（Planning）？常见规划方法？"></a><strong>4. 什么是 Agent 的规划（Planning）？常见规划方法？</strong></h2><p><strong>定义：</strong></p>
+<blockquote>
+<p>规划就是 Agent 把一个复杂任务拆解成可执行的步骤链。</p>
+</blockquote>
+<p>常用方法：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>特点</th>
+<th>适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>CoT（Chain of Thought）</strong></td>
+<td>串行推理步骤</td>
+<td>普通推理、简单多步骤任务</td>
+</tr>
+<tr>
+<td><strong>ToT（Tree of Thoughts）</strong></td>
+<td>分叉探索多种推理路径</td>
+<td>复杂决策、数学题、大型任务</td>
+</tr>
+<tr>
+<td><strong>GoT（Graph of Thoughts）</strong></td>
+<td>将多个思考节点串成图，可合并/并行</td>
+<td>大规模复杂工程任务，多 Agent 协作</td>
+</tr>
+<tr>
+<td><strong>Plan-Act-Reflect</strong></td>
+<td>先生成计划，再执行，再复盘</td>
+<td>长任务，如研究、写论文、编程</td>
+</tr>
+</tbody></table>
+<p><strong>一句话理解：</strong></p>
+<blockquote>
+<p>CoT 是“一条路走到底”，<br>ToT 是“走多条路看看哪条最好”，<br>GoT 是“多条路径互相分享经验”。</p>
+</blockquote>
+<hr>
+<h1 id="二、架构与设计"><a href="#二、架构与设计" class="headerlink" title="二、架构与设计"></a>二、架构与设计</h1><h2 id="1-如果设计一个多-Agent-协作系统，需要哪些关键组件？"><a href="#1-如果设计一个多-Agent-协作系统，需要哪些关键组件？" class="headerlink" title="1. 如果设计一个多 Agent 协作系统，需要哪些关键组件？"></a><strong>1. 如果设计一个多 Agent 协作系统，需要哪些关键组件？</strong></h2><p>一个标准架构包括：</p>
+<h3 id="①-Orchestrator（调度器-控制器）"><a href="#①-Orchestrator（调度器-控制器）" class="headerlink" title="① Orchestrator（调度器 / 控制器）"></a><strong>① Orchestrator（调度器 / 控制器）</strong></h3><ul>
+<li>负责任务拆解、分发、收集结果</li>
+<li>控制各个 Agent 的顺序和依赖</li>
+</ul>
+<h3 id="②-多类-Agent"><a href="#②-多类-Agent" class="headerlink" title="② 多类 Agent"></a><strong>② 多类 Agent</strong></h3><ul>
+<li>专家 Agent（代码、搜索、写作、数据分析）</li>
+<li>管理 Agent（做评估与复盘）</li>
+<li>工作者 Agent（执行工具调用）</li>
+</ul>
+<h3 id="③-Memory（记忆系统）"><a href="#③-Memory（记忆系统）" class="headerlink" title="③ Memory（记忆系统）"></a><strong>③ Memory（记忆系统）</strong></h3><ul>
+<li>短期：保存当前 session 的思路、上下文</li>
+<li>长期：知识库、历史经验、用户偏好</li>
+</ul>
+<h3 id="④-工具系统"><a href="#④-工具系统" class="headerlink" title="④ 工具系统"></a><strong>④ 工具系统</strong></h3><ul>
+<li>API 集成：搜索、数据库、支付、任务执行</li>
+<li>沙盒：代码执行（Python/JS sandbox）</li>
+<li>业务系统：ERP、CRM 等</li>
+</ul>
+<h3 id="⑤-监控与安全层"><a href="#⑤-监控与安全层" class="headerlink" title="⑤ 监控与安全层"></a><strong>⑤ 监控与安全层</strong></h3><ul>
+<li>防止无限循环</li>
+<li>限制危险操作</li>
+<li>工具调用的白名单 / 黑名单</li>
+</ul>
+<h3 id="核心交互流程："><a href="#核心交互流程：" class="headerlink" title="核心交互流程："></a><strong>核心交互流程：</strong></h3><ol>
+<li>用户输入 → 任务交给调度器</li>
+<li>调度器选择合适的 Agent</li>
+<li>Agent 推理 → 工具调用</li>
+<li>返回结果 → 合并结果 → 给用户</li>
+</ol>
+<hr>
+<h2 id="2-Agent-处理长上下文任务的挑战与解决方案"><a href="#2-Agent-处理长上下文任务的挑战与解决方案" class="headerlink" title="2. Agent 处理长上下文任务的挑战与解决方案"></a><strong>2. Agent 处理长上下文任务的挑战与解决方案</strong></h2><h3 id="挑战："><a href="#挑战：" class="headerlink" title="挑战："></a><strong>挑战：</strong></h3><ol>
+<li><strong>遗忘内容</strong>（超过上下文窗口）</li>
+<li><strong>状态崩坏</strong>（长对话越来越乱）</li>
+<li><strong>反复处理重复信息</strong></li>
+<li><strong>推理链过长导致失败</strong></li>
+<li><strong>成本高（tokens 爆炸）</strong></li>
+</ol>
+<h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a><strong>解决方案：</strong></h3><ul>
+<li><strong>压缩（Summarization）</strong>：每阶段总结</li>
+<li><strong>记忆分层：短期 + 长期</strong></li>
+<li><strong>向量数据库检索（RAG）</strong></li>
+<li><strong>分段执行（Chunk-based Execution）</strong></li>
+<li><strong>中间状态持久化（State Store）</strong></li>
+<li><strong>规划 + 子任务拆解</strong></li>
+</ul>
+<hr>
+<h2 id="3-如何设计-Agent-的记忆系统？"><a href="#3-如何设计-Agent-的记忆系统？" class="headerlink" title="3. 如何设计 Agent 的记忆系统？"></a><strong>3. 如何设计 Agent 的记忆系统？</strong></h2><h3 id="短期记忆（Working-Memory）"><a href="#短期记忆（Working-Memory）" class="headerlink" title="短期记忆（Working Memory）"></a><strong>短期记忆（Working Memory）</strong></h3><ul>
+<li>保存当前任务的思路、工具调用历史</li>
+<li>以“上下文窗口”形式实时存在</li>
+<li>也可以存入 state store（如 Redis）</li>
+</ul>
+<h3 id="长期记忆（Long-term-Memory）"><a href="#长期记忆（Long-term-Memory）" class="headerlink" title="长期记忆（Long-term Memory）"></a><strong>长期记忆（Long-term Memory）</strong></h3><p>实现方式：</p>
+<ul>
+<li><p>向量数据库（FAISS、Milvus、Qdrant）</p>
+</li>
+<li><p>分层存储：知识、用户偏好、任务经验</p>
+</li>
+<li><p>自动写入策略：</p>
+<ul>
+<li>当内容出现频率高</li>
+<li>当有未来价值</li>
+<li>当用户明确要求记住</li>
+</ul>
+</li>
+</ul>
+<h3 id="关键能力："><a href="#关键能力：" class="headerlink" title="关键能力："></a><strong>关键能力：</strong></h3><ul>
+<li>何时写入</li>
+<li>如何读取（RAG）</li>
+<li>如何防止垃圾记忆</li>
+</ul>
+<hr>
+<h2 id="4-如何保证工具调用安全与可靠？"><a href="#4-如何保证工具调用安全与可靠？" class="headerlink" title="4. 如何保证工具调用安全与可靠？"></a><strong>4. 如何保证工具调用安全与可靠？</strong></h2><p>对策：</p>
+<h3 id="（1）工具白名单"><a href="#（1）工具白名单" class="headerlink" title="（1）工具白名单"></a><strong>（1）工具白名单</strong></h3><p>LLM 只能调用特定工具，不能扩展。</p>
+<h3 id="（2）强模式的-JSON-schema"><a href="#（2）强模式的-JSON-schema" class="headerlink" title="（2）强模式的 JSON schema"></a><strong>（2）强模式的 JSON schema</strong></h3><p>限制参数类型、数值范围。</p>
+<h3 id="（3）沙盒化执行"><a href="#（3）沙盒化执行" class="headerlink" title="（3）沙盒化执行"></a><strong>（3）沙盒化执行</strong></h3><p>代码执行必须在 sandbox（Node sandbox、Pyodide）中。</p>
+<h3 id="（4）多轮验证"><a href="#（4）多轮验证" class="headerlink" title="（4）多轮验证"></a><strong>（4）多轮验证</strong></h3><p>使用“critic agent”检查：</p>
+<ul>
+<li>调用是否合理？</li>
+<li>参数安全吗？</li>
+<li>是否可能引发破坏性操作？</li>
+</ul>
+<h3 id="（5）限制循环"><a href="#（5）限制循环" class="headerlink" title="（5）限制循环"></a><strong>（5）限制循环</strong></h3><p>设置：</p>
+<ul>
+<li>最大工具调用次数</li>
+<li>最大递归深度</li>
+<li>超时机制</li>
+</ul>
+<hr>
+<h1 id="三、工程实现与工具"><a href="#三、工程实现与工具" class="headerlink" title="三、工程实现与工具"></a>三、工程实现与工具</h1><h2 id="1-主流-Agent-框架比较（面试常问）"><a href="#1-主流-Agent-框架比较（面试常问）" class="headerlink" title="1. 主流 Agent 框架比较（面试常问）"></a><strong>1. 主流 Agent 框架比较（面试常问）</strong></h2><table>
+<thead>
+<tr>
+<th>框架</th>
+<th>优点</th>
+<th>缺点</th>
+<th>场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>LangChain</strong></td>
+<td>生态最大、工具多、支持各种模型</td>
+<td>有时过度复杂、调试难</td>
+<td>商业应用、PoC</td>
+</tr>
+<tr>
+<td><strong>LlamaIndex</strong></td>
+<td>极强的 RAG 能力、文档结构化好</td>
+<td>Agent 功能较弱</td>
+<td>文档问答、企业知识库</td>
+</tr>
+<tr>
+<td><strong>LangGraph</strong></td>
+<td>状态机、循环控制好、可视化强</td>
+<td>学习曲线稍高</td>
+<td>复杂 Agent、多 Agent 协作</td>
+</tr>
+<tr>
+<td><strong>AutoGen</strong></td>
+<td>多 Agent 协作强</td>
+<td>自定义工具管理略复杂</td>
+<td>多角色协作（研究、编码）</td>
+</tr>
+<tr>
+<td><strong>CrewAI</strong></td>
+<td>任务/角色定义清晰</td>
+<td>工具链较少</td>
+<td>自动化生产线、多 Agent 分工</td>
+</tr>
+</tbody></table>
+<p><strong>如果问我企业级项目选哪个？</strong><br>→ <strong>LangGraph</strong>：最稳定，最适合复杂 Agent workflow。</p>
+<hr>
+<h2 id="2-提升检索器（Retriever）质量的高级技巧"><a href="#2-提升检索器（Retriever）质量的高级技巧" class="headerlink" title="2. 提升检索器（Retriever）质量的高级技巧"></a><strong>2. 提升检索器（Retriever）质量的高级技巧</strong></h2><p>不仅是向量检索，还有：</p>
+<h3 id="1-Hybrid-Search（BM25-Vector）"><a href="#1-Hybrid-Search（BM25-Vector）" class="headerlink" title="1. Hybrid Search（BM25 + Vector）"></a><strong>1. Hybrid Search（BM25 + Vector）</strong></h3><p>解决缺词、稀疏词问题。</p>
+<h3 id="2-Reranker（如-BGE-Reranker）"><a href="#2-Reranker（如-BGE-Reranker）" class="headerlink" title="2. Reranker（如 BGE-Reranker）"></a><strong>2. Reranker（如 BGE-Reranker）</strong></h3><p>先召回大量候选，再筛选最佳答案<br>→ 大幅提升精度。</p>
+<h3 id="3-Metadata-Filtering"><a href="#3-Metadata-Filtering" class="headerlink" title="3. Metadata Filtering"></a><strong>3. Metadata Filtering</strong></h3><p>按标签过滤，例如时间、作者、类别。</p>
+<h3 id="4-Query-Expansion"><a href="#4-Query-Expansion" class="headerlink" title="4. Query Expansion"></a><strong>4. Query Expansion</strong></h3><p>让 LLM 帮你改写、扩展搜索 query。</p>
+<h3 id="5-Multi-step-Retrieval（分阶段检索）"><a href="#5-Multi-step-Retrieval（分阶段检索）" class="headerlink" title="5. Multi-step Retrieval（分阶段检索）"></a><strong>5. Multi-step Retrieval（分阶段检索）</strong></h3><p>例如先找目录，再找内容。</p>
+<h3 id="6-Graph-RAG-结构化索引"><a href="#6-Graph-RAG-结构化索引" class="headerlink" title="6. Graph RAG / 结构化索引"></a><strong>6. Graph RAG / 结构化索引</strong></h3><p>对文档进行：</p>
+<ul>
+<li>概念图</li>
+<li>章节图</li>
+<li>链接图</li>
+</ul>
+<p>搜索不仅是“相似”，而是“语义关联”。</p>
+<hr>
+<h2 id="3-Agent-的典型工作流程与性能瓶颈"><a href="#3-Agent-的典型工作流程与性能瓶颈" class="headerlink" title="3. Agent 的典型工作流程与性能瓶颈"></a><strong>3. Agent 的典型工作流程与性能瓶颈</strong></h2><h3 id="典型流程："><a href="#典型流程：" class="headerlink" title="典型流程："></a><strong>典型流程：</strong></h3><ol>
+<li>解析用户意图</li>
+<li>规划任务（CoT / Plan）</li>
+<li>读取记忆或检索知识</li>
+<li>工具调用</li>
+<li>整合结果</li>
+<li>生成最终答案</li>
+<li>写入记忆</li>
+</ol>
+<h3 id="潜在瓶颈："><a href="#潜在瓶颈：" class="headerlink" title="潜在瓶颈："></a><strong>潜在瓶颈：</strong></h3><ul>
+<li>多次模型调用 → 成本高</li>
+<li>检索慢（向量数据库延迟）</li>
+<li>工具调用链太长，导致超时</li>
+<li>大模型推理速度慢</li>
+<li>Reranker 过重（QPS 低）</li>
+</ul>
+<h3 id="优化策略："><a href="#优化策略：" class="headerlink" title="优化策略："></a><strong>优化策略：</strong></h3><ul>
+<li>缓存（工具结果、Embedding）</li>
+<li>轻量模型替代（small LLM for routing）</li>
+<li>并行工具执行</li>
+<li>分段计划</li>
+<li>工具预调用（prefetching）</li>
+</ul>
+<hr>
+<h2 id="4-如何评估一个-Agent-系统？"><a href="#4-如何评估一个-Agent-系统？" class="headerlink" title="4. 如何评估一个 Agent 系统？"></a><strong>4. 如何评估一个 Agent 系统？</strong></h2><h3 id="维度-1：正确性-成功率"><a href="#维度-1：正确性-成功率" class="headerlink" title="维度 1：正确性 / 成功率"></a><strong>维度 1：正确性 / 成功率</strong></h3><ul>
+<li>成功完成任务比例</li>
+<li>工具调用精准度</li>
+</ul>
+<h3 id="维度-2：稳健性"><a href="#维度-2：稳健性" class="headerlink" title="维度 2：稳健性"></a><strong>维度 2：稳健性</strong></h3><ul>
+<li>是否能从错误恢复</li>
+<li>是否出现幻觉</li>
+</ul>
+<h3 id="维度-3：性能"><a href="#维度-3：性能" class="headerlink" title="维度 3：性能"></a><strong>维度 3：性能</strong></h3><ul>
+<li>延迟（Latency）</li>
+<li>Token 成本</li>
+<li>工具调用次数</li>
+</ul>
+<h3 id="维度-4：用户体验"><a href="#维度-4：用户体验" class="headerlink" title="维度 4：用户体验"></a><strong>维度 4：用户体验</strong></h3><ul>
+<li>可解释性</li>
+<li>答案一致性</li>
+<li>风险和安全评估</li>
+</ul>
+<h3 id="维度-5：交互性"><a href="#维度-5：交互性" class="headerlink" title="维度 5：交互性"></a><strong>维度 5：交互性</strong></h3><ul>
+<li>多轮任务的完成度</li>
+<li>误解率</li>
+</ul>
+<hr>
+<h1 id="四、场景与实践"><a href="#四、场景与实践" class="headerlink" title="四、场景与实践"></a>四、场景与实践</h1><h2 id="1-电商客服-Agent-的能力、工具、流程"><a href="#1-电商客服-Agent-的能力、工具、流程" class="headerlink" title="1. 电商客服 Agent 的能力、工具、流程"></a><strong>1. 电商客服 Agent 的能力、工具、流程</strong></h2><h3 id="核心能力："><a href="#核心能力：" class="headerlink" title="核心能力："></a><strong>核心能力：</strong></h3><ul>
+<li>订单查询</li>
+<li>物流查询</li>
+<li>退款/退货流程指导</li>
+<li>商品推荐</li>
+<li>投诉与工单升级</li>
+<li>多轮状态追踪</li>
+<li>个性化回答（结合用户历史）</li>
+</ul>
+<h3 id="工具集："><a href="#工具集：" class="headerlink" title="工具集："></a><strong>工具集：</strong></h3><ul>
+<li>get_order(order_id)</li>
+<li>get_shipping(order_id)</li>
+<li>refund(order_id)</li>
+<li>search_product(query)</li>
+<li>recommend(user_id)</li>
+<li>create_ticket(user_id, description)</li>
+</ul>
+<h3 id="工作流程（示例）："><a href="#工作流程（示例）：" class="headerlink" title="工作流程（示例）："></a><strong>工作流程（示例）：</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 用户输入：我想查一下订单1234的物流</span><br><span class="line">2. Agent 解析 → 确定工具: get_shipping</span><br><span class="line">3. 调用工具</span><br><span class="line">4. 得到结果（在转运中心）</span><br><span class="line">5. 用自然语言返回结果</span><br><span class="line">6. 根据用户后续问答继续交互</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="2-当-Agent-在复杂任务中失败，你的调试思路"><a href="#2-当-Agent-在复杂任务中失败，你的调试思路" class="headerlink" title="2. 当 Agent 在复杂任务中失败，你的调试思路"></a><strong>2. 当 Agent 在复杂任务中失败，你的调试思路</strong></h2><p>系统化排查：</p>
+<h3 id="①-是否走对规划？"><a href="#①-是否走对规划？" class="headerlink" title="① 是否走对规划？"></a><strong>① 是否走对规划？</strong></h3><ul>
+<li>检查 CoT / Plan 是否合理</li>
+</ul>
+<h3 id="②-工具调用参数是否正确？"><a href="#②-工具调用参数是否正确？" class="headerlink" title="② 工具调用参数是否正确？"></a><strong>② 工具调用参数是否正确？</strong></h3><ul>
+<li>JSON schema 是否匹配</li>
+<li>数据接口是否返回预期格式</li>
+</ul>
+<h3 id="③-推理链是否过长？"><a href="#③-推理链是否过长？" class="headerlink" title="③ 推理链是否过长？"></a><strong>③ 推理链是否过长？</strong></h3><ul>
+<li>缩短任务，拆分 Subtask</li>
+</ul>
+<h3 id="④-是否需要增加记忆或检索？"><a href="#④-是否需要增加记忆或检索？" class="headerlink" title="④ 是否需要增加记忆或检索？"></a><strong>④ 是否需要增加记忆或检索？</strong></h3><ul>
+<li>看是否因为“信息丢失/遗忘”</li>
+</ul>
+<h3 id="⑤-是否需要增加-Reranker？"><a href="#⑤-是否需要增加-Reranker？" class="headerlink" title="⑤ 是否需要增加 Reranker？"></a><strong>⑤ 是否需要增加 Reranker？</strong></h3><ul>
+<li>RAG 召回不准</li>
+</ul>
+<h3 id="⑥-是否需要多-Agent？"><a href="#⑥-是否需要多-Agent？" class="headerlink" title="⑥ 是否需要多 Agent？"></a><strong>⑥ 是否需要多 Agent？</strong></h3><ul>
+<li>引入 Reviewer / Critic Agent</li>
+</ul>
+<hr>
+<h2 id="3-未来-Agent-技术的最大挑战是什么？如何解决？"><a href="#3-未来-Agent-技术的最大挑战是什么？如何解决？" class="headerlink" title="3. 未来 Agent 技术的最大挑战是什么？如何解决？"></a><strong>3. 未来 Agent 技术的最大挑战是什么？如何解决？</strong></h2><h3 id="挑战-1：长期任务的稳定性（State-Management）"><a href="#挑战-1：长期任务的稳定性（State-Management）" class="headerlink" title="挑战 1：长期任务的稳定性（State Management）"></a><strong>挑战 1：长期任务的稳定性（State Management）</strong></h3><p>长任务（写代码、写论文、跑流程）容易崩坏：</p>
+<ul>
+<li>状态偏离</li>
+<li>幻觉累积</li>
+<li>步骤遗忘</li>
+</ul>
+<p><strong>解决方向：</strong></p>
+<ul>
+<li>引入“强状态机”（如 LangGraph）</li>
+<li>更好的中途检查（Critic Agent）</li>
+<li>更稳定的计划/反思系统</li>
+</ul>
+<hr>
+<h3 id="挑战-2：多工具、多-Agent-协作的可控性"><a href="#挑战-2：多工具、多-Agent-协作的可控性" class="headerlink" title="挑战 2：多工具、多 Agent 协作的可控性"></a><strong>挑战 2：多工具、多 Agent 协作的可控性</strong></h3><p>复杂协作容易出现：</p>
+<ul>
+<li>死循环</li>
+<li>工具乱调用</li>
+<li>Agent 互相误解</li>
+</ul>
+<p><strong>解决方向：</strong></p>
+<ul>
+<li>静态计划（Structured Plan）</li>
+<li>工具权限控制</li>
+<li>自动纠错（Auto-correct Agents）</li>
+</ul>
+<hr>
+<h3 id="挑战-3：安全与可信执行"><a href="#挑战-3：安全与可信执行" class="headerlink" title="挑战 3：安全与可信执行"></a><strong>挑战 3：安全与可信执行</strong></h3><p>Agent 越能调用系统、越危险。</p>
+<p><strong>解决方向：</strong></p>
+<ul>
+<li>权限系统（沙盒、白名单）</li>
+<li>强 JSON 验证</li>
+<li>调用模拟（Dry run）</li>
+</ul>
+<hr>
+<h1 id="如果你要，我可以帮你进一步："><a href="#如果你要，我可以帮你进一步：" class="headerlink" title="如果你要，我可以帮你进一步："></a>如果你要，我可以帮你进一步：</h1><ul>
+<li>生成 <strong>完整面试模板</strong>（方便背）</li>
+<li>生成 <strong>可口头表达的精简版答案</strong></li>
+<li>帮你做 <strong>Agent 系统架构图</strong></li>
+<li>或根据你的业务写 <strong>真实 Agent 方案</strong></li>
+</ul>
+<p>你想要哪个？</p>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">一、核心概念与基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-AI-Agent%EF%BC%9F%E4%B8%8E%E4%BC%A0%E7%BB%9F-AI-%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%A0%B9%E6%9C%AC%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1. 什么是 AI Agent？与传统 AI 模型的根本区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-ReAct-%E6%A1%86%E6%9E%B6%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%EF%BC%88Reasoning-Acting%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">2. ReAct 框架的核心思想（Reasoning + Acting）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BB%80%E4%B9%88%E6%98%AF%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%EF%BC%88Tool-Function-Calling%EF%BC%89%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E9%87%8D%E8%A6%81%EF%BC%9F"><span class="toc-number">1.3.</span> <span class="toc-text">3. 什么是工具调用（Tool &#x2F; Function Calling），为什么重要？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%BB%80%E4%B9%88%E6%98%AF-Agent-%E7%9A%84%E8%A7%84%E5%88%92%EF%BC%88Planning%EF%BC%89%EF%BC%9F%E5%B8%B8%E8%A7%81%E8%A7%84%E5%88%92%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="toc-number">1.4.</span> <span class="toc-text">4. 什么是 Agent 的规划（Planning）？常见规划方法？</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E6%9E%B6%E6%9E%84%E4%B8%8E%E8%AE%BE%E8%AE%A1"><span class="toc-number">2.</span> <span class="toc-text">二、架构与设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%A6%82%E6%9E%9C%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E5%A4%9A-Agent-%E5%8D%8F%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%8C%E9%9C%80%E8%A6%81%E5%93%AA%E4%BA%9B%E5%85%B3%E9%94%AE%E7%BB%84%E4%BB%B6%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">1. 如果设计一个多 Agent 协作系统，需要哪些关键组件？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Orchestrator%EF%BC%88%E8%B0%83%E5%BA%A6%E5%99%A8-%E6%8E%A7%E5%88%B6%E5%99%A8%EF%BC%89"><span class="toc-number">2.1.1.</span> <span class="toc-text">① Orchestrator（调度器 &#x2F; 控制器）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-%E5%A4%9A%E7%B1%BB-Agent"><span class="toc-number">2.1.2.</span> <span class="toc-text">② 多类 Agent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A2-Memory%EF%BC%88%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%EF%BC%89"><span class="toc-number">2.1.3.</span> <span class="toc-text">③ Memory（记忆系统）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A3-%E5%B7%A5%E5%85%B7%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.1.4.</span> <span class="toc-text">④ 工具系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A4-%E7%9B%91%E6%8E%A7%E4%B8%8E%E5%AE%89%E5%85%A8%E5%B1%82"><span class="toc-number">2.1.5.</span> <span class="toc-text">⑤ 监控与安全层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BA%A4%E4%BA%92%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">2.1.6.</span> <span class="toc-text">核心交互流程：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Agent-%E5%A4%84%E7%90%86%E9%95%BF%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BB%BB%E5%8A%A1%E7%9A%84%E6%8C%91%E6%88%98%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.2.</span> <span class="toc-text">2. Agent 处理长上下文任务的挑战与解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98%EF%BC%9A"><span class="toc-number">2.2.1.</span> <span class="toc-text">挑战：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-number">2.2.2.</span> <span class="toc-text">解决方案：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1-Agent-%E7%9A%84%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F%EF%BC%9F"><span class="toc-number">2.3.</span> <span class="toc-text">3. 如何设计 Agent 的记忆系统？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%AD%E6%9C%9F%E8%AE%B0%E5%BF%86%EF%BC%88Working-Memory%EF%BC%89"><span class="toc-number">2.3.1.</span> <span class="toc-text">短期记忆（Working Memory）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%BF%E6%9C%9F%E8%AE%B0%E5%BF%86%EF%BC%88Long-term-Memory%EF%BC%89"><span class="toc-number">2.3.2.</span> <span class="toc-text">长期记忆（Long-term Memory）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E8%83%BD%E5%8A%9B%EF%BC%9A"><span class="toc-number">2.3.3.</span> <span class="toc-text">关键能力：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E5%AE%89%E5%85%A8%E4%B8%8E%E5%8F%AF%E9%9D%A0%EF%BC%9F"><span class="toc-number">2.4.</span> <span class="toc-text">4. 如何保证工具调用安全与可靠？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E5%B7%A5%E5%85%B7%E7%99%BD%E5%90%8D%E5%8D%95"><span class="toc-number">2.4.1.</span> <span class="toc-text">（1）工具白名单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E5%BC%BA%E6%A8%A1%E5%BC%8F%E7%9A%84-JSON-schema"><span class="toc-number">2.4.2.</span> <span class="toc-text">（2）强模式的 JSON schema</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%B2%99%E7%9B%92%E5%8C%96%E6%89%A7%E8%A1%8C"><span class="toc-number">2.4.3.</span> <span class="toc-text">（3）沙盒化执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E5%A4%9A%E8%BD%AE%E9%AA%8C%E8%AF%81"><span class="toc-number">2.4.4.</span> <span class="toc-text">（4）多轮验证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%885%EF%BC%89%E9%99%90%E5%88%B6%E5%BE%AA%E7%8E%AF"><span class="toc-number">2.4.5.</span> <span class="toc-text">（5）限制循环</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B7%A5%E7%A8%8B%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">三、工程实现与工具</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%B8%BB%E6%B5%81-Agent-%E6%A1%86%E6%9E%B6%E6%AF%94%E8%BE%83%EF%BC%88%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%EF%BC%89"><span class="toc-number">3.1.</span> <span class="toc-text">1. 主流 Agent 框架比较（面试常问）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%8F%90%E5%8D%87%E6%A3%80%E7%B4%A2%E5%99%A8%EF%BC%88Retriever%EF%BC%89%E8%B4%A8%E9%87%8F%E7%9A%84%E9%AB%98%E7%BA%A7%E6%8A%80%E5%B7%A7"><span class="toc-number">3.2.</span> <span class="toc-text">2. 提升检索器（Retriever）质量的高级技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Hybrid-Search%EF%BC%88BM25-Vector%EF%BC%89"><span class="toc-number">3.2.1.</span> <span class="toc-text">1. Hybrid Search（BM25 + Vector）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Reranker%EF%BC%88%E5%A6%82-BGE-Reranker%EF%BC%89"><span class="toc-number">3.2.2.</span> <span class="toc-text">2. Reranker（如 BGE-Reranker）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Metadata-Filtering"><span class="toc-number">3.2.3.</span> <span class="toc-text">3. Metadata Filtering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Query-Expansion"><span class="toc-number">3.2.4.</span> <span class="toc-text">4. Query Expansion</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Multi-step-Retrieval%EF%BC%88%E5%88%86%E9%98%B6%E6%AE%B5%E6%A3%80%E7%B4%A2%EF%BC%89"><span class="toc-number">3.2.5.</span> <span class="toc-text">5. Multi-step Retrieval（分阶段检索）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Graph-RAG-%E7%BB%93%E6%9E%84%E5%8C%96%E7%B4%A2%E5%BC%95"><span class="toc-number">3.2.6.</span> <span class="toc-text">6. Graph RAG &#x2F; 结构化索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Agent-%E7%9A%84%E5%85%B8%E5%9E%8B%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E4%B8%8E%E6%80%A7%E8%83%BD%E7%93%B6%E9%A2%88"><span class="toc-number">3.3.</span> <span class="toc-text">3. Agent 的典型工作流程与性能瓶颈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">3.3.1.</span> <span class="toc-text">典型流程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BD%9C%E5%9C%A8%E7%93%B6%E9%A2%88%EF%BC%9A"><span class="toc-number">3.3.2.</span> <span class="toc-text">潜在瓶颈：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E7%AD%96%E7%95%A5%EF%BC%9A"><span class="toc-number">3.3.3.</span> <span class="toc-text">优化策略：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E5%A6%82%E4%BD%95%E8%AF%84%E4%BC%B0%E4%B8%80%E4%B8%AA-Agent-%E7%B3%BB%E7%BB%9F%EF%BC%9F"><span class="toc-number">3.4.</span> <span class="toc-text">4. 如何评估一个 Agent 系统？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-1%EF%BC%9A%E6%AD%A3%E7%A1%AE%E6%80%A7-%E6%88%90%E5%8A%9F%E7%8E%87"><span class="toc-number">3.4.1.</span> <span class="toc-text">维度 1：正确性 &#x2F; 成功率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-2%EF%BC%9A%E7%A8%B3%E5%81%A5%E6%80%A7"><span class="toc-number">3.4.2.</span> <span class="toc-text">维度 2：稳健性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-3%EF%BC%9A%E6%80%A7%E8%83%BD"><span class="toc-number">3.4.3.</span> <span class="toc-text">维度 3：性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-4%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C"><span class="toc-number">3.4.4.</span> <span class="toc-text">维度 4：用户体验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6-5%EF%BC%9A%E4%BA%A4%E4%BA%92%E6%80%A7"><span class="toc-number">3.4.5.</span> <span class="toc-text">维度 5：交互性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%9C%BA%E6%99%AF%E4%B8%8E%E5%AE%9E%E8%B7%B5"><span class="toc-number">4.</span> <span class="toc-text">四、场景与实践</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%94%B5%E5%95%86%E5%AE%A2%E6%9C%8D-Agent-%E7%9A%84%E8%83%BD%E5%8A%9B%E3%80%81%E5%B7%A5%E5%85%B7%E3%80%81%E6%B5%81%E7%A8%8B"><span class="toc-number">4.1.</span> <span class="toc-text">1. 电商客服 Agent 的能力、工具、流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E8%83%BD%E5%8A%9B%EF%BC%9A"><span class="toc-number">4.1.1.</span> <span class="toc-text">核心能力：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B7%E9%9B%86%EF%BC%9A"><span class="toc-number">4.1.2.</span> <span class="toc-text">工具集：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E7%A4%BA%E4%BE%8B%EF%BC%89%EF%BC%9A"><span class="toc-number">4.1.3.</span> <span class="toc-text">工作流程（示例）：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%BD%93-Agent-%E5%9C%A8%E5%A4%8D%E6%9D%82%E4%BB%BB%E5%8A%A1%E4%B8%AD%E5%A4%B1%E8%B4%A5%EF%BC%8C%E4%BD%A0%E7%9A%84%E8%B0%83%E8%AF%95%E6%80%9D%E8%B7%AF"><span class="toc-number">4.2.</span> <span class="toc-text">2. 当 Agent 在复杂任务中失败，你的调试思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-%E6%98%AF%E5%90%A6%E8%B5%B0%E5%AF%B9%E8%A7%84%E5%88%92%EF%BC%9F"><span class="toc-number">4.2.1.</span> <span class="toc-text">① 是否走对规划？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-%E5%B7%A5%E5%85%B7%E8%B0%83%E7%94%A8%E5%8F%82%E6%95%B0%E6%98%AF%E5%90%A6%E6%AD%A3%E7%A1%AE%EF%BC%9F"><span class="toc-number">4.2.2.</span> <span class="toc-text">② 工具调用参数是否正确？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A2-%E6%8E%A8%E7%90%86%E9%93%BE%E6%98%AF%E5%90%A6%E8%BF%87%E9%95%BF%EF%BC%9F"><span class="toc-number">4.2.3.</span> <span class="toc-text">③ 推理链是否过长？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A3-%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A2%9E%E5%8A%A0%E8%AE%B0%E5%BF%86%E6%88%96%E6%A3%80%E7%B4%A2%EF%BC%9F"><span class="toc-number">4.2.4.</span> <span class="toc-text">④ 是否需要增加记忆或检索？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A4-%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A2%9E%E5%8A%A0-Reranker%EF%BC%9F"><span class="toc-number">4.2.5.</span> <span class="toc-text">⑤ 是否需要增加 Reranker？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A5-%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%A4%9A-Agent%EF%BC%9F"><span class="toc-number">4.2.6.</span> <span class="toc-text">⑥ 是否需要多 Agent？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%9C%AA%E6%9D%A5-Agent-%E6%8A%80%E6%9C%AF%E7%9A%84%E6%9C%80%E5%A4%A7%E6%8C%91%E6%88%98%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%EF%BC%9F"><span class="toc-number">4.3.</span> <span class="toc-text">3. 未来 Agent 技术的最大挑战是什么？如何解决？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98-1%EF%BC%9A%E9%95%BF%E6%9C%9F%E4%BB%BB%E5%8A%A1%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7%EF%BC%88State-Management%EF%BC%89"><span class="toc-number">4.3.1.</span> <span class="toc-text">挑战 1：长期任务的稳定性（State Management）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98-2%EF%BC%9A%E5%A4%9A%E5%B7%A5%E5%85%B7%E3%80%81%E5%A4%9A-Agent-%E5%8D%8F%E4%BD%9C%E7%9A%84%E5%8F%AF%E6%8E%A7%E6%80%A7"><span class="toc-number">4.3.2.</span> <span class="toc-text">挑战 2：多工具、多 Agent 协作的可控性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98-3%EF%BC%9A%E5%AE%89%E5%85%A8%E4%B8%8E%E5%8F%AF%E4%BF%A1%E6%89%A7%E8%A1%8C"><span class="toc-number">4.3.3.</span> <span class="toc-text">挑战 3：安全与可信执行</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E8%A6%81%EF%BC%8C%E6%88%91%E5%8F%AF%E4%BB%A5%E5%B8%AE%E4%BD%A0%E8%BF%9B%E4%B8%80%E6%AD%A5%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">如果你要，我可以帮你进一步：</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/11/14/2025-ai-sum/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2025/11/14/2025-ai-sum/&text=2025年｜ai agent面试题"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/11/14/2025-ai-sum/&is_video=false&description=2025年｜ai agent面试题"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜ai agent面试题&body=Check out this article: http://yoursite.com/2025/11/14/2025-ai-sum/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2025/11/14/2025-ai-sum/&title=2025年｜ai agent面试题"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/11/14/2025-ai-sum/&name=2025年｜ai agent面试题&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/11/14/2025-ai-sum/&t=2025年｜ai agent面试题"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2025 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>

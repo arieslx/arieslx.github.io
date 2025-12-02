@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="1. Two Sum1234567891011121314function twoSum(nums: number[], target: number): number[]&amp;#123;    let helperMap: Map&lt;number, number&gt; &#x3D; new Map();    let index: number | undefined;    let resArr: n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2025年｜Leetcode hot100 typescript">
+<meta property="og:url" content="http://yoursite.com/2025/10/31/2025-leetcode-hot100/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="1. Two Sum1234567891011121314function twoSum(nums: number[], target: number): number[]&amp;#123;    let helperMap: Map&lt;number, number&gt; &#x3D; new Map();    let index: number | undefined;    let resArr: n">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2025-10-31T15:40:59.000Z">
+<meta property="article:modified_time" content="2025-11-30T13:37:23.560Z">
+<meta property="article:tag" content="2025">
+<meta property="article:tag" content="front-end-interview">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>2025年｜Leetcode hot100 typescript</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2025/10/31/2025-sri/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2025/10/31/2025-sum-interviews/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/10/31/2025-leetcode-hot100/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&text=2025年｜Leetcode hot100 typescript"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&is_video=false&description=2025年｜Leetcode hot100 typescript"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜Leetcode hot100 typescript&body=Check out this article: http://yoursite.com/2025/10/31/2025-leetcode-hot100/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&name=2025年｜Leetcode hot100 typescript&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&t=2025年｜Leetcode hot100 typescript"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Two-Sum"><span class="toc-number">1.</span> <span class="toc-text">1. Two Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#49-Group-Anagrams"><span class="toc-number">2.</span> <span class="toc-text">49. Group Anagrams</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#128-Longest-Consecutive-Sequence"><span class="toc-number">3.</span> <span class="toc-text">128. Longest Consecutive Sequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#283-Move-Zeroes"><span class="toc-number">4.</span> <span class="toc-text">283. Move Zeroes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Container-With-Most-Water"><span class="toc-number">5.</span> <span class="toc-text">11. Container With Most Water</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-3Sum"><span class="toc-number">6.</span> <span class="toc-text">15. 3Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-Trapping-Rain-Water"><span class="toc-number">7.</span> <span class="toc-text">42. Trapping Rain Water</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        2025年｜Leetcode hot100 typescript
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2025-10-31T15:40:59.000Z" itemprop="datePublished">2025-10-31</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/2025/" rel="tag">2025</a>, <a class="tag-link-link" href="/tags/front-end-interview/" rel="tag">front-end-interview</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h3 id="1-Two-Sum"><a href="#1-Two-Sum" class="headerlink" title="1. Two Sum"></a><a href="https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked" target="_blank" rel="noopener">1. Two Sum</a></h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">twoSum</span>(<span class="params">nums: <span class="built_in">number</span>[], target: <span class="built_in">number</span></span>): <span class="title">number</span>[]</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> helperMap: Map&lt;<span class="built_in">number</span>, <span class="built_in">number</span>&gt; = <span class="keyword">new</span> Map();</span><br><span class="line">    <span class="keyword">let</span> index: <span class="built_in">number</span> | <span class="literal">undefined</span>;</span><br><span class="line">    <span class="keyword">let</span> resArr: <span class="built_in">number</span>[] = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>, length=nums.length;i&lt;length;i++)&#123;</span><br><span class="line">        index = helperMap.get(target-nums[i]);</span><br><span class="line">        <span class="keyword">if</span>(index!==<span class="literal">undefined</span>)&#123;</span><br><span class="line">            resArr= [i, index];</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        helperMap.set(nums[i], i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> resArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="49-Group-Anagrams"><a href="#49-Group-Anagrams" class="headerlink" title="49. Group Anagrams"></a><a href="https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked" target="_blank" rel="noopener">49. Group Anagrams</a></h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">groupAnagrams</span>(<span class="params">strs: <span class="built_in">string</span>[]</span>): <span class="title">string</span>[][] </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> map: Map&lt;<span class="built_in">string</span>, <span class="built_in">Array</span>&lt;<span class="built_in">string</span>&gt;&gt; = <span class="keyword">new</span> Map();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;strs.length; i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> key = strs[i].split(<span class="string">""</span>).sort().join(<span class="string">""</span>)</span><br><span class="line">        <span class="keyword">if</span>(!map.has(key))&#123;</span><br><span class="line">            map.set(key, [])</span><br><span class="line">        &#125;</span><br><span class="line">        map.get(key)!.push(strs[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [...map.values()]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="128-Longest-Consecutive-Sequence"><a href="#128-Longest-Consecutive-Sequence" class="headerlink" title="128. Longest Consecutive Sequence"></a><a href="https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-100-liked" target="_blank" rel="noopener">128. Longest Consecutive Sequence</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">longestConsecutive</span>(<span class="params">nums: number[]</span>): <span class="title">number</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> numSet: <span class="built_in">Set</span>&lt;number&gt; = <span class="keyword">new</span> <span class="built_in">Set</span>&lt;number&gt;(nums);</span><br><span class="line">    <span class="keyword">let</span> longestSequence: number = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> currentNum <span class="keyword">of</span> numSet)&#123;</span><br><span class="line">        <span class="keyword">const</span> isStartOfSequence: boolean = !numSet.has(currentNum - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span>(isStartOfSequence)&#123;</span><br><span class="line">            <span class="keyword">let</span> sequenceLength: number = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">let</span> nextNum: number = currentNum + <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(numSet.has(nextNum))&#123;</span><br><span class="line">                sequenceLength++;</span><br><span class="line">                nextNum++</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            longestSequence = <span class="built_in">Math</span>.max(longestSequence, sequenceLength);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> longestSequence;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="283-Move-Zeroes"><a href="#283-Move-Zeroes" class="headerlink" title="283. Move Zeroes"></a><a href="https://leetcode.cn/problems/move-zeroes/?envType=study-plan-v2&envId=top-100-liked" target="_blank" rel="noopener">283. Move Zeroes</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">moveZeroes</span>(<span class="params">nums: number[]</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> right=<span class="number">0</span>; right&lt;nums.length; right++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[right]!==<span class="number">0</span>)&#123;</span><br><span class="line">            [nums[left], nums[right]] = [nums[right], nums[left]];</span><br><span class="line">            left++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-Container-With-Most-Water"><a href="#11-Container-With-Most-Water" class="headerlink" title="11. Container With Most Water"></a><a href="https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-100-liked" target="_blank" rel="noopener">11. Container With Most Water</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">maxArea</span>(<span class="params">height: number[]</span>): <span class="title">number</span></span>&#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> right = height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">let</span> maxArea = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">        <span class="keyword">const</span> width = right - left;</span><br><span class="line">        <span class="keyword">const</span> currentHeight = <span class="built_in">Math</span>.min(height[left], height[right]);</span><br><span class="line">        <span class="keyword">const</span> area = width * currentHeight;</span><br><span class="line"></span><br><span class="line">        maxArea = <span class="built_in">Math</span>.max(maxArea, area);</span><br><span class="line">        <span class="keyword">if</span>(height[left]&lt;height[right])&#123;</span><br><span class="line">            left++</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> maxArea;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-3Sum"><a href="#15-3Sum" class="headerlink" title="15. 3Sum"></a><a href="https://leetcode.cn/problems/3sum/?envType=study-plan-v2&envId=top-100-liked" target="_blank" rel="noopener">15. 3Sum</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function threeSum(nums: number[]): number[][]&#123;</span><br><span class="line">    <span class="keyword">const</span> result: number[][] = [];</span><br><span class="line">    nums.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;nums.length<span class="number">-2</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;<span class="number">0</span> &amp;&amp; nums[i]===nums[i<span class="number">-1</span>]) <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">let</span> left=i+<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">let</span> right=nums.length<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">            <span class="keyword">const</span> sum=nums[i]+nums[left]+nums[right];</span><br><span class="line">            <span class="keyword">if</span>(sum===<span class="number">0</span>)&#123;</span><br><span class="line">                result.push([nums[i],nums[left],nums[right]])</span><br><span class="line">                <span class="keyword">while</span>(left&lt;right &amp;&amp; nums[left]===nums[left+<span class="number">1</span>]) left++;</span><br><span class="line">                <span class="keyword">while</span>(left&lt;right &amp;&amp; nums[right] === nums[right<span class="number">-1</span>]) right--;</span><br><span class="line">                left++;</span><br><span class="line">                right--</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span>(sum&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="42-Trapping-Rain-Water"><a href="#42-Trapping-Rain-Water" class="headerlink" title="42. Trapping Rain Water"></a><a href="https://leetcode.cn/problems/trapping-rain-water/description/?envType=study-plan-v2&envId=top-100-liked" target="_blank" rel="noopener">42. Trapping Rain Water</a></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trap</span>(<span class="params">height: number[]</span>): <span class="title">number</span></span>&#123;</span><br><span class="line">    <span class="keyword">let</span> left=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> right=height.length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">let</span> leftMax=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> rightMax=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> result=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(left&lt;right)&#123;</span><br><span class="line">        <span class="keyword">if</span>(height[left]&lt;height[right])&#123;</span><br><span class="line">            <span class="keyword">if</span>(height[left]&gt;=leftMax)&#123;</span><br><span class="line">                leftMax=height[left];</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                result+=leftMax-height[left]</span><br><span class="line">            &#125;</span><br><span class="line">            left++</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(height[right] &gt;= rightMax)&#123;</span><br><span class="line">                rightMax=height[right]</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                result+=rightMax-height[right]</span><br><span class="line">            &#125;</span><br><span class="line">            right--</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Two-Sum"><span class="toc-number">1.</span> <span class="toc-text">1. Two Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#49-Group-Anagrams"><span class="toc-number">2.</span> <span class="toc-text">49. Group Anagrams</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#128-Longest-Consecutive-Sequence"><span class="toc-number">3.</span> <span class="toc-text">128. Longest Consecutive Sequence</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#283-Move-Zeroes"><span class="toc-number">4.</span> <span class="toc-text">283. Move Zeroes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-Container-With-Most-Water"><span class="toc-number">5.</span> <span class="toc-text">11. Container With Most Water</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-3Sum"><span class="toc-number">6.</span> <span class="toc-text">15. 3Sum</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-Trapping-Rain-Water"><span class="toc-number">7.</span> <span class="toc-text">42. Trapping Rain Water</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2025/10/31/2025-leetcode-hot100/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&text=2025年｜Leetcode hot100 typescript"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&is_video=false&description=2025年｜Leetcode hot100 typescript"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2025年｜Leetcode hot100 typescript&body=Check out this article: http://yoursite.com/2025/10/31/2025-leetcode-hot100/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&title=2025年｜Leetcode hot100 typescript"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&name=2025年｜Leetcode hot100 typescript&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2025/10/31/2025-leetcode-hot100/&t=2025年｜Leetcode hot100 typescript"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2025 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
