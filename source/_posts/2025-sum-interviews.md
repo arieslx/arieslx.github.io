@@ -61,3 +61,68 @@ function flattern(arr, depth){
 ```
 执行顺序问题
 答的不好。
+
+### 某公司一面，怎么判断链表有环
+
+用快慢指针，slow指针每次走一步，fast指针每次走两步。如果链表无环，fast一定会先走到null，说明没有环。如果链表有环，fast和slow指针会相遇。只有slow===fast，说明有环。时间复杂度O(n)，空间复杂度O(1)。
+
+### 某公司一面
+
+```js
+/** * 
+ * 1.实现一个sameValue函数，判断两个值是否相等。相等返回 true，不相等返回 false。
+ * 2.参数a和b可以是任意类型，包括基本类型和引用类型。 
+ * 3.保证以下Case输出目标值 
+ * 4.禁止使用JSON.stringify方法 
+ * console.log("0 and -0",sameValue(0, -0)); // false
+ * console.log("NaN and NaN",sameValue(NaN, NaN)); // false 
+ * console.log("undefined and null",sameValue(undefined, null)); // false 
+ * console.log("array and array",sameValue([1, 2, 3], [1, 2, 3])); // true 
+ * console.log("object and object",sameValue({a: 1}, {a: 1})); // true 
+ * console.log("object and object",sameValue({a: 1}, {a: 1, b: 2})); // false 
+ * console.log("object and null",sameValue({a: 1}, null)); // false 
+ * console.log("null and object",sameValue(null, {a: 1})); // false 
+ * console.log("array and object",sameValue([1, 2], {0: 1, 1: 2})); // false
+ **/
+function sameValue(a, b) {
+  // 1️⃣ 处理 NaN
+  if (Number.isNaN(a) && Number.isNaN(b)) return true;
+
+  // 2️⃣ 处理 0 与 -0（0 === -0 为 true，但本题要求 false）
+  if (a === 0 && b === 0) return 1 / a === 1 / b;
+
+  // 3️⃣ 基本类型（包括函数）直接比较
+  if (a === b) return true;
+
+  // 4️⃣ 处理 null（typeof null === 'object'）
+  if (a === null || b === null) return false;
+
+  // 5️⃣ 引用类型：必须类型一致（都是数组 或 都是对象）
+  if (typeof a !== "object" || typeof b !== "object") return false;
+
+  // 6️⃣ 数组类型必须一致
+  const isArrA = Array.isArray(a);
+  const isArrB = Array.isArray(b);
+  if (isArrA !== isArrB) return false;
+
+  // 7️⃣ 键数量必须一致
+  const keysA = Object.keys(a);
+  const keysB = Object.keys(b);
+  if (keysA.length !== keysB.length) return false;
+
+  // 8️⃣ 每个 key 的对应值也必须相等（递归）
+  for (let key of keysA) {
+    if (!sameValue(a[key], b[key])) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+#### npm包按需加载
+npm包按需加载依赖 tree-shaking 和代码分割。
+只要 npm 包支持独立模块文件（如 lodash/debounce）或 ESM 格式（如 lodash-es），打包器就能自动删除未使用的代码。
+也可以通过动态 import 实现运行时按需加载，而 UI 库通常通过 babel-plugin-import 或自动按需工具实现组件级别加载。
+本质是减少 bundle 体积和提升性能
+
