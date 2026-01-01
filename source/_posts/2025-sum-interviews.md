@@ -126,3 +126,49 @@ npm包按需加载依赖 tree-shaking 和代码分割。
 也可以通过动态 import 实现运行时按需加载，而 UI 库通常通过 babel-plugin-import 或自动按需工具实现组件级别加载。
 本质是减少 bundle 体积和提升性能
 
+### web3公司一面，被问懵了。
+
+```js
+function main() {
+  console.log(1);
+  setTimeout(() => {
+    console.log(2);
+  }, 1000);
+  setTimeout(() => {
+    console.log(3);
+    Promise.resolve(4).then((res) => {
+      console.log(res);
+    });
+  }, 500);
+  try {
+    new Promise((resolve, reject) => {
+      console.log(5);
+      reject(6);
+      console.log(7);
+      resolve(8);
+    }).then((res) => {
+      console.log(res);
+    });
+  } catch (error) {
+    console.log("error", error);
+  }
+  console.log(9);
+}
+//
+// 1
+// 5
+// 7
+// 9
+// 3
+// 4
+// 2
+
+```
+```js
+const [count, setCount] = useState(0) 
+useEffect(() => { 
+    const timer = setInterval(() => { console.log("count", count) }, 1000); 
+    return () => { clearInterval(timer) } }, ) 
+const handleClick = () => { setCount(count + 1) }
+```
+
