@@ -205,7 +205,7 @@ test.flat(-10)
 
 ### 方法一：使用 reduce 方法
 
-#### 一次性扁平化所有
+#### 一次性扁平化所有 ***** （important）
 
 ```javascript
 function flattenDeep(arr) { 
