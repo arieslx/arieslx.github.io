@@ -1,8 +1,9 @@
 ---
-title: 2025年｜interview test
+title: 2026年｜interview test
 date: 2025-11-7 17:17:59
 tags:
   - 2025
+  - front-end-interview
 ---
 
 1. 一维数组每三个切成一个数组，形成二维数组
