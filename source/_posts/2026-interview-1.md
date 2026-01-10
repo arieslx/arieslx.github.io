@@ -115,3 +115,7 @@ Object.prototype.two = function(){}
 obj = new Obj()
 
 ```
+
+4. linux环境
+
+[linux环境配置文章](https://juejin.cn/post/7118919471317647397/)
