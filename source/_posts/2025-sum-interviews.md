@@ -47,10 +47,27 @@ tags:
 
 ### 作业帮一面
 
-vite和webpack
-content-type
-数组扁平化
+#### vite和webpack
+Vite 采用 ES modules 原生支持，在开发环境下无需打包，直接在浏览器中加载模块，所以启动速度快。Webpack 需要打包所有代码后才能在开发服务器运行，虽然有优化但启动较慢。
+在热更新方面，Vite 只需要重新编译改动的模块，速度很快。Webpack 的热更新虽然也很成熟，但涉及整个模块系统的处理。
+生产环境下，两者都进行完整的打包和优化，性能差异不大。但 Vite 的配置相对简洁，Webpack 配置更复杂但灵活性更强。
+#### content-type
+这个通常出现在网络请求相关的题目中。Content-Type 是 HTTP 头，用来告诉服务器或浏览器发送的数据格式。常见的包括：
+application/json 用于 JSON 数据
+application/x-www-form-urlencoded 用于表单数据
+multipart/form-data 用于文件上传
+text/html 用于 HTML 文档
+text/plain 用于纯文本
+
+#### 数组扁平化
 ```js
+function flattern(arr, depth = 3){
+  if(depth > 0){
+    return arr.reduce((acc, cur) => acc.concat(flattern(cur, depth - 1)), [])
+  } else {
+    return arr
+  }
+}
 function flattern(arr, depth){
   if(depth > 0) {
     return arr.reduce((acc, cur) => acc.concat(flattern(cur, depth - 1)), [])
@@ -168,7 +185,21 @@ function main() {
 const [count, setCount] = useState(0) 
 useEffect(() => { 
     const timer = setInterval(() => { console.log("count", count) }, 1000); 
-    return () => { clearInterval(timer) } }, ) 
+    return () => { clearInterval(timer) } }, []) 
 const handleClick = () => { setCount(count + 1) }
+
+// 创建定时器，但无法访问最新的 count
+const countRef = useRef(count)
+
+useEffect(() => {
+    countRef.current = count
+}, [count])
+
+useEffect(() => { 
+    const timer = setInterval(() => { 
+        console.log("count", countRef.current) 
+    }, 1000); 
+    return () => { clearInterval(timer) } //当组件从 DOM 中移除时，清理函数会执行，清除定时器。
+}, [])  // 定时器只创建一次，但能访问最新的 count
 ```
 

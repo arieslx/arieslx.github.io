@@ -30,7 +30,6 @@ chunk([1,2,3,4,5,6,7,8,9,10])
 //   { id: 4, parentId: 2 }
 // ];
 
-
 function arrayToTree(list) {
     const map = {};
     const result = [];
@@ -49,7 +48,6 @@ function arrayToTree(list) {
 
     return result;
 }   
-
 ```
 
 3. 分析
@@ -104,15 +102,6 @@ console.log('timer2')
 // 1
 // timer2
 // timer1
-
-```
-
-```js
-
-function Obj(){}
-Function.prototype.one = function(){}
-Object.prototype.two = function(){}
-obj = new Obj()
 
 ```
 
