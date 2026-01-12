@@ -14,7 +14,7 @@
 <meta property="og:description" content="为什么Jimp会打穿内存？ Jimp 会把整张图片 decode 到 JS heap例如一张 6000×4000 的 JPEG，解码后是 6000×4000×4 ≈ 96MB 内存！连续 10 张 → 960MB → Node.js 默认最大 heap 是 4GB（老版本是 1.4GB），很容易打穿。 Jimp是纯JS，不能把位图放到native内存Sharp、libvips 这类库都把 deco">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-11-23T03:17:59.000Z">
-<meta property="article:modified_time" content="2025-11-23T12:20:48.938Z">
+<meta property="article:modified_time" content="2026-01-11T09:37:33.443Z">
 <meta property="article:tag" content="2025">
 <meta property="article:tag" content="front-end-interview">
 <meta name="twitter:card" content="summary">
@@ -108,7 +108,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Jimp%E4%BC%9A%E6%89%93%E7%A9%BF%E5%86%85%E5%AD%98%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么Jimp会打穿内存？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%B1%8F500ms%E4%BB%A5%E4%B8%8B"><span class="toc-number">2.</span> <span class="toc-text">首屏500ms以下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-3-%E5%AF%B9-SPA-%E6%80%A7%E8%83%BD%E7%9A%84%E4%BC%98%E5%8A%BF%E4%B8%BB%E8%A6%81%E4%BD%93%E7%8E%B0%E5%9C%A8"><span class="toc-number">3.</span> <span class="toc-text">HTTP&#x2F;3 对 SPA 性能的优势主要体现在</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Jimp%E4%BC%9A%E6%89%93%E7%A9%BF%E5%86%85%E5%AD%98%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么Jimp会打穿内存？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%B1%8F500ms%E4%BB%A5%E4%B8%8B"><span class="toc-number">2.</span> <span class="toc-text">首屏500ms以下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-3-%E5%AF%B9-SPA-%E6%80%A7%E8%83%BD%E7%9A%84%E4%BC%98%E5%8A%BF%E4%B8%BB%E8%A6%81%E4%BD%93%E7%8E%B0%E5%9C%A8"><span class="toc-number">3.</span> <span class="toc-text">HTTP&#x2F;3 对 SPA 性能的优势主要体现在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useEffect-useLayoutEffect%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">useEffect, useLayoutEffect的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">5.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react%E7%9A%84hooks%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%86%99%E5%88%B0if%E7%9A%84%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5%E4%B8%AD"><span class="toc-number">6.</span> <span class="toc-text">react的hooks为什么不能写到if的判断语句中</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -157,15 +157,26 @@
 <li>Jimp是纯JS，不能把位图放到native内存<br>Sharp、libvips 这类库都把 decode 交给 native → 不占 JS heap、GC 压力低。</li>
 <li>GC不会立即回收<br>你就算 img = null，也不保证马上回收，于是 Heap 在上传高峰时被撑爆。<br>浏览器端：文件数量和尺寸做限制，前端压缩，分片上传。<br>🌟（最推荐）方案 1：完全替换 Jimp → 用 sharp<br>如果你的业务允许，请 立刻换 sharp。<br>sharp 基于 libvips，不吃 JS heap，不会 OOM。<br>使用 Worker Threads + 限制并发<br>用 p-limit 限制 Jimp 处理的并发：</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = <span class="literal">null</span>;</span><br><span class="line">global.gc();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">img = <span class="literal">null</span>;</span><br><span class="line"><span class="variable language_">global</span>.<span class="title function_">gc</span>();</span><br></pre></td></tr></table></figure>
 
 <p>🚨 为什么处理图片会 OOM？</p>
 <p>无论 Jimp / Sharp / 自己 decode，只要你：<br>一次上传太多文件<br>文件太大（10MB+）<br>多张图片同时 decode<br>Node 没限制处理并发<br>中间对象没有及时释放<br>就会触发 Out Of Memory，Node 进程就会：<br>内存飙到上限<br>V8 抛 FATAL ERROR: Reached heap limit<br>进程崩溃</p>
 <p>PM2 / Docker 自动重启</p>
 <h2 id="首屏500ms以下"><a href="#首屏500ms以下" class="headerlink" title="首屏500ms以下"></a>首屏500ms以下</h2><p>首屏 500ms 以下，需要关注 关键渲染路径（Critical Rendering Path）：<br>最小化关键请求：减少首屏必须加载的 JS/CSS/图片。<br>优先渲染关键内容：Critical CSS 内联，JS 延迟加载。<br>服务端优化：SSR / SSG 或 Edge 缓存。<br>网络优化：HTTP/3、CDN、压缩、缓存。<br>浏览器渲染优化：避免 render-blocking 资源、减少重排重绘。<br>预加载关键资源：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"preload"</span>&gt;、&lt;link rel=<span class="string">"prefetch"</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">&quot;preload&quot;</span>&gt;、&lt;link rel=<span class="string">&quot;prefetch&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="HTTP-3-对-SPA-性能的优势主要体现在"><a href="#HTTP-3-对-SPA-性能的优势主要体现在" class="headerlink" title="HTTP/3 对 SPA 性能的优势主要体现在"></a>HTTP/3 对 SPA 性能的优势主要体现在</h2><p>首屏渲染更快 → 减少握手延迟，减少队头阻塞<br>动态资源加载优化 → JS/CSS 分片加载更快<br>API 请求响应更低延迟 → AJAX/fetch 性能提升<br>移动端高丢包环境更稳健 → 网络切换不中断</p>
+<h2 id="useEffect-useLayoutEffect的区别"><a href="#useEffect-useLayoutEffect的区别" class="headerlink" title="useEffect, useLayoutEffect的区别"></a>useEffect, useLayoutEffect的区别</h2><p>useLayoutEffect 在 DOM 更新后、浏览器绘制前同步执行；<br>useEffect 在浏览器绘制完成后异步执行。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Render</span></span><br><span class="line"> ↓</span><br><span class="line"><span class="variable constant_">DOM</span> 更新（commit）</span><br><span class="line"> ↓</span><br><span class="line">useLayoutEffect   ← 这里（同步，阻塞绘制）</span><br><span class="line"> ↓</span><br><span class="line">浏览器 paint</span><br><span class="line"> ↓</span><br><span class="line">useEffect         ← 这里（异步，不阻塞绘制）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>用 useLayoutEffect</p>
+<p>适合 “必须在 paint 前完成” 的场景：</p>
+<p>1️⃣ 测量 DOM（width / height / position）<br>useLayoutEffect(() =&gt; {<br>  const rect = ref.current.getBoundingClientRect()<br>  setWidth(rect.width)<br>}, [])</p>
+<p>2️⃣ 防止视觉闪烁（tooltip / modal / 动画起点）<br>useLayoutEffect(() =&gt; {<br>  el.style.transform = ‘translateX(0)’<br>}, [])</p>
+<p>3️⃣ 与第三方 UI 库强耦合<br>D3<br>老 jQuery 插件<br>imperative 动画库</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包就是：函数在定义时记住了它所在的词法作用域，即使在这个作用域之外执行，也能访问当时的变量。</p>
+<h2 id="react的hooks为什么不能写到if的判断语句中"><a href="#react的hooks为什么不能写到if的判断语句中" class="headerlink" title="react的hooks为什么不能写到if的判断语句中"></a>react的hooks为什么不能写到if的判断语句中</h2><p><code>Hooks</code>必须在组件的最外层、以固定顺序调用，因为<code>React</code>是靠“调用顺序”来关联<code>Hook</code>状态的；<br>写进<code>if</code>会破坏顺序，导致状态错位。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Fiber</span></span><br><span class="line">  <span class="attr">hooks</span>: [</span><br><span class="line">    hook0, <span class="comment">// 第一次 useState</span></span><br><span class="line">    hook1, <span class="comment">// 第二次 useEffect</span></span><br><span class="line">    hook2, <span class="comment">// 第三次 useState</span></span><br><span class="line">    ...</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 组件每 render 一次：</span></span><br><span class="line"><span class="comment">// React 从第 0 个 Hook 开始</span></span><br><span class="line"><span class="comment">// 按调用顺序一个一个往后取</span></span><br></pre></td></tr></table></figure>
 
   </div>
 </article>
@@ -197,7 +208,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Jimp%E4%BC%9A%E6%89%93%E7%A9%BF%E5%86%85%E5%AD%98%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么Jimp会打穿内存？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%B1%8F500ms%E4%BB%A5%E4%B8%8B"><span class="toc-number">2.</span> <span class="toc-text">首屏500ms以下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-3-%E5%AF%B9-SPA-%E6%80%A7%E8%83%BD%E7%9A%84%E4%BC%98%E5%8A%BF%E4%B8%BB%E8%A6%81%E4%BD%93%E7%8E%B0%E5%9C%A8"><span class="toc-number">3.</span> <span class="toc-text">HTTP&#x2F;3 对 SPA 性能的优势主要体现在</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88Jimp%E4%BC%9A%E6%89%93%E7%A9%BF%E5%86%85%E5%AD%98%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么Jimp会打穿内存？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%B1%8F500ms%E4%BB%A5%E4%B8%8B"><span class="toc-number">2.</span> <span class="toc-text">首屏500ms以下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-3-%E5%AF%B9-SPA-%E6%80%A7%E8%83%BD%E7%9A%84%E4%BC%98%E5%8A%BF%E4%B8%BB%E8%A6%81%E4%BD%93%E7%8E%B0%E5%9C%A8"><span class="toc-number">3.</span> <span class="toc-text">HTTP&#x2F;3 对 SPA 性能的优势主要体现在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#useEffect-useLayoutEffect%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">useEffect, useLayoutEffect的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">5.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react%E7%9A%84hooks%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E5%86%99%E5%88%B0if%E7%9A%84%E5%88%A4%E6%96%AD%E8%AF%AD%E5%8F%A5%E4%B8%AD"><span class="toc-number">6.</span> <span class="toc-text">react的hooks为什么不能写到if的判断语句中</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
