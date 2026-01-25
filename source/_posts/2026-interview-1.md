@@ -108,3 +108,6 @@ console.log('timer2')
 4. linux环境
 
 [linux环境配置文章](https://juejin.cn/post/7118919471317647397/)
+
+5. 准备一个demo。
+7. 提前了解web3的专业术语和相关知识。
