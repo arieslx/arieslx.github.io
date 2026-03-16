@@ -111,3 +111,63 @@ console.log('timer2')
 
 5. 准备一个demo。
 7. 提前了解web3的专业术语和相关知识。
+
+面试被鸽了，继续普通面试题+ai辅助。我感觉这堆题目好难记，过段时间就忘了，理解了之后又忘了的过程无敌痛苦，可能还是我重刷太少。
+
+5. 获取数组层级
+
+```js
+
+// 递归 ?
+function getArrayDepth(arr){
+    if(!Array.isArray(arr)) return 0
+
+    let maxDepth = 1;
+
+    for(const item of arr){
+        if(Array.isArray(item)){
+            maxDepth = Math.max(
+                maxDepth,
+                1+getArrayDepth(item)
+            )
+        }
+    }
+
+    return maxDepth
+}
+
+function getArrayDepth1(arr){
+    if(!Array.isArray(arr)) return 0
+    return arr.reduce((max, item) => {
+        const depth = Array.isArray(item)
+        ? getArrayDepth(item)
+        : 0;
+        return Math.max(max, depth);
+    }, 0) + 1
+}
+
+// ?
+function getArrayDepth2(arr){
+    if(!Array.isArray(arr)) return 0;
+
+    let maxDepth = 0;
+    const stack = [{value: arr, depth: 1}];
+
+    while(stack.length) {
+        const {value, depth} = stack.pop();
+        maxDepth = Math.max(maxDepth, depth);
+
+        for (const item of value){
+            if(Array.isArray(item)) {
+                stack.push({value: item, depth: depth + 1})
+            }
+        }
+    }
+
+    // RAG chunking / JSON 裁剪, RAG / AST / JSON Schema 分析
+    return maxDepth;
+}
+
+
+
+```
