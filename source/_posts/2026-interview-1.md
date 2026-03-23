@@ -4,9 +4,10 @@ date: 2025-11-7 17:17:59
 tags:
   - 2025
   - front-end-interview
+  - done
 ---
 
-1. 一维数组每三个切成一个数组，形成二维数组
+### 一维数组每三个切成一个数组，形成二维数组
 ```js
 // 一维数组每三个切成一个数组，形成二维数组
 function chunk(arr, size=3){
@@ -20,7 +21,7 @@ function chunk(arr, size=3){
 chunk([1,2,3,4,5,6,7,8,9,10])    
 ```
 
-2. 数组转树（扁平结构 → Tree）
+### 数组转树（扁平结构 → Tree）,list -> tree
 
 ```js
 // const list = [
@@ -50,7 +51,7 @@ function arrayToTree(list) {
 }   
 ```
 
-3. 分析
+### 事件循环执行顺序分析
 
 ```js
 const async1 = async () => {
@@ -105,16 +106,17 @@ console.log('timer2')
 
 ```
 
-4. linux环境
+### linux部署环境
 
 [linux环境配置文章](https://juejin.cn/post/7118919471317647397/)
 
-5. 准备一个demo。
-7. 提前了解web3的专业术语和相关知识。
+### web3大公司
+1. 准备一个demo。
+2. 提前了解web3的专业术语和相关知识。
 
 面试被鸽了，继续普通面试题+ai辅助。我感觉这堆题目好难记，过段时间就忘了，理解了之后又忘了的过程无敌痛苦，可能还是我重刷太少。
 
-5. 获取数组层级
+### 获取数组层级
 
 ```js
 
@@ -146,7 +148,7 @@ function getArrayDepth1(arr){
     }, 0) + 1
 }
 
-// ?
+// ? 用stack好不方便记忆啊
 function getArrayDepth2(arr){
     if(!Array.isArray(arr)) return 0;
 
@@ -170,7 +172,7 @@ function getArrayDepth2(arr){
 
 ```
 
-6. Promise.all()
+### 实现 Promise.all()
 
 ```js
 /**
@@ -217,7 +219,7 @@ function myPromiseAll(promises){
 ```
 
 7. 一句话总结关键词，方便记忆，方便后期拓展搜索。
-- React.memo 用于函数组件、只浅比较 props；PureComponent 用于类组件、同时浅比较 props 和 state，本质都是避免不必要的重新渲染。memo可以用useMemo来坐优化，避免值一样的Obj重新render。
+- React.memo 用于函数组件、只浅比较 props；PureComponent用于类组件、同时浅比较 props和state，本质都是避免不必要的重新渲染。memo可以用useMemo来做优化，避免值一样的Obj重新render。
 - 如何判断object为空，严谨：`Reflect.ownKeys({}).length === 0`
 - ==和===的区别：“==”先隐式类型转换，再判断值是否相等。“===”直接判断，类型+值是否相等。
 - 基础类型存放于栈，变量记录原始值；引用类型存放堆，变量记录地址。
@@ -232,6 +234,7 @@ function myPromiseAll(promises){
 - 反转字符串：str.split('').reverse().join('')
 - depcheck：检查幽灵依赖。
 - Hooks为什么必须写在最外层？依赖调用顺序来索引Fiber上的hook链表
+- 为什么hooks不能写在if里？Hooks依赖调用顺序来匹配Fiber上的hook链表。
 
 8. useRef和useState的本质区别是什么？为什么 useRef 改变不会触发重新渲染？
 核心点
@@ -241,15 +244,15 @@ useRef → 逃离渲染系统的可变容器
 
 useRef 返回的是 { current }，React 不会追踪 current 的变化
 useState 的变化会进入 Fiber 的 update queue
-useRef 更像是「组件级别的 instance 变量」
+useRef 更像是「组件级别的instance变量」
 
-useRef 在一次组件生命周期内地址是稳定的，相当于 class component 的 this.xxx
+useRef在一次组件生命周期内地址是稳定的，相当于class component的this.xxx
 
-hooks 本质是 按顺序挂在 Fiber 上的链表
-useRef 在 mount 阶段创建一次
-update 阶段直接复用同一个 ref 对象
+hooks 本质是按顺序挂在Fiber上的链表
+useRef在mount阶段创建一次
+update阶段直接复用同一个ref对象
 
-useRef 的 current 并不是“保存状态”，而是 React 帮你保存了一个 不参与 diff 的对象引用
+useRef的current并不是“保存状态”，而是React帮你保存了一个不参与diff的对象引用
 
 useRef解决的闭包问题
 ```js
@@ -265,4 +268,16 @@ useEffect(() => {
 useCallback(fn, deps)
 // 等价于
 useMemo(() => fn, deps)
+```
+
+### 手写useEvent hooks
+```js
+function useEvent(fn) {
+  const ref = useRef(fn)
+  ref.current = fn
+
+  return useCallback((...args) => {
+    return ref.current(...args)
+  }, [])
+}
 ```

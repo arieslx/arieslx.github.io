@@ -1,13 +1,18 @@
 ---
-title: 2025年｜Leetcode hot100 typescript
-date: 2025-10-31 23:40:59
+title: 算法题大混合
+date: 2026-3-23 23:40:59
 tags:
   - 2025
   - front-end-interview
+  - Leetcode-hot100-ts
+  - 2026
+  - algorithm
+  - todo
 ---
 
-### [1. Two Sum](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
 
+### [1. Two Sum](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
+`Leetcode-hot100-ts`
 ```ts
 function twoSum(nums: number[], target: number): number[]{
     let helperMap: Map<number, number> = new Map();

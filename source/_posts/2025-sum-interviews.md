@@ -4,6 +4,8 @@ date: 2025-10-31 17:17:59
 tags:
   - 2025
   - front-end-interview
+  - 面试总结
+  - done
 ---
 
 ## 最近找工作在复习些什么？
@@ -52,7 +54,7 @@ Vite 采用 ES modules 原生支持，在开发环境下无需打包，直接在
 在热更新方面，Vite 只需要重新编译改动的模块，速度很快。Webpack 的热更新虽然也很成熟，但涉及整个模块系统的处理。
 生产环境下，两者都进行完整的打包和优化，性能差异不大。但 Vite 的配置相对简洁，Webpack 配置更复杂但灵活性更强。
 #### content-type
-这个通常出现在网络请求相关的题目中。Content-Type 是 HTTP 头，用来告诉服务器或浏览器发送的数据格式。常见的包括：
+这个通常出现在网络请求相关的题目中。Content-Type是HTTP 头，用来告诉服务器或浏览器发送的数据格式。常见的包括：
 application/json 用于 JSON 数据
 application/x-www-form-urlencoded 用于表单数据
 multipart/form-data 用于文件上传
@@ -63,13 +65,6 @@ text/plain 用于纯文本
 ```js
 function flattern(arr, depth = 3){
   if(depth > 0){
-    return arr.reduce((acc, cur) => acc.concat(flattern(cur, depth - 1)), [])
-  } else {
-    return arr
-  }
-}
-function flattern(arr, depth){
-  if(depth > 0) {
     return arr.reduce((acc, cur) => acc.concat(flattern(cur, depth - 1)), [])
   } else {
     return arr
@@ -133,15 +128,14 @@ function sameValue(a, b) {
       return false;
     }
   }
-
   return true;
 }
 ```
 #### npm包按需加载
-npm包按需加载依赖 tree-shaking 和代码分割。
-只要 npm 包支持独立模块文件（如 lodash/debounce）或 ESM 格式（如 lodash-es），打包器就能自动删除未使用的代码。
-也可以通过动态 import 实现运行时按需加载，而 UI 库通常通过 babel-plugin-import 或自动按需工具实现组件级别加载。
-本质是减少 bundle 体积和提升性能
+npm包按需加载依赖tree-shaking和代码分割。
+只要npm包支持独立模块文件（如 lodash/debounce）或ESM格式（如 lodash-es），打包器就能自动删除未使用的代码。
+也可以通过动态import实现运行时按需加载，而UI库通常通过 babel-plugin-import或自动按需工具实现组件级别加载。
+本质是减少bundle体积和提升性能
 
 ### web3公司一面，被问懵了。
 
@@ -201,5 +195,69 @@ useEffect(() => {
     }, 1000); 
     return () => { clearInterval(timer) } //当组件从 DOM 中移除时，清理函数会执行，清除定时器。
 }, [])  // 定时器只创建一次，但能访问最新的 count
+```
+
+之前没好好做面试总结，接下来要好好做面试总结。
+
+### apple一面
+
+三数之和，没写出来，忘记了。一段时间不写，连两数之和都会忘记，哎。
+```js
+function threeSum(nums){
+  const res = []
+  nums.sort((a, b) => a - b);
+
+  for(let i=0; i<nums.length-2; i++){
+    if(i>0 && nums[i] === nums[i-1]) continue;
+
+    let left = i+1;
+    let right = nums.length -1;
+
+    while(left<right){
+      const sum=nums[i]+nums[left]+nums[right];
+
+      if(sum === 0){
+        res.push([nums[i], nums[left], nums[right]])
+
+        while(left < right && nums[left] === nums[left+1]) left++
+        while(left < right && nums[right] === nums[right-1]) right--
+
+        left++
+        right--
+      } else if(sum<0){
+        left++
+      } ekse {
+        right--
+      }
+    }
+  }
+
+  return res;
+}
+
+//暴力解法
+function threeSum(nums){
+  const res = [];
+  const set = new Set();
+
+  for(let i=0; i<nums.length-2; i++){
+    for(let j=i+1; j<nums.length-1; j++){
+      for(let k=j+1; k<nums.length; k++){
+        if(nums[i] + nums[j] + nums[k] === 0){
+          const arr = [nums[i], nums[j], nums[k]].sort((a,b) => a-b);
+          const key = arr.join(',')
+
+          if(!set.has(key)){
+            set.add(key);
+            res.push(arr)
+          }
+        }
+      }
+    }
+  }
+
+  return res;
+}
+
 ```
 
