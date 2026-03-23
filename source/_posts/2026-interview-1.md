@@ -168,6 +168,101 @@ function getArrayDepth2(arr){
     return maxDepth;
 }
 
+```
 
+6. Promise.all()
 
+```js
+/**
+Promise.all(iterable) 有几个硬规则：
+参数是可迭代对象（一般是数组）
+返回一个 新的 Promise
+全部成功 → 按顺序返回结果数组
+有一个失败 → 立刻 reject（短路）
+元素可以不是 Promise（要用 Promise.resolve 包一层）
+顺序 ≠ 完成顺序，而是输入顺序
+*/
+
+function myPromiseAll(promises){
+    return new Promise((resolve, reject) => {
+        if(!Array.isArray(promises)){
+            return reject(new TypeError('Argument must be an array'))
+        }
+
+        const result = [];
+        let count = 0;
+        const total = promises.length;
+
+        if(total === 0){
+            resolve([]);
+            return;
+        }
+
+        promises.forEach((p, index) => {
+            Promise.resolve(p)
+            .then(value => {
+                result[index] = value;
+                count++;
+
+                if(count === total){
+                    resolve(result)
+                }
+            })
+            .catch(err => {
+                reject(err)
+            })
+        })
+    })
+}
+```
+
+7. 一句话总结关键词，方便记忆，方便后期拓展搜索。
+- React.memo 用于函数组件、只浅比较 props；PureComponent 用于类组件、同时浅比较 props 和 state，本质都是避免不必要的重新渲染。memo可以用useMemo来坐优化，避免值一样的Obj重新render。
+- 如何判断object为空，严谨：`Reflect.ownKeys({}).length === 0`
+- ==和===的区别：“==”先隐式类型转换，再判断值是否相等。“===”直接判断，类型+值是否相等。
+- 基础类型存放于栈，变量记录原始值；引用类型存放堆，变量记录地址。
+- typeof null // "object",历史遗留问题
+- Object.prototype.toString.call(null) //"[object Null]"
+- arr instanceof Array // true
+- Array.isArray([]) // true
+- 常用判断对象：JSON.stringify(obj1) === JSON.stringify(obj2);
+- 某个feishu上的55题关于事件循环解释得很好。
+- 清空数组：arr.length = 0
+- 找到页面上所有a标签的href属性：Array.from(document.getElementByTagName('a')).map(item => item.href)
+- 反转字符串：str.split('').reverse().join('')
+- depcheck：检查幽灵依赖。
+- Hooks为什么必须写在最外层？依赖调用顺序来索引Fiber上的hook链表
+
+8. useRef和useState的本质区别是什么？为什么 useRef 改变不会触发重新渲染？
+核心点
+
+useState → 状态参与渲染流程
+useRef → 逃离渲染系统的可变容器
+
+useRef 返回的是 { current }，React 不会追踪 current 的变化
+useState 的变化会进入 Fiber 的 update queue
+useRef 更像是「组件级别的 instance 变量」
+
+useRef 在一次组件生命周期内地址是稳定的，相当于 class component 的 this.xxx
+
+hooks 本质是 按顺序挂在 Fiber 上的链表
+useRef 在 mount 阶段创建一次
+update 阶段直接复用同一个 ref 对象
+
+useRef 的 current 并不是“保存状态”，而是 React 帮你保存了一个 不参与 diff 的对象引用
+
+useRef解决的闭包问题
+```js
+const countRef = useRef(count)
+
+useEffect(() => {
+  countRef.current = count
+})
+```
+
+```js
+// useMemo,useCallback
+useCallback(fn, deps)
+// 等价于
+useMemo(() => fn, deps)
 ```

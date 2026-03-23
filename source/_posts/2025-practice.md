@@ -319,6 +319,13 @@ function unique (arr) {
 	}, [])
 }
 
+cosnt uniqueArr = arr.reduce((acc, cur) => {
+  if(!acc.includes(cur)){
+    acc.push(cur)
+  }
+  return acc
+}, [])
+
 // 测试
 var arr = [1, 2, 2, 3]
 unique(arr); // [1, 2, 3]
@@ -336,6 +343,17 @@ function unique(arr) {
 // 测试
 var arr = [1, 2, 2, 3]
 unique(arr); // [1, 2, 3]
+```
+
+### 方法四：indexOf
+```js
+const arr = [1,23,44,44,3]
+const uniqueArr = []
+arr.forEach((value) => {
+  if(uniqueArr.indexOf(value) === -1){ // if(!uniqueArr.includes(value))
+    uniqueArr.push(value)
+  }
+})
 ```
 
 ## 数组原地去重方法
@@ -1214,3 +1232,285 @@ React Fiber的遍历机制
 ## 十大排序算法
 
 我记不住怎么办，每次从冒泡开始，就像是学习英语，每次只背了个abandon。
+
+### 类数组转化为真实数组
+```js
+// 1. Array.from
+const nodeList = document.querySelectorAll('.elements')
+const arrayFromNodeList = Arrary.from(nodeList)
+
+// 2. 
+const arrayFromNodeList1 = Array.prototype.slice.call(nodeList)
+// 3.
+const arrayFromNodeList2 = [...nodeList]
+```
+
+### 求笛卡尔积
+
+### 原地打乱数组
+```js
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1)); // ✅ 关键
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+```
+
+### 判断对象是否存在循环引用
+```js
+function hasCircularReference(obj, visited = new WeakSet()){
+  if(obj && typeof obj === 'object'){
+    if(visited.has(obj)){
+      return true;
+    }
+    visited.add(obj);
+    const keys = Reflect.ownKeys(obj);
+    for(let i=0; i<keys.length;i++){
+      if(hasCircularReference(obj[keys[i]], visited)){
+        return true
+      }
+    }
+    visited.delete(obj)
+  }
+  return false
+}
+```
+
+### 反转字符串
+```js
+const str = 'hello a';
+const resultStr = Array.from(str).reduce((pre, cur) => {
+  return `${cur}${pre}`
+}, '')
+```
+
+### 实现一个once函数，传入函数参数只执行一次
+```js
+function once(fn){
+  let called = false;
+
+  return function (...args){
+    if(!called){
+      called = true;
+      return fn(...args)
+    }
+  }
+}
+```
+
+### 实现sleep效果
+```js
+async function sleep(time){
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve()
+    }, time)
+  })
+}
+```
+
+### 实现一个instanceof
+```js
+function myInstanceof(obj, constructor){
+  if(typeof constructor !== 'function'){
+    throw new TypeError('constructor of instanceof is not callable')
+  }
+  if(obj === null || (typeof obj !== 'object' && typeof obj !== 'function')){
+    return false
+  }
+
+  let proto = Object.getPrototypeOf(obj);
+
+  while(protp !== null){
+    console.log(proto, constructor.prototype)
+    if(proto == constructor.prototype){
+      return true
+    }
+    proto = Object.getPrototypeOf(proto)
+  }
+
+  return false
+}
+```
+
+### 找出字符串中不含重复字符的最长子串的长度
+```js
+var lengthOfLongestSubstring = function(s){
+  let arr = [];
+  let max = 0;
+  for(let i = 0; len = s.length; ++i){
+    const sameIndex = arr.findIndex(item => item === s[i])
+    arr.push(s[i])
+    if(sameIndex > -1){
+      arr = arr.splice(sameIndex+1)
+    }
+    max = Math.max(arr.length, max)
+  }
+  return max;
+}
+
+```
+
+### 给定一个字符串，判定其能否排列成回文串
+```js
+var canPermutePalindrome = function(s){
+  const set = new Set()
+  s.split('').forEach(key => {
+    if(set.has(key)){
+      set.delete(key)
+    } else {
+      set.add(key)
+    }
+  })
+  return set.size <= 1
+}
+```
+
+### 反转链表
+```js
+const node = {
+  val:
+  next:
+}
+
+var reverseList = function(head){
+  if(!head){
+    return head;
+  }
+
+  let pre = null;
+  let cur = head;
+
+  while(cur){
+    const {next} = cur;
+    cur.next = pre;
+    pre = cur;
+    cur = next;
+  }
+
+  return pre
+}
+
+```
+
+### 二叉树的遍历
+```js
+const node = {
+  value:
+  left:
+  right:
+}
+
+//前序：根左右
+var preorderTraversal = function(root){
+  if(!root){
+    return [];
+  }
+
+  const result = [];
+  result.push(root.val)
+  if(root.left){ result.push(...preorderTraversal(root.left))}
+  if(root.right){result.push(...preorderTraversal(root.right))}
+  return result
+}
+
+var inorderTraversal = function(root){
+  if(!root){
+    return []
+  }
+  let result = []
+  result = result.concat(inorderTraversal(root.left))
+  result.push(root.val)
+  result = result.concat(inorderTraversal(root.right))
+  return result;
+}
+
+var postorderTraversal = function(root){
+  if(!root){
+    return []
+  }
+  const result = []
+  result.push(...postorderTraversal(root.left))
+  result.push(...postorderTraversal(root.right))
+  result.push(root.val)
+  return result;
+}
+
+```
+
+### 实现一个全排列
+```js
+function permute(arr){
+  const result = [];
+  function backtrack(subarr, remaining){
+    if(remaining.length === 0){
+      result.push(subarr.slice())
+    } else {
+      for(let i=0; i<remaining.length; i++){
+        subarr.push(remaining[i]);
+        const newRemaining = [...remaining.slice(0,1), ...remaining.slice(i+1)]
+        backtrack(subarr, newRemaining)
+        subarr.pop()
+      }
+    }
+  }
+
+  backtrack([], arr);
+  return result;
+}
+
+const inputArray = [1,2,3]
+const permutations = permute(inputArray)
+console.log(permutations)
+```
+
+### 快速找到链表的中间节点
+```js
+
+class ListNode {
+  constructor(val, next = null){
+    this.val = val;
+    this.next = next;
+  }
+}
+
+function findMiddleNode(head){
+  let slow = head;
+  let fast = head;
+
+  while(fast !== null && fast.next !== null){
+    slow = slow.next;
+    fast = fast.next.next
+  }
+  return slow
+}
+
+```
+
+### 单例模式
+```js
+const Singleton = (function(){
+  let instance;
+
+  function createInstance(){
+    return new Object("singleton")
+  }
+
+  return {
+    getInstance: function(){
+      if(!instance){
+        instance = createInstance();
+      }
+      return instance;
+    }
+  }
+})()
+
+const instance1 = Singleton.getInstance();
+const instance2 = Singleton.getInstance();
+
+console.log(instance1 === instance2)
+```
+
