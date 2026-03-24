@@ -5,8 +5,7 @@ date: 2025-11-18 15:17:59
 tags:
   - 2025
   - front-end-interview
-  - algorithm
-  - todo
+  - TODO
 
 ---
 
@@ -94,71 +93,7 @@ let result = disArr.sort(function(a, b) {
 console.log(result);
 ```
 
-## LeetCode：LRU 缓存机制
 
-运用你所掌握的数据结构，设计和实现一个 **LRU (最近最少使用)** 缓存机制。它应该支持以下操作：获取数据 get 和写入数据 put。
-
-- 获取数据 `get(key)` - 如果密钥存在于缓存中，则获取密钥的值（总是正数），否则返回 -1
-- 写入数据 `put(key, value)` - 如果密钥不存在，则写入数据。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据，从而为新数据留出空间
-
-**进阶**：你是否可以在 O(1) 时间复杂度内完成这两种操作？
-
-**示例**：
-```javascript
-LRUCache cache = new LRUCache(2); // 缓存容量
-
-cache.put(1, 1);
-cache.put(2, 2);
-cache.get(1);       // 返回 1
-cache.put(3, 3);    // 该操作会使得密钥 2 作废
-cache.get(2);       // 返回 -1 (未找到)
-cache.put(4, 4);    // 该操作会使得密钥 1 作废
-cache.get(1);       // 返回 -1 (未找到)
-cache.get(3);       // 返回 3
-cache.get(4);       // 返回 4
-```
-
-**实现**：
-```typescript
-class LRUCache {
-    max: number = 0;
-    cache: Map<number, number>;
-    
-    constructor(capacity: number) {
-        this.max = capacity;
-        this.cache = new Map();
-    }
-
-    get(key: number): number {
-        const { cache } = this;
-        let value = cache.get(key);
-        
-        if (value !== undefined) {
-            cache.delete(key);
-            cache.set(key, value);
-            return value;
-        } else {
-            return -1;
-        }
-    }
-
-    put(key: number, value: number): void {
-        const { cache } = this;
-        
-        // 如果键已存在，先删除再重新插入以更新顺序
-        if (cache.has(key)) {
-            cache.delete(key);
-        }
-        // 如果缓存已满且要添加新键，删除最久未使用的
-        else if (cache.size >= this.max) {
-            const firstKey = cache.keys().next().value;
-            cache.delete(firstKey);
-        }
-        
-        cache.set(key, value);
-    }
-}
-```
 
 ## 数组扁平化与去重
 
@@ -1231,10 +1166,6 @@ React Fiber的遍历机制
 依赖图、拓扑排序
 查找最近的节点（最近可见元素）
 
-## 十大排序算法
-
-我记不住怎么办，每次从冒泡开始，就像是学习英语，每次只背了个abandon。
-
 ### 类数组转化为真实数组
 ```js
 // 1. Array.from
@@ -1246,8 +1177,6 @@ const arrayFromNodeList1 = Array.prototype.slice.call(nodeList)
 // 3.
 const arrayFromNodeList2 = [...nodeList]
 ```
-
-### 求笛卡尔积
 
 ### 原地打乱数组
 ```js
@@ -1337,159 +1266,7 @@ function myInstanceof(obj, constructor){
 }
 ```
 
-### 找出字符串中不含重复字符的最长子串的长度
-```js
-var lengthOfLongestSubstring = function(s){
-  let arr = [];
-  let max = 0;
-  for(let i = 0; len = s.length; ++i){
-    const sameIndex = arr.findIndex(item => item === s[i])
-    arr.push(s[i])
-    if(sameIndex > -1){
-      arr = arr.splice(sameIndex+1)
-    }
-    max = Math.max(arr.length, max)
-  }
-  return max;
-}
 
-```
-
-### 给定一个字符串，判定其能否排列成回文串
-```js
-var canPermutePalindrome = function(s){
-  const set = new Set()
-  s.split('').forEach(key => {
-    if(set.has(key)){
-      set.delete(key)
-    } else {
-      set.add(key)
-    }
-  })
-  return set.size <= 1
-}
-```
-
-### 反转链表
-```js
-const node = {
-  val:
-  next:
-}
-
-var reverseList = function(head){
-  if(!head){
-    return head;
-  }
-
-  let pre = null;
-  let cur = head;
-
-  while(cur){
-    const {next} = cur;
-    cur.next = pre;
-    pre = cur;
-    cur = next;
-  }
-
-  return pre
-}
-
-```
-
-### 二叉树的遍历
-```js
-const node = {
-  value:
-  left:
-  right:
-}
-
-//前序：根左右
-var preorderTraversal = function(root){
-  if(!root){
-    return [];
-  }
-
-  const result = [];
-  result.push(root.val)
-  if(root.left){ result.push(...preorderTraversal(root.left))}
-  if(root.right){result.push(...preorderTraversal(root.right))}
-  return result
-}
-
-var inorderTraversal = function(root){
-  if(!root){
-    return []
-  }
-  let result = []
-  result = result.concat(inorderTraversal(root.left))
-  result.push(root.val)
-  result = result.concat(inorderTraversal(root.right))
-  return result;
-}
-
-var postorderTraversal = function(root){
-  if(!root){
-    return []
-  }
-  const result = []
-  result.push(...postorderTraversal(root.left))
-  result.push(...postorderTraversal(root.right))
-  result.push(root.val)
-  return result;
-}
-
-```
-
-### 实现一个全排列
-```js
-function permute(arr){
-  const result = [];
-  function backtrack(subarr, remaining){
-    if(remaining.length === 0){
-      result.push(subarr.slice())
-    } else {
-      for(let i=0; i<remaining.length; i++){
-        subarr.push(remaining[i]);
-        const newRemaining = [...remaining.slice(0,1), ...remaining.slice(i+1)]
-        backtrack(subarr, newRemaining)
-        subarr.pop()
-      }
-    }
-  }
-
-  backtrack([], arr);
-  return result;
-}
-
-const inputArray = [1,2,3]
-const permutations = permute(inputArray)
-console.log(permutations)
-```
-
-### 快速找到链表的中间节点
-```js
-
-class ListNode {
-  constructor(val, next = null){
-    this.val = val;
-    this.next = next;
-  }
-}
-
-function findMiddleNode(head){
-  let slow = head;
-  let fast = head;
-
-  while(fast !== null && fast.next !== null){
-    slow = slow.next;
-    fast = fast.next.next
-  }
-  return slow
-}
-
-```
 
 ### 单例模式
 ```js
