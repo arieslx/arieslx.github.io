@@ -240,6 +240,123 @@ function trap(height: number[]): number{
 }
 
 ```
+## 栈
+### [20. 有效的括号](https://leetcode.cn/problems/valid-parentheses)
+```js
+var isValid = function(s){
+    const stack = []
+    const map = {
+        '(':')',
+        '{':'}',
+        '[':']'
+    }
+    for(let char of s){
+        if(map[char]){
+            stack.push(map[char])
+        } else {
+            if(stack.pop() !== char){
+                return false
+            }
+        }
+    }
+    return stack.length === 0
+}
+```
+
+## 贪心算法
+### [121. 买卖股票的最佳时机](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock)
+```js
+function getMaxProfix(prices){
+    let minPrice = Infinity;
+    let maxProfit = 0;
+
+    for(let price of prices){
+        minPrice = Math.min(minPrice, price);
+        maxProfix = Math.max(maxProfit, price-minPrice)
+    }
+
+    return maxProfit;
+}
+```
+## 双指针
+### [283.移动零](https://leetcode.cn/problems/move-zeroes)
+```js
+var moveZeroes = function(nums){
+    let slow = 0;
+    for(let fast=0; fast<nums.length; fast++){
+        if(nums[fast] !==0){
+            nums[slow] = nums[fast]
+            slow++
+        }
+    }
+    for(let i=slow; i<nums.length;i++){
+        nums[i]=0
+    }
+}
+```
+
+## 动态规划
+### [70. 爬楼梯](https://leetcode.cn/problems/climbing-stairs)
+```js
+var climbStairs = function(n){
+    if(n<=2){
+        return n
+    }
+    let prev1 = 1;
+    let prev2 = 2;
+
+    for(let i=3;i<=n;i++){
+        let cur=prev1+prev2;
+        prev1=prev2
+        prev2=cur
+    }
+    return prev2
+}
+```
+
+### [118. 杨辉三角](https://leetcode.cn/problems/pascals-triangle)
+```js
+var generate = function(numRows){
+    const res = [];
+    for(let i=0; i<numsRows; i++){
+        const row = new Array(i+1).fill(1)
+        for(let j=1; j<i; j++){
+            row[j] = res[i-1][j-1] + res[i-1][j]
+        }
+        res.push(row)
+    }
+    return res
+}
+```
+
+## 技巧
+### [只出现一次的数字](https://leetcode.cn/problems/single-number)
+```js
+var singleNum = function(nums){
+    let res = 0;
+    for(let num of nums){
+        res ^=num;
+    }
+    return res;
+}
+
+```
+
+### [169. 多数元素](https://leetcode.cn/problems/majority-element)
+```js
+var majorityEle = function(nums){
+    let candidate = null;
+    let count = 0;
+    for(let num of nums){
+        if(count === 0){
+            candidate = num
+        }
+
+        count += (num === candidate) ? 1:-1
+    }
+    return candidate
+}
+```
 
 ## 链表
 ```
@@ -331,6 +448,48 @@ function reverseList(head){
 
 ```
 
+### [相交链表](https://leetcode.cn/problems/intersection-of-two-linked-lists)
+```js
+var getIntersectionNode = function(headA, headB){
+    let pA=headA;
+    let pB=headB;
+    while(pA!==pB){
+        pA = (pA===null)? headB: pA.next;
+        pB = (pB===null)? headA: pB.next;
+    }
+    return pA;
+}
+```
+
+### [回文链表](https://leetcode.cn/problems/palindrome-linked-list)
+```js
+var isPalindrome = function(head){
+    if(!head || !head.next) return true
+    let slow = head
+    let fast = head
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+    }
+    let prev = null
+    while(slow){
+        let next = slow.next
+        slow.next = prev
+        prev = slow
+        slow = next
+    }
+    let p1 = head
+    let p2 = prev
+    while(p2){
+        if(p1.val !== p2.val){
+            return false
+        }
+        p1 = p1.next
+        p2 = p2.next
+    }
+    return true
+}
+```
 ### [两个链表的第一个公共结点](https://leetcode.cn/problems/liang-ge-lian-biao-de-di-yi-ge-gong-gong-jie-dian-lcof/)
 `牛客网剑指offer`
 ```js
@@ -345,8 +504,49 @@ function FindFirstCommonNode(pHead1, pHead2){
     return p1
 }
 ```
+### [环形链表](https://leetcode.cn/problems/linked-list-cycle)
+```js
+var hasCycle = function(head){
+    if(!head || !head.next) return false
+    let slow = head;
+    let fast = head;
 
-[LCR 022. 环形链表 II,链表中环的入口结点](https://leetcode.cn/problems/c32eOV/description/)
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+        if(slow === fast){
+            return true
+        }
+    }
+
+    return false
+}
+```
+
+### [环形链表2](https://leetcode.cn/problems/linked-list-cycle-ii)
+```js
+var detectCycle = function(head){
+    let slow = head
+    let fast = head
+    while(fast && fast.next){
+        slow = slow.next
+        fast = fast.next.next
+        if(slow === fast){
+            //入环点
+            let p = head;
+            while(p !== slow){
+                p = p.next
+                slow = slow.next
+            }
+            return p
+        }
+    }
+    return null
+}
+
+```
+
+### [LCR 022. 环形链表 II,链表中环的入口结点](https://leetcode.cn/problems/c32eOV/description/)
 `牛客网剑指offer`
 ```js
 function entryNodeOfLoop(pHead){
@@ -362,7 +562,91 @@ function entryNodeOfLoop(pHead){
     return null;
 }
 ```
-## [LRU缓存机制](https://leetcode.cn/problems/lru-cache/)
+
+### [两数相加](https://leetcode.cn/problems/add-two-numbers)
+```js
+var addTwoNumbers = function(l1, l2){
+    const dummy = new ListNode(0)
+    let cur = dummy
+    let carry = 0
+    while(l1 || l2 || carry){
+        const v1 = l1 ? l1.val : 0
+        const v2 = l2 ? l2.val : 0
+
+        const sum = v1 + v2 + carry
+        carry = Math.floor(sum / 10)
+        cur.next = new ListNode(sum % 10)
+        cur = cur.next
+        if(l1) l1 = l1.next
+        if(l2) l2 = l2.next
+    }
+    return dummy.next
+}
+
+```
+
+### [删除链表的倒数第n个结点](https://leetcode.cn/problems/remove-nth-node-from-end-of-list)
+```js
+//快慢指针+dummy结点。删除链表倒数第n个结点，并返回链表的头结点。
+// head = 1->2->3->4->5
+// n = 2
+// fast 走3步到3
+// 当slow到3的时候删除4。
+// 1->2->3->5
+// 通过让 fast 指针先走 n+1 步，构造出一个固定间距，从而一次遍历就能定位到倒数第 n 个节点的前驱节点。
+var removeNthFromEnd = function(head, n){
+    const dummy = new ListNode(0)
+    dummy.next = head
+    let fast = dummy
+    let slow = dummy
+    // fast先走n+1步
+    for(let i=0; i<=n; i++){
+        fast = fast.next
+    }
+    // 有间隔之后再同时移动
+    while(fast){
+        fast = fast.next
+        slow = slow.next
+    }
+    //等fast到null了直接删除结点。
+    slow.next = slow.next.next
+    return dummy.next
+}
+```
+
+### [两两交换链表中的节点](https://leetcode.cn/problems/swap-nodes-in-pairs)
+```js
+//不要丢链
+//prev->a->b->next
+//a.next = b.next
+//b.next = a
+//prev.next = b
+//原链表：
+//1 → 2 → 3 → 4
+//目标：
+//2 → 1 → 4 → 3
+//这题的关键是通过 dummy 节点统一处理头节点，并且在每一轮中维护 prev、a、b 三个指针，通过三次指针重连完成交换
+var swapPairs = function(head){
+    const dummy = new ListNode(0)
+    dummy.next = head
+    let prev = dummy
+
+    while(prev.next && prev.next.next){
+        let a = prev.next
+        let b = a.next
+
+        prev.next = b
+        a.next = b.next
+        b.next = a 
+
+        prev = a
+    }
+
+    return dummy.next
+}
+
+```
+### [LRU缓存机制](https://leetcode.cn/problems/lru-cache/)
 
 运用你所掌握的数据结构，设计和实现一个 **LRU (最近最少使用)** 缓存机制。它应该支持以下操作：获取数据 get 和写入数据 put。
 
@@ -425,6 +709,68 @@ class LRUCache {
         
         cache.set(key, value);
     }
+}
+```
+
+### 链表中倒数最后k个结点
+`牛客网剑指offer`
+```js
+//14.链表中倒数第K个节点
+//输入一个链表，输出该链表中倒数第k个结点。
+/*function ListNode(x){
+    this.val = x;
+    this.next = null;
+}*/
+function findKthToTail(head, k){
+    let arr = [];
+    while(head){
+        arr.push(head);
+        head = head.next;
+    }
+    return arr[arr.length - k]
+}
+```
+
+### 删除链表中重复的结点
+```js
+function deleteDuplication(pHead){
+    if(pHead == null || pHead.next == null) return pHead; // 只有0个或1个结点，则返回
+    let pNode = pHead.next;
+    if(pHead.val == pNode.val){
+        while(pNode != null && pHead.val == pNode.val){
+            pNode = pNode.next; // 跳过值与当前结点相同的全部结点,找到第一个与当前结点不同的结点
+        }
+        return deleteDuplication(pNode); // 从第一个与当前结点不同的结点开始递归
+    } else {
+        pHead.next = deleteDuplication(pNode);  // 当前结点不是重复结点,保留当前结点，从下一个结点开始递归
+        return pHead;
+    }
+}
+
+```
+
+### 删除链表中的结点
+```js
+/*
+ * function ListNode(x){
+ *   this.val = x;
+ *   this.next = null;
+ * }
+ */
+
+function deleteNode( head ,  val ) {
+    // write code here
+    //直接遍历，找到该节点，将pre和next节点连接在一起即可。
+    //注意特殊输入，val是链表头端的情况;注意输入的val是值不是节点，与节点.val进行比较
+    if(head.val===val) return head=head.next
+    let cur = head
+    let pre = null
+    while(cur.val!==val){
+        pre=cur
+        cur=cur.next
+    }
+    pre.next=cur.next
+    return head
 }
 ```
 ## 树
@@ -1056,3 +1402,10 @@ function findMiddleNode(head){
 }
 
 ```
+## 子串
+### 滑动窗口的最大值
+
+
+
+### 参考内容
+[github上剑指offer answer](https://github.com/mengshen7hao/offer-answer)

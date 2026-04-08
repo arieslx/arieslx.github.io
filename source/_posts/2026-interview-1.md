@@ -54,6 +54,7 @@ function arrayToTree(list) {
 ### 事件循环执行顺序分析
 
 ```js
+//题一
 const async1 = async () => {
 console.log('async1');
 setTimeout(() => {
@@ -103,6 +104,33 @@ console.log('timer2')
 // 1
 // timer2
 // timer1
+
+//题二
+function main() {
+  console.log(1);
+  setTimeout(() => {
+    console.log(2);
+  }, 1000);
+  setTimeout(() => {
+    console.log(3);
+    Promise.resolve(4).then((res) => {
+      console.log(res);
+    });
+  }, 500);
+  try {
+    new Promise((resolve, reject) => {
+      console.log(5);
+      reject(6);
+      console.log(7);
+      resolve(8);
+    }).then((res) => {
+      console.log(res);
+    });
+  } catch (error) {
+    console.log("error", error);
+  }
+  console.log(9);
+}
 
 ```
 
@@ -280,4 +308,30 @@ function useEvent(fn) {
     return ref.current(...args)
   }, [])
 }
+```
+
+### 实现一个useLayoutEffect hook
+思路：在react中，render->commit DOM -> useLayoutEffect（同步执行）->浏览器绘制->useEffect(异步)
+```js
+function useLayoutEffectMock(effect, deps){
+    const cleanupRef = useRef();
+    const run = () => {
+        if(cleanupRef.current){
+            cleanupRef.current()
+        }
+        cleanupRef.current = effect()
+    }
+
+    useEffect(() => {
+        // 尽量提前执行（但仍不是真同步）
+        queueMicrotask(run)
+
+        return () => {
+            if(cleanupRef.current){
+                cleanupRef.current()
+            }
+        }
+    },deps)
+}
+
 ```

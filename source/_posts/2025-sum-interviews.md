@@ -3,10 +3,8 @@ title: 2025年｜最近找工作在复习一些什么？
 date: 2025-10-31 17:17:59
 tags:
   - 2025
-  - 2026
   - front-end-interview
   - 面试总结
-  - done
 ---
 
 ## 最近找工作在复习些什么？
@@ -99,7 +97,7 @@ function flattern(arr, depth = 3){
  **/
 function sameValue(a, b) {
   // 1️⃣ 处理 NaN
-  if (Number.isNaN(a) && Number.isNaN(b)) return true;
+  if (Number.isNaN(a) && Number.isNaN(b)) return false;
 
   // 2️⃣ 处理 0 与 -0（0 === -0 为 true，但本题要求 false）
   if (a === 0 && b === 0) return 1 / a === 1 / b;
@@ -196,6 +194,40 @@ useEffect(() => {
     }, 1000); 
     return () => { clearInterval(timer) } //当组件从 DOM 中移除时，清理函数会执行，清除定时器。
 }, [])  // 定时器只创建一次，但能访问最新的 count
+
+//变种题型1
+const [count, setCount] = useState(0)
+useEffect(() => { //只在第一次render执行。永远打印0
+  const timer = setInterval(() => {
+	console.log("count", count);
+  }, 1000);
+  return () => {
+	clearInterval(timer);
+  };
+}, []);
+
+const handleClick = () => {
+  setCount(count + 1);
+};
+//变种题型1 -> 优化
+const countRef = useRef(count);
+
+useEffect(() => {
+  countRef.current = count;
+}, [count]);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+	console.log("count", countRef.current);
+  }, 1000);
+  return () => {
+	clearInterval(timer);
+  };
+}, []);
+
+const handleClick = () => {
+  setCount(count + 1);
+};
 ```
 
 之前没好好做面试总结，接下来要好好做面试总结。
@@ -229,7 +261,7 @@ function threeSum(nums){
         right--
       } else if(sum<0){
         left++
-      } ekse {
+      } else {
         right--
       }
     }
