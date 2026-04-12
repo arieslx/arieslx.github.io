@@ -6,16 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="在root文件夹下放置.env文件，在文件中编写自己需要的key-value。   REACT_APP_前缀，针对用react-script生成的脚手架，内置dotenv等packages可以直接使用封装好的环境变量。  1REACT_APP_API_KEY &#x3D; &#39;my-secret-api-key&#39;   webpack5中有一些对于process的poly写法被拿掉了，所以如果要在webpac">
+    <meta name="description" content="在root文件夹下放置.env文件，在文件中编写自己需要的key-value。   REACT_APP_前缀，针对用react-script生成的脚手架，内置dotenv等packages可以直接使用封装好的环境变量。  1REACT_APP_API_KEY &#x3D; &amp;#x27;my-secret-api-key&amp;#x27;   webpack5中有一些对于process的poly写法被拿掉了，所以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于node和client端‘env’环境变量">
 <meta property="og:url" content="http://yoursite.com/2022/11/09/20221204/index.html">
 <meta property="og:site_name" content="Arieslx">
-<meta property="og:description" content="在root文件夹下放置.env文件，在文件中编写自己需要的key-value。   REACT_APP_前缀，针对用react-script生成的脚手架，内置dotenv等packages可以直接使用封装好的环境变量。  1REACT_APP_API_KEY &#x3D; &#39;my-secret-api-key&#39;   webpack5中有一些对于process的poly写法被拿掉了，所以如果要在webpac">
+<meta property="og:description" content="在root文件夹下放置.env文件，在文件中编写自己需要的key-value。   REACT_APP_前缀，针对用react-script生成的脚手架，内置dotenv等packages可以直接使用封装好的环境变量。  1REACT_APP_API_KEY &#x3D; &amp;#x27;my-secret-api-key&amp;#x27;   webpack5中有一些对于process的poly写法被拿掉了，所以">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-11-09T13:29:59.000Z">
-<meta property="article:modified_time" content="2022-12-05T10:03:05.999Z">
+<meta property="article:modified_time" content="2026-04-12T11:07:15.409Z">
 <meta property="article:tag" content="2022">
+<meta property="article:tag" content="work">
 <meta name="twitter:card" content="summary">
     
     
@@ -142,7 +143,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/2022/" rel="tag">2022</a>
+        <a class="tag-link-link" href="/tags/2022/" rel="tag">2022</a>, <a class="tag-link-link" href="/tags/work/" rel="tag">work</a>
     </div>
 
 
@@ -156,7 +157,7 @@
 </li>
 </ol>
 <p><code>REACT_APP_</code>前缀，针对用<code>react-script</code>生成的脚手架，内置dotenv等packages可以直接使用封装好的环境变量。 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">REACT_APP_API_KEY = <span class="string">'my-secret-api-key'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable constant_">REACT_APP_API_KEY</span> = <span class="string">&#x27;my-secret-api-key&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>webpack5中有一些对于process的poly写法被拿掉了，所以如果要在webpack5中读到node相关的变量，需要引入新的包。</li>
@@ -166,17 +167,17 @@
 </ol>
 <p>参考资料：</p>
 <ol>
-<li><a href="https://akashmittal.com/code-example-uncaught-referenceerror-process-is-not-defined-reactjs/" target="_blank" rel="noopener">react-script, webpack config</a></li>
-<li><a href="https://stackoverflow.com/questions/49579028/adding-an-env-file-to-react-project" target="_blank" rel="noopener">react-script</a></li>
-<li><a href="https://create-react-app.dev/docs/adding-custom-environment-variables/" target="_blank" rel="noopener">react-script demo</a></li>
-<li><a href="https://stackoverflow.com/questions/65018431/webpack-5-uncaught-referenceerror-process-is-not-defined" target="_blank" rel="noopener">webpack5关于process不能读到值的解决方案</a></li>
-<li><a href="https://juejin.cn/post/7021457868612173832" target="_blank" rel="noopener">webpack pollyfill</a></li>
-<li><a href="https://webpack.js.org/plugins/environment-plugin/" target="_blank" rel="noopener">webpack plugin doc</a></li>
-<li><a href="https://awdr74100.github.io/2020-06-29-webpack-dotenvwebpack/" target="_blank" rel="noopener">dotenv-webpack</a></li>
-<li><a href="https://github.com/mrsteele/dotenv-webpack/issues/377" target="_blank" rel="noopener">DefinePlugin and dotenv-webpack conflict</a></li>
-<li><a href="https://github.com/textbook/starter-kit/wiki/Dotenv#Client-environment-variables" target="_blank" rel="noopener">Client-environment-variables</a></li>
-<li><a href="https://stackoverflow.com/questions/67431401/conflicting-values-for-process-env-with-webpack-encore-and-dotenv" target="_blank" rel="noopener">dotenv</a></li>
-<li><a href="https://github.com/mrsteele/dotenv-webpack/issues/271" target="_blank" rel="noopener">dotenv issue</a></li>
+<li><a target="_blank" rel="noopener" href="https://akashmittal.com/code-example-uncaught-referenceerror-process-is-not-defined-reactjs/">react-script, webpack config</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/49579028/adding-an-env-file-to-react-project">react-script</a></li>
+<li><a target="_blank" rel="noopener" href="https://create-react-app.dev/docs/adding-custom-environment-variables/">react-script demo</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/65018431/webpack-5-uncaught-referenceerror-process-is-not-defined">webpack5关于process不能读到值的解决方案</a></li>
+<li><a target="_blank" rel="noopener" href="https://juejin.cn/post/7021457868612173832">webpack pollyfill</a></li>
+<li><a target="_blank" rel="noopener" href="https://webpack.js.org/plugins/environment-plugin/">webpack plugin doc</a></li>
+<li><a target="_blank" rel="noopener" href="https://awdr74100.github.io/2020-06-29-webpack-dotenvwebpack/">dotenv-webpack</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mrsteele/dotenv-webpack/issues/377">DefinePlugin and dotenv-webpack conflict</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/textbook/starter-kit/wiki/Dotenv#Client-environment-variables">Client-environment-variables</a></li>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/67431401/conflicting-values-for-process-env-with-webpack-encore-and-dotenv">dotenv</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/mrsteele/dotenv-webpack/issues/271">dotenv issue</a></li>
 </ol>
 
   </div>
