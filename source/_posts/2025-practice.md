@@ -5,7 +5,6 @@ date: 2025-11-18 15:17:59
 tags:
   - 2025
   - front-end-interview
-  - TODO
 
 ---
 
@@ -148,7 +147,7 @@ test.flat(-10)
 function flattenDeep(arr) { 
     return Array.isArray(arr)
       ? arr.reduce( (acc, cur) => [...acc, ...flattenDeep(cur)] , [])
-      : [arr]
+      : arr
 }
 
 // 测试

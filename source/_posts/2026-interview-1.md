@@ -4,7 +4,6 @@ date: 2025-11-7 17:17:59
 tags:
   - 2025
   - front-end-interview
-  - done
 ---
 
 ### 一维数组每三个切成一个数组，形成二维数组
@@ -56,27 +55,27 @@ function arrayToTree(list) {
 ```js
 //题一
 const async1 = async () => {
-console.log('async1');
-setTimeout(() => {
-console.log('timer1')
-}, 2000)
-await new Promise(resolve => {
-console.log('promise1')
-})
-console.log('async1 end')
-return 'async1 success'
-}
-console.log('script start');
-async1().then(res => console.log(res));
-console.log('script end');
+  console.log("async1");
+  setTimeout(() => {
+    console.log("timer1");
+  }, 2000);
+  await new Promise((resolve) => {
+    console.log("promise1");
+  });
+  console.log("async1 end");
+  return "async1 success";
+};
+console.log("script start");
+async1().then((res) => console.log(res));
+console.log("script end");
 Promise.resolve(1)
-.then(2)
-.then(Promise.resolve(3))
-.catch(4)
-.then(res => console.log(res))
+  .then(2)
+  .then(Promise.resolve(3))
+  .catch(4)
+  .then((res) => console.log(res));
 setTimeout(() => {
-console.log('timer2')
-}, 1000)
+  console.log("timer2");
+}, 1000);
 
 // script start
 // async1
@@ -104,34 +103,6 @@ console.log('timer2')
 // 1
 // timer2
 // timer1
-
-//题二
-function main() {
-  console.log(1);
-  setTimeout(() => {
-    console.log(2);
-  }, 1000);
-  setTimeout(() => {
-    console.log(3);
-    Promise.resolve(4).then((res) => {
-      console.log(res);
-    });
-  }, 500);
-  try {
-    new Promise((resolve, reject) => {
-      console.log(5);
-      reject(6);
-      console.log(7);
-      resolve(8);
-    }).then((res) => {
-      console.log(res);
-    });
-  } catch (error) {
-    console.log("error", error);
-  }
-  console.log(9);
-}
-
 ```
 
 ### linux部署环境

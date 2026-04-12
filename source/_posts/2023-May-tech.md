@@ -42,5 +42,3 @@ star了两个项目
 1. https://www.dimajia.com/technology/icejs/
 2. https://www.dimajia.com/technology/nocobase/ 最贴近的是这个项目，好好读读
 
-#### nocobase research
-
