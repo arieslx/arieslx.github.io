@@ -8,7 +8,106 @@ tags:
   - algorithm
 ---
 
+今天晚点：再盲写 1 遍
+明天：再盲写 1 遍
+三天后：再盲写 1 遍
+一周后：再盲写 1 遍
+
 ### [两数之和](https://leetcode.cn/problems/two-sum/description/)
+`TODO`
+用例子走一遍：
+
+nums = [2, 7, 11, 15]
+target = 9
+一开始：
+
+map = {}
+第一次循环：
+
+i = 0
+num = nums[0] = 2
+need = 9 - 2 = 7
+问：
+
+map 里面有没有 7？
+没有，因为之前还没见过任何数。
+
+所以执行：
+
+map.set(2, 0)
+意思是：
+
+我见过数字 2，它的下标是 0。
+现在：
+
+map = { 2 -> 0 }
+第二次循环：
+
+i = 1
+num = nums[1] = 7
+need = 9 - 7 = 2
+问：
+
+map 里面有没有 2？
+有。2 的下标是 0。
+
+所以返回：
+
+return [map.get(2)!, 1]
+也就是：
+
+return [0, 1]
+因为：
+
+nums[0] + nums[1] = 2 + 7 = 9
+关键点是这句：
+
+if (map.has(need)) {
+它不是问“当前数字在不在 map 里”。
+它问的是：
+
+之前有没有一个数，能和当前 num 凑成 target？
+所以这个 need 很重要。
+
+再看为什么最后才写：
+
+map.set(num, i)
+因为当前这个数如果暂时找不到搭档，就把它存起来，给后面的数当搭档。
+
+你可以把 map 想成一个“之前见过的数字本子”：
+
+map 里只放已经走过的数。
+当前 num 不属于“之前”，所以先查，再存。
+完整循环逻辑就是：
+
+每来一个新数字：
+1. 算它需要谁
+2. 去“之前见过的数字”里找
+3. 找到了就返回
+4. 找不到就把自己记到本子上
+对应代码：
+
+const num = nums[i]              // 当前数字
+const need = target - num        // 当前数字需要的搭档
+
+if (map.has(need)) {             // 之前有没有见过这个搭档？
+  return [map.get(need)!, i]     // 有：返回搭档下标 + 当前下标
+}
+
+map.set(num, i)                  // 没有：把当前数字记下来
+你现在先别完整背。你只要先记住这句：
+
+先问：我需要的那个数，之前出现过吗？
+
+记忆点：
+建 map
+遍历 nums
+拿当前 num
+算 need
+先查 need
+查到返回两个下标
+查不到存当前 num 和 i
+
 `跟着瓶子刷算法`
 `Leetcode-hot100-ts`
 ```js
@@ -30,6 +129,33 @@ function twoSum(nums: number[], target: number): number[] {
     return resArr;
 }
 
+
+function twoSum(nums: number[], target: number): number[]{
+    let map = new Map<number, number>()
+    for(let i = 0; i<nums.length; i++){
+        let num = nums[i]
+        let need = target - num
+        if(map.has(need)){
+            return[map.get(need)!, i]
+        }
+        map.set(num, i)
+    }
+    return []
+}
+
+
+function twoSum(nums: number[], target: number): number[]{
+    const map = new Map<number, number>()
+    for(let i = 0; i<nums.length; i++){
+        const num = nums[i]
+        const need = target - num
+        if(map.has(need)){
+            return [map.get(need)!, i]
+        }
+        map.set(num, i)
+    }
+    return []
+}
 ```
 
 ### [js两个数组的交集](https://leetcode.cn/problems/intersection-of-two-arrays/description/)
@@ -279,6 +405,13 @@ function getMaxProfix(prices){
 ```
 ## 双指针
 ### [283.移动零](https://leetcode.cn/problems/move-zeroes)
+读写分离
+fast 是读指针，slow 是写指针。
+读到非 0，就写到 slow。
+写完 slow 后移。
+读到 0，就只读不写。
+最后写指针后面清零。
+`TODO`
 ```js
 var moveZeroes = function(nums){
     let slow = 0;
@@ -291,6 +424,54 @@ var moveZeroes = function(nums){
     for(let i=slow; i<nums.length;i++){
         nums[i]=0
     }
+}
+
+// 读写指针
+function moveZeroes(nums: number[]): void{
+    let slow = 0
+    for(let fast = 0; fast < nums.length; fast++){
+        if(nums[fast] !== 0){
+            nums[slow] = nums[fast]
+            slow++
+        }
+    }
+
+    for(let i = slow; i < nums.length; i++){
+        nums[i] = 0
+    }
+}
+```
+
+### [11. 盛最多水的容器](https://leetcode.cn/problems/container-with-most-water/?envType=study-plan-v2&envId=top-100-likedd)
+`TODO`
+1. 左右指针站两边
+2. while 还没相遇
+3. 算宽度
+4. 算短板高度
+5. 算面积
+6. 更新最大面积
+7. 在，wihle循环里，谁矮移动谁
+```js
+function maxArea(height: number[]): number{
+    let left = 0;
+    let right = height.length - 1; // ***
+    let maxArea = 0
+
+    while(left < right){
+        let width = right - left
+        let currHeight = Math.min(height[left], height[right])
+        let area = width * currHeight
+
+        maxArea = Math.max(maxArea, area)
+
+        if(height[left] < height[right]){
+            left++
+        } else {
+            right --
+        }
+    }
+
+    return maxArea
 }
 ```
 
@@ -368,6 +549,16 @@ head 是 入口，丢了 head，整个链表就找不到了
 ### [合并两个有序链表](https://leetcode.cn/problems/merge-two-sorted-lists/)
 `跟着瓶子刷算法`
 `Leetcode-hot100-ts`
+`TODO`
+大部分链表题：
+合并 / 新建结果链：dummy + cur
+删除节点：dummy + prev/cur
+反转链表：prev + cur + next
+找中点 / 环：slow + fast
+倒数第 N 个：dummy + fast + slow
+两两交换：dummy + prev + first + second
+
+接谁，谁后移；cur 永远后移。
 ```js
 /**
  * Definition for singly-linked list.
@@ -398,6 +589,33 @@ function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode
         return list2
     }
 };
+
+// 1. dummy + cur
+// 2. while 两个链表都不空
+// 3. 比较 val，cur.next 接小的
+// 4. 被接的链表后移，cur 后移
+// 5. 接剩余，返回 dummy.next
+
+function mergeTwoLists(list1: ListNode | null, list2: ListNode | null ): ListNode{
+    let dummy = new ListNode(0)
+    let cur = dummy
+
+    while(list1 !== null && list2 !== null){
+        if(list1.val < list2.val){
+            cur.next = list1
+            list1 = list1.next
+        } else {
+            cur.next = list2
+            list2 = list2.next
+        }
+
+        cur = cur.next
+    }
+
+    cur.next = list1 !== null ? list1 : list2
+
+    return dummy.next
+}
 /**
 1️⃣ 有空的，直接接
 2️⃣ 比头结点，谁小选谁
@@ -1245,10 +1463,21 @@ function merge(left, right){
     const sortedArr = shellSort(arr);
     console.log(sortedArr);
 })([1, 5, 4, 2, 9, 7, 8]);//>> [1, 2, 4, 5, 7, 8, 9]
-
+```
 
 
 ### 找出字符串中不含重复字符的最长子串的长度
+right 负责往右加字符，left 负责删到不重复，窗口合法后更新答案。
+right 每次把一个新字符放进窗口。
+如果放进来后重复了，就移动 left，从左边删除字符。
+一直删到窗口里没有重复字符。
+这时候窗口重新合法，再计算长度。
+新字符重复了，就左边一直删，删到它不重复，再加入它。
+
+窗口里不能有重复字符。
+新字符重复了，就从左边一直删。
+删到不重复，再加入新字符，更新长度。
+`TODO`
 ```js
 var lengthOfLongestSubstring = function(s){
   let arr = [];
@@ -1262,6 +1491,29 @@ var lengthOfLongestSubstring = function(s){
     max = Math.max(arr.length, max)
   }
   return max;
+}
+
+// 拿当前字符
+// 重复就删左边
+// 加入当前字符
+// 更新最大长度
+
+function lengthOfString(s: string): number{
+    let left = 0;
+    let maxLength = 0;
+    let set = new Set<string>()
+
+    for(let right = 0; right<s.length; right++){
+        let windowChar = s[right]
+        while(set.has(windowChar)){
+            set.delete(s[left])
+            left++
+        }
+        set.add(windowChar)
+        maxLength = Math.max(maxLength, right - left + 1)
+    }
+
+    return maxLength
 }
 
 ```
