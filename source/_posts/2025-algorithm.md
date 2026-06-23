@@ -1656,7 +1656,98 @@ function findMiddleNode(head){
 ## 子串
 ### 滑动窗口的最大值
 
+## 哈希
+
+字母异位词分组
+
+```js
+function groupAnagrams(strs: string[]): string[][]{
+    const map = new Map<string, string[]>()
+
+    for(const word of strs){
+        const key = word.split('').sort().join('')
+
+        if(!map.has(key)){
+            map.set(key, [])
+        }
+
+        map.get(key)!.push(word)
+    }
+
+    return Array.from(map.values())
+}
+
+```
+
+最长连续序列
+这个数字前面还有没有人？
+
+1. 把所有数字放进 Set
+
+2. 遍历每个 num
+
+3. 判断：
+   num-1 不存在
+
+   ↓
+
+   说明 num 是起点
+
+4. 从 num 开始一直找：
+
+   num+1
+   num+2
+   num+3
+   ...
+
+5. 统计当前连续序列长度
+
+6. 更新最大长度
+
+7. 返回最大长度
+```js
+function longestConsecutive(nums: number[]): number{
+    const set = new Set(nums)
+    let maxLen = 0;
+    for(const num of set){
+        if(!set.has(num-1)){
+            let currentNum = num;
+            let currentLen = 1
+
+            while(set.has(currentNum + 1)){
+                currentNum++
+                currentLen++
+            }
+
+            maxLen = Math.max(maxLen, currentLen)
+        }
+    }
+
+    return maxLen
+}
+
+
+```
+
 
 
 ### 参考内容
 [github上剑指offer answer](https://github.com/mengshen7hao/offer-answer)
+
+```js
+function twoSum(nums: number[], target: number): number[]{
+    let res = []
+    let map = new Map<number, number>()
+
+    for(let i =0; i<nums.length; i++){
+        let num = nums[i]
+        let need = target = num
+        if(map.has(need)){
+            return [map.get(need)!, i]
+        }
+        map.set(num, i)
+    }
+
+    return []
+}
+```

@@ -1292,3 +1292,59 @@ const instance2 = Singleton.getInstance();
 console.log(instance1 === instance2)
 ```
 
+### 实现一个forEach
+
+```js
+Array.protytype.myForEach = function(callback, thisArg){
+  const arr = this
+  if(typeof callback !== 'function'){
+    throw new TypeError('cb must be function')
+  }
+  for(let i=0; i<arr.length; i++){
+    if(!Reflect.has(arr, i)) continue
+    callback.call(thisArg, arr[i], i, arr)
+  }
+}
+
+// 测试
+[1,2,3].myForEach((v,i)=>console.log(v,i));
+```
+
+
+### 写一个只打印偶数的函数，要求不断调用 next 方法返回下一个值，如果函数参数不是数组，返回 2、4、6、8……
+
+```js
+function createEvenIterator(list) {
+  // 情况1：参数非数组，无限生成2,4,6...
+  if (!Array.isArray(list)) {
+    let num = 0;
+    return {
+      next() {
+        num += 2;
+        return num;
+      }
+    }
+  }
+  // 情况2：参数是数组，遍历数组提取偶数，依次返回
+  const evenList = list.filter(item => item % 2 === 0);
+  let index = 0;
+  return {
+    next() {
+      if (index >= evenList.length) return null;
+      return evenList[index++];
+    }
+  };
+}
+
+// 测试1：非数组
+const infinite = createEvenIterator('test');
+console.log(infinite.next()); //2
+console.log(infinite.next()); //4
+
+// 测试2：数组
+const arrIt = createEvenIterator([1,2,3,4,5,6]);
+console.log(arrIt.next()); //2
+console.log(arrIt.next()); //4
+console.log(arrIt.next()); //6
+console.log(arrIt.next()); //null
+```

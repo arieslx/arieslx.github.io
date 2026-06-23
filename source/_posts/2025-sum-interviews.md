@@ -296,3 +296,235 @@ function threeSum(nums){
 
 ```
 
+### hireEZ二面
+// Given a set of non-overlapping work experiences, insert a work experience into the work experiences (merge if necessary).
+
+// You may assume that the work experiences were initially sorted according to their start times.
+
+// Example 1:
+// Input:
+
+// Experiences:
+// 2015-01-01 ~ 2016-01-01
+// 2017-01-01 ~ 2018-01-01
+
+// newExperience:
+// 2015-12-01 ~ 2016-02-01
+
+// Output:
+// 2015-01-01 ~ 2016-02-01
+// 2017-01-01 ~ 2018-01-01
+
+
+// Example 2:
+// Input:
+
+// Experiences:
+// 2010-01-01 ~ 2012-01-01
+// 2013-01-01 ~ 2015-01-01
+// 2016-01-01 ~ 2017-01-01
+// 2019-01-01 ~ 2020-10-01
+
+// newExperience:
+// 2014-01-01 ~ 2018-01-01
+
+// Output:
+// 2010-01-01 ~ 2012-01-01
+// 2013-01-01 ~ 2018-01-01
+// 2019-01-01 ~ 2020-10-01 
+```js
+function mergeDateRange(originalArrs, insertArr) {
+  const result = [];
+  let [newStart, newEnd] = insertArr.map(date => new Date(date).getTime());
+  let inserted = false;
+
+  for (const [startDate, endDate] of originalArrs) {
+    const start = new Date(startDate).getTime();
+    const end = new Date(endDate).getTime();
+
+    // 当前区间完全在新区间左边
+    if (end < newStart) {
+      result.push([startDate, endDate]);
+    }
+
+    // 当前区间完全在新区间右边
+    else if (start > newEnd) {
+      if (!inserted) {
+        result.push([
+          new Date(newStart).toISOString().slice(0, 10),
+          new Date(newEnd).toISOString().slice(0, 10)
+        ]);
+        inserted = true;
+      }
+
+      result.push([startDate, endDate]);
+    }
+
+    // 有重叠，合并
+    else {
+      newStart = Math.min(newStart, start);
+      newEnd = Math.max(newEnd, end);
+    }
+  }
+
+  if (!inserted) {
+    result.push([
+      new Date(newStart).toISOString().slice(0, 10),
+      new Date(newEnd).toISOString().slice(0, 10)
+    ]);
+  }
+
+  return result;
+}
+
+// end < newStart      // 在左边，无重叠
+// start > newEnd      // 在右边，无重叠
+// 否则就是有重叠
+```
+
+怎么给agent做性能分析呢？从几个方面来谈。日志、token、性能、代码质量
+
+1. 日志分析
+日志是最基础的观测入口，重点不是只存 prompt 和 response，而是记录一次 agent 执行链路。
+可以看：
+用户输入是什么
+agent 做了哪些 planning
+调用了哪些 tool
+每个 tool 的入参、出参、耗时、失败原因
+中间状态有没有被覆盖或丢失
+最终回答是否引用了正确上下文
+是否发生重试、循环、超时、异常 fallback
+比较理想的日志结构是 trace 形式：
+{
+  traceId: 'xxx',
+  userInput: '帮我分析代码性能',
+  steps: [
+    {
+      type: 'plan',
+      content: '先读取文件，再定位热点函数'
+    },
+    {
+      type: 'tool_call',
+      tool: 'read_file',
+      durationMs: 120,
+      success: true
+    },
+    {
+      type: 'tool_call',
+      tool: 'run_tests',
+      durationMs: 3400,
+      success: false,
+      error: 'timeout'
+    }
+  ],
+  finalAnswer: '...'
+}
+日志主要回答一个问题：
+agent 到底是怎么走到这个结果的？
+
+如果结果不好，日志能帮你判断是模型理解错了、上下文缺失、工具失败、还是执行路径太绕。
+2. Token 分析
+token 是 agent 系统的核心成本之一，也会直接影响速度和稳定性。
+重点看：
+单次请求 input token / output token
+上下文里有多少是有效信息
+有多少重复历史、无关文件、冗余日志
+tool result 是否太长
+是否频繁把完整文件、完整错误堆栈塞回模型
+多轮任务里 token 是否线性膨胀
+是否触发 context truncation，导致前文丢失
+常见指标：
+input_tokens
+output_tokens
+total_tokens
+tokens_per_step
+tokens_per_tool_result
+cost_per_task
+context_utilization
+优化方向：
+对长文件做摘要，而不是全量塞入
+tool 输出做截断和结构化
+历史消息做压缩
+只保留和当前任务相关的上下文
+对重复任务缓存中间结果
+一句话：token 分析不是单纯为了省钱，而是为了让 agent 的“注意力”更干净。
+3. 性能分析
+性能可以分成延迟、吞吐和成功率。
+关键指标：
+首 token 延迟：用户多久看到回应
+总耗时：一次任务完整完成要多久
+tool 调用耗时：瓶颈是不是外部工具
+模型调用次数：是不是拆得太碎
+重试次数：是不是经常失败后重跑
+并发能力：多个 agent / 多个用户同时跑是否稳定
+超时率：任务是否容易卡死
+成功率：最终是否真的完成用户目标
+可以拆成链路：
+用户输入
+  -> prompt 构造耗时
+  -> 模型推理耗时
+  -> tool 调用耗时
+  -> 结果解析耗时
+  -> 下一轮模型推理
+  -> 最终输出
+很多 agent 慢，不是模型慢，而是：
+工具串行调用太多
+每次都重新读全量上下文
+失败后无脑重试
+planning 太碎
+没有缓存
+没有并行化独立任务
+所以性能优化可以从这些地方入手：
+并行执行互不依赖的 tool call
+缓存文件索引、embedding、检索结果
+减少无意义模型轮次
+设置最大步数和超时
+对失败路径做明确 fallback
+让 agent 先判断“是否真的需要调用工具”
+4. 代码质量分析
+如果 agent 会写代码，就要评估它产出的代码质量，而不只是“能跑”。
+可以看：
+是否满足需求
+是否破坏已有逻辑
+是否符合项目风格
+是否有重复代码
+是否引入过度抽象
+是否有边界条件处理
+是否有测试
+是否有类型错误、lint 错误
+是否有安全问题
+是否改了不该改的文件
+指标可以分两类。
+自动化指标：
+test pass rate
+lint pass rate
+typecheck pass rate
+build success rate
+coverage diff
+bug regression count
+changed files count
+diff size
+人工/LLM review 指标：
+需求符合度
+可读性
+可维护性
+复杂度
+异常处理
+边界条件
+架构一致性
+一个比较实用的做法是：让 agent 每次提交前跑一套质量门禁：
+1. npm test
+2. npm run lint
+3. npm run typecheck
+4. npm run build
+5. review diff
+然后记录结果，长期统计 agent 的代码质量趋势。
+可以总结成一张表
+维度	关注问题	常用指标
+日志	agent 为什么这么做	trace、tool call、错误、重试
+token	成本和上下文效率	input/output token、上下文利用率
+性能	完成任务快不快、稳不稳	延迟、耗时、成功率、超时率
+代码质量	产物是否可靠	test/lint/typecheck、diff、review
+
+面试里可以这样说：
+我会从可观测性、成本、执行效率和产出质量四个方面分析 agent。日志负责还原执行链路，token 负责衡量上下文效率和成本，性能关注延迟、工具调用和成功率，代码质量则通过测试、lint、typecheck、review 和回归指标来评估。这样能判断 agent 是“想错了”“慢了”“贵了”，还是“产物质量不稳定”。
