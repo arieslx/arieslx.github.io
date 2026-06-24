@@ -382,6 +382,37 @@ function mergeDateRange(originalArrs, insertArr) {
 // 否则就是有重叠
 ```
 
+业务题和leetcode 57 插入区间有点像。[leetcode-57-插入区间](https://leetcode.cn/problems/insert-interval/description/)
+
+左边不重叠先放，中间重叠就合并，右边不重叠再放。
+
+```js
+function insert(intervals: number[][], newInterval: number[]): number[][]{
+  const result: number[][] = []
+  let i = 0;
+
+  while(i < intervals.length && intervals[i][1] < newInterval[0]){
+    result.push(intervals[i])
+    i++
+  }
+
+  while(i < intervals.length && intervals[i][0] <= newInterval[1]){
+    newInterval[0] = Math.min(newInterval[0], intervals[i][0])
+    newInterval[1] = Math.max(newInterval[1], intervals[i][1])
+    i++
+  }
+
+  result.push(newInterval)
+
+  while(i < intervals.length){
+    result.push(intervals[i])
+    i++
+  }
+
+  return result
+}
+```
+
 怎么给agent做性能分析呢？从几个方面来谈。日志、token、性能、代码质量
 
 1. 日志分析
@@ -528,3 +559,73 @@ token	成本和上下文效率	input/output token、上下文利用率
 
 面试里可以这样说：
 我会从可观测性、成本、执行效率和产出质量四个方面分析 agent。日志负责还原执行链路，token 负责衡量上下文效率和成本，性能关注延迟、工具调用和成功率，代码质量则通过测试、lint、typecheck、review 和回归指标来评估。这样能判断 agent 是“想错了”“慢了”“贵了”，还是“产物质量不稳定”。
+
+管理 prompt，我一般建议把它当成“产品里的配置 + 可测试的业务逻辑”来管，而不是散落在代码里的长字符串。
+最实用的一套做法：
+分层
+system prompt：稳定角色、边界、格式要求。
+developer/internal prompt：业务规则、工具调用策略、约束。
+user input：用户本次输入，只做变量注入，不和规则混写。
+examples：少量高质量 few-shot，独立维护。
+
+模板化
+把 prompt 放到单独文件，比如：
+prompts/
+  support_triage.v1.md
+  support_triage.v2.md
+  summarizer.v1.md
+代码里只引用模板名和版本，不直接拼大段文本。
+
+版本管理
+每次改 prompt 都像改代码一样走 Git：
+为什么改
+影响哪些场景
+是否需要回滚
+是否更新测试集
+
+变量显式化
+不要随手字符串拼接，定义清楚输入变量：
+You are summarizing a support ticket.
+
+Ticket:
+{{ticket_text}}
+
+Output format:
+{{output_schema}}
+同时对用户输入做边界包裹，避免用户内容和指令混在一起。
+
+建立测试集
+至少维护一组典型输入：
+正常案例
+边界案例
+恶意注入
+长文本
+空信息/缺字段
+业务上最容易翻车的样本
+每次改 prompt 跑一遍，看输出有没有退化。
+
+记录效果
+对线上 prompt 记录：
+prompt 版本
+model
+temperature 等参数
+输入摘要或样本 id
+输出
+人工评分/用户反馈
+成本和延迟
+
+避免 prompt 越写越肿
+prompt 里只放模型必须知道的规则。大量知识、FAQ、文档内容，优先走 RAG/检索；复杂判断，优先写成代码或工具。
+
+一个简单原则是：
+稳定规则进 system/developer prompt，动态知识进检索，确定性逻辑进代码，实验性表达进版本化模板。
+
+如果你是在做一个 AI 应用，我会推荐最小目录结构：
+src/
+  prompts/
+    answer_question.v1.md
+    classify_intent.v1.md
+  promptRegistry.ts
+  evals/
+    answer_question.cases.json
+这样 prompt 可审查、可回滚、可测试，也不会变成藏在代码里的“魔法咒语”。
