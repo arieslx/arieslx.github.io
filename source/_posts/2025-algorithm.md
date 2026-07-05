@@ -167,6 +167,40 @@ function intersection(num1: number[], num2: number[]): number[] {
 }
 ```
 
+### [169.多数元素](https://leetcode.cn/problems/majority-element/description/)
+```js
+var majorityElement = function(nums) {
+  const map = new Map()
+
+  for (let i = 0; i < nums.length; i++) {
+    const num = nums[i]
+    const count = (map.get(num) || 0) + 1
+
+    map.set(num, count)
+
+    if (count > nums.length / 2) {
+      return num
+    }
+  }
+}
+
+function majorityNums(nums){
+    const map = new Map()
+
+    for (let i = 0; i < nums.length; i++) {
+      const num = nums[i]
+      const count = (map.get(num) || 0) + 1
+
+      map.set(num, count)
+
+      if (count > nums.length / 2) {
+      return num
+    }
+  }
+}
+
+```
+
 ### [三数之和](https://github.com/sisterAn/JavaScript-Algorithms/issues/31)
 
 ```js
