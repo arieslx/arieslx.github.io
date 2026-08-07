@@ -30,3 +30,199 @@
     margin-bottom: 5px
     p
       display: inline
+
+.portfolio-eyebrow
+  margin: 0 0 .4rem
+  color: $color-accent-1
+  text-transform: uppercase
+  letter-spacing: .12em
+  font-size: .72rem
+
+.portfolio-intro
+  margin-bottom: 4rem
+
+  h2
+    margin: 0 0 1rem
+    color: $color-accent-2
+    font-size: 1.65rem
+    line-height: 1.35
+
+  p
+    max-width: 42rem
+    text-align: left
+
+  .portfolio-intro-zh
+    margin-bottom: .25rem
+
+  .portfolio-intro-en
+    margin-top: 0
+    color: $color-meta
+
+.portfolio-social
+  display: flex
+  gap: 1rem
+  margin-top: 1.5rem
+
+  a
+    font-size: 1.1rem
+
+.portfolio
+  margin-bottom: 4rem
+
+.portfolio-heading
+  display: flex
+  justify-content: space-between
+  align-items: flex-end
+  gap: 1rem
+  margin-bottom: 1.25rem
+  border-bottom: 1px dotted $color-border
+
+  h2
+    margin: 0 0 1rem
+    color: $color-accent-2
+    font-size: 1.35rem
+
+  > p
+    margin-bottom: 1rem
+    color: $color-meta
+    white-space: nowrap
+
+.portfolio-filters
+  display: flex
+  flex-wrap: wrap
+  gap: .55rem
+  margin-bottom: 1.5rem
+
+.portfolio-filter
+  padding: .4rem .7rem
+  border: 1px dotted $color-border
+  border-radius: 3px
+  background: transparent
+  color: $color-meta
+  font: inherit
+  font-size: .78rem
+  cursor: pointer
+
+  &:hover,
+  &:focus-visible,
+  &.is-active
+    border-color: $color-accent-1
+    color: $color-accent-1
+
+  &:focus-visible
+    outline: 1px solid $color-accent-1
+    outline-offset: 2px
+
+.portfolio-grid
+  column-count: 2
+  column-gap: 1.25rem
+
+  &.is-single
+    column-count: 1
+    max-width: 36rem
+
+.portfolio-card
+  display: inline-block
+  overflow: hidden
+  margin: 0 0 1.25rem
+  width: 100%
+  border: 1px dotted $color-border
+  border-radius: 4px
+  break-inside: avoid
+  background: $color-background-code
+
+  &[hidden]
+    display: none
+
+  &:hover
+    border-color: $color-accent-1
+
+.content .portfolio-card-link
+  display: block
+  background: none
+
+  &:hover
+    background: none
+
+.portfolio-cover
+  display: block
+  width: 100%
+  height: auto
+  border-bottom: 1px dotted $color-border
+
+.portfolio-card-body
+  padding: 1.25rem
+
+  h3
+    margin: .8rem 0 .1rem
+    color: $color-accent-2
+    font-size: 1.2rem
+
+  p
+    text-align: left
+
+.portfolio-card-meta
+  display: flex
+  justify-content: space-between
+  gap: 1rem
+  color: $color-meta
+  font-size: .72rem
+
+.portfolio-card-title-en
+  margin: 0 0 1rem
+  color: $color-accent-1
+
+.portfolio-card-description-en
+  margin-top: -.7rem
+  color: $color-meta
+
+.portfolio-tags
+  display: flex
+  flex-wrap: wrap
+  gap: .45rem
+  margin: 1rem 0 1.25rem
+  padding: 0
+  list-style: none
+
+  li
+    padding: .2rem .45rem
+    border: 1px dotted $color-border
+    border-radius: 3px
+    color: $color-meta
+    font-size: .7rem
+
+.portfolio-platform
+  color: $color-accent-1
+  font-size: .8rem
+
+.portfolio-writing
+  margin-bottom: 4rem
+  padding-top: 1.5rem
+  border-top: 1px dotted $color-border
+
+.content .portfolio-articles-link
+  display: inline-block
+  margin-top: .4rem
+  color: $color-accent-2
+  font-size: 1.2rem
+
+@media (max-width: 680px)
+  .portfolio-grid
+    column-count: 1
+
+  .portfolio-intro
+    margin-bottom: 3rem
+
+    h2
+      font-size: 1.4rem
+
+  .portfolio-heading
+    align-items: flex-start
+
+  .portfolio-card-body
+    padding: 1rem
+
+@media (prefers-reduced-motion: no-preference)
+  .portfolio-card,
+  .portfolio-filter
+    transition: border-color .18s ease, color .18s ease
