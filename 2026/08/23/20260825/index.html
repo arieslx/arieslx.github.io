@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="女性运行时 × StopWatch 黑客松 Handoff 更新日期：2026-08-25用途：在新会话中继续产品、设计和技术实施。比赛约束：项目必须在黑客松期间从 0 到 1 实现，不复制现成项目、仓库或 SDK 代码。赛前只做调研、需求、设计规范和探针测试；正式代码在比赛开始后重写。  1. 项目定位项目暂定名女性运行时：我怎么又这样了 一句话介绍一个帮助女性低负担看懂身体规律的轻应用：用户不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="女性运行时 × StopWatch 黑客松 Handoff">
+<meta property="og:url" content="http://yoursite.com/2026/08/23/20260825/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="女性运行时 × StopWatch 黑客松 Handoff 更新日期：2026-08-25用途：在新会话中继续产品、设计和技术实施。比赛约束：项目必须在黑客松期间从 0 到 1 实现，不复制现成项目、仓库或 SDK 代码。赛前只做调研、需求、设计规范和探针测试；正式代码在比赛开始后重写。  1. 项目定位项目暂定名女性运行时：我怎么又这样了 一句话介绍一个帮助女性低负担看懂身体规律的轻应用：用户不">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-23T10:00:59.000Z">
+<meta property="article:modified_time" content="2026-08-25T14:39:45.451Z">
+<meta property="article:tag" content="2026">
+<meta property="article:tag" content="hackathon">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>女性运行时 × StopWatch 黑客松 Handoff</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2026/08/23/2026-hackathon-guide/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2026/06/06/2018-hello-world/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2026/08/23/20260825/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2026/08/23/20260825/&text=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2026/08/23/20260825/&is_video=false&description=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=女性运行时 × StopWatch 黑客松 Handoff&body=Check out this article: http://yoursite.com/2026/08/23/20260825/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2026/08/23/20260825/&name=女性运行时 × StopWatch 黑客松 Handoff&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2026/08/23/20260825/&t=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A5%B3%E6%80%A7%E8%BF%90%E8%A1%8C%E6%97%B6-%C3%97-StopWatch-%E9%BB%91%E5%AE%A2%E6%9D%BE-Handoff"><span class="toc-number">1.</span> <span class="toc-text">女性运行时 × StopWatch 黑客松 Handoff</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.1.</span> <span class="toc-text">1. 项目定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9A%82%E5%AE%9A%E5%90%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">项目暂定名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">一句话介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%B7%E5%80%BC"><span class="toc-number">1.1.3.</span> <span class="toc-text">核心价值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%80%E7%BB%88%E6%BC%94%E7%A4%BA%E6%95%85%E4%BA%8B"><span class="toc-number">1.2.</span> <span class="toc-text">2. 最终演示故事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD%E8%8C%83%E5%9B%B4"><span class="toc-number">1.3.</span> <span class="toc-text">3. 产品功能范围</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#StopWatch-%E9%A6%96%E9%A1%B5"><span class="toc-number">1.3.1.</span> <span class="toc-text">StopWatch 首页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E5%A4%A7%E5%9F%BA%E6%9C%AC%E9%9C%80%E6%B1%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">五大基本需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BD%93%E6%97%B6%E9%97%B4%E7%BA%BF"><span class="toc-number">1.3.3.</span> <span class="toc-text">身体时间线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%87%E6%99%83%E5%BD%A9%E8%9B%8B"><span class="toc-number">1.3.4.</span> <span class="toc-text">摇晃彩蛋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%93%9D%E8%89%B2%E8%BA%AB%E4%BD%93%E8%A7%82%E5%AF%9F%E5%B0%8F%E8%B4%B4%E7%BA%B8"><span class="toc-number">1.3.5.</span> <span class="toc-text">蓝色身体观察小贴纸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-StopWatch-%E8%AE%BE%E8%AE%A1%E8%A7%84%E6%A0%BC"><span class="toc-number">1.4.</span> <span class="toc-text">4. StopWatch 设计规格</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A0%E6%9D%90%E5%8E%9F%E5%88%99"><span class="toc-number">1.4.1.</span> <span class="toc-text">素材原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E4%B8%8E%E5%88%B7%E6%96%B0"><span class="toc-number">1.4.2.</span> <span class="toc-text">动画与刷新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84%E5%8E%9F%E5%88%99"><span class="toc-number">1.5.</span> <span class="toc-text">5. 数据架构原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E7%B1%BB%E6%95%B0%E6%8D%AE"><span class="toc-number">1.5.1.</span> <span class="toc-text">四类数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.2.</span> <span class="toc-text">统一事件模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E6%89%93%E6%9E%B6"><span class="toc-number">1.5.3.</span> <span class="toc-text">防止数据打架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StopWatch-%E5%90%8C%E6%AD%A5%E7%8A%B6%E6%80%81"><span class="toc-number">1.5.4.</span> <span class="toc-text">StopWatch 同步状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Apple-Health-%E6%8E%A5%E5%85%A5"><span class="toc-number">1.6.</span> <span class="toc-text">6. Apple Health 接入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E4%B8%8E-Skill"><span class="toc-number">1.7.</span> <span class="toc-text">7. 本地知识库与 Skill</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.7.1.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Monorepo-%E7%BB%93%E6%9E%84"><span class="toc-number">1.7.2.</span> <span class="toc-text">Monorepo 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E7%89%88%E7%9F%A5%E8%AF%86%E8%8C%83%E5%9B%B4"><span class="toc-number">1.7.3.</span> <span class="toc-text">首版知识范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%BE%B9%E7%95%8C"><span class="toc-number">1.7.4.</span> <span class="toc-text">安全边界</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E3%80%81Function-Calling-%E4%B8%8E-MCP"><span class="toc-number">1.8.</span> <span class="toc-text">8. 大模型、Function Calling 与 MCP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9"><span class="toc-number">1.8.1.</span> <span class="toc-text">模型选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-Calling"><span class="toc-number">1.8.2.</span> <span class="toc-text">Function Calling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP"><span class="toc-number">1.8.3.</span> <span class="toc-text">MCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Skill%E3%80%81Function-Calling%E3%80%81MCP-%E5%88%86%E5%B7%A5"><span class="toc-number">1.8.4.</span> <span class="toc-text">Skill、Function Calling、MCP 分工</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-number">1.9.</span> <span class="toc-text">9. 代码结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E9%9D%9E%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F%E7%9A%84%E6%8F%92%E4%BB%B6%E5%BC%8F%E5%88%86%E5%B7%A5"><span class="toc-number">1.10.</span> <span class="toc-text">10. 非技术团队的插件式分工</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%9C%AC%E4%BA%BA%EF%BC%9A%E6%9E%B6%E6%9E%84%E4%B8%8E%E9%9B%86%E6%88%90"><span class="toc-number">1.10.1.</span> <span class="toc-text">用户本人：架构与集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-A%EF%BC%9AWeb-App"><span class="toc-number">1.10.2.</span> <span class="toc-text">队友 A：Web App</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-B%EF%BC%9A%E4%BA%94%E5%A4%A7%E9%9C%80%E6%B1%82%E4%BA%A4%E4%BA%92"><span class="toc-number">1.10.3.</span> <span class="toc-text">队友 B：五大需求交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-C%EF%BC%9A%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93"><span class="toc-number">1.10.4.</span> <span class="toc-text">队友 C：本地知识库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-D%EF%BC%9A%E8%B4%B4%E7%BA%B8%E4%B8%8E%E6%8F%90%E7%A4%BA%E5%8D%A1"><span class="toc-number">1.10.5.</span> <span class="toc-text">队友 D：贴纸与提示卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-E%EF%BC%9A%E8%AF%AD%E9%9F%B3%E4%B8%8E%E7%BB%93%E6%9E%84%E5%8C%96%E6%8F%90%E5%8F%96"><span class="toc-number">1.10.6.</span> <span class="toc-text">队友 E：语音与结构化提取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-API-%E8%8D%89%E6%A1%88"><span class="toc-number">1.11.</span> <span class="toc-text">11. API 草案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E9%BB%91%E5%AE%A2%E6%9D%BE%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.12.</span> <span class="toc-text">12. 黑客松优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#P0%EF%BC%9A%E5%BF%85%E9%A1%BB%E5%AE%8C%E6%88%90"><span class="toc-number">1.12.1.</span> <span class="toc-text">P0：必须完成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P1%EF%BC%9A%E6%97%B6%E9%97%B4%E5%85%81%E8%AE%B8"><span class="toc-number">1.12.2.</span> <span class="toc-text">P1：时间允许</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P2%EF%BC%9A%E5%B1%95%E7%A4%BA%E5%8A%A0%E5%88%86"><span class="toc-number">1.12.3.</span> <span class="toc-text">P2：展示加分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%AE%9E%E6%96%BD%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.13.</span> <span class="toc-text">13. 实施顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%BD%93%E5%89%8D%E5%BE%85%E7%A1%AE%E8%AE%A4%E7%9A%84%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98"><span class="toc-number">1.14.</span> <span class="toc-text">14. 当前待确认的技术问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E6%96%B0%E4%BC%9A%E8%AF%9D%E5%90%AF%E5%8A%A8%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-number">1.15.</span> <span class="toc-text">15. 新会话启动提示词</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        女性运行时 × StopWatch 黑客松 Handoff
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-08-23T10:00:59.000Z" itemprop="datePublished">2026-08-23</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/2026/" rel="tag">2026</a>, <a class="tag-link-link" href="/tags/hackathon/" rel="tag">hackathon</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="女性运行时-×-StopWatch-黑客松-Handoff"><a href="#女性运行时-×-StopWatch-黑客松-Handoff" class="headerlink" title="女性运行时 × StopWatch 黑客松 Handoff"></a>女性运行时 × StopWatch 黑客松 Handoff</h1><blockquote>
+<p>更新日期：2026-08-25<br>用途：在新会话中继续产品、设计和技术实施。<br>比赛约束：项目必须在黑客松期间从 0 到 1 实现，不复制现成项目、仓库或 SDK 代码。赛前只做调研、需求、设计规范和探针测试；正式代码在比赛开始后重写。</p>
+</blockquote>
+<h2 id="1-项目定位"><a href="#1-项目定位" class="headerlink" title="1. 项目定位"></a>1. 项目定位</h2><h3 id="项目暂定名"><a href="#项目暂定名" class="headerlink" title="项目暂定名"></a>项目暂定名</h3><p><strong>女性运行时：我怎么又这样了</strong></p>
+<h3 id="一句话介绍"><a href="#一句话介绍" class="headerlink" title="一句话介绍"></a>一句话介绍</h3><p>一个帮助女性低负担看懂身体规律的轻应用：用户不用填复杂表格，只需对挂脖 StopWatch 说一句话或完成五问，系统将主动感受与 Apple Health 客观数据放入同一条身体时间线，再通过本地知识库生成温和、非诊断的身体观察，并打印一张蓝色单色小贴纸带走。</p>
+<h3 id="核心价值"><a href="#核心价值" class="headerlink" title="核心价值"></a>核心价值</h3><ul>
+<li>不把所有问题归因于经期。</li>
+<li>不强调“哪里又不舒服”，而是提供可执行的小建议和简短安抚。</li>
+<li>Apple Health 说明身体客观发生了什么；StopWatch 记录用户主观感受到了什么。</li>
+<li>本地知识库提供可信依据和安全边界，大模型只负责理解、调用工具与口语化表达。</li>
+<li>产品不是医疗诊断工具。</li>
+</ul>
+<h2 id="2-最终演示故事"><a href="#2-最终演示故事" class="headerlink" title="2. 最终演示故事"></a>2. 最终演示故事</h2><ol>
+<li>用户从 StopWatch 首页点击“说一说”。</li>
+<li>用户说：“下午特别困，还想吃甜的，肩膀有点紧。”</li>
+<li>系统完成语音转写，并提取困倦、想吃甜食和肩颈不适。</li>
+<li>记录与 Apple Health 的睡眠、心率、步数等数据进入同一条身体时间线。</li>
+<li>Agent 查询当天身体摘要与本地知识库。</li>
+<li>Web App 展示主观记录、客观背景和温和建议。</li>
+<li>用户确认后，打印蓝色单色“五行身体观察小贴纸”。</li>
+<li>用户摇晃 StopWatch 时，可以额外揭晓一张“今日身体提示卡”；这是彩蛋，不阻塞核心流程。</li>
+</ol>
+<h2 id="3-产品功能范围"><a href="#3-产品功能范围" class="headerlink" title="3. 产品功能范围"></a>3. 产品功能范围</h2><h3 id="StopWatch-首页"><a href="#StopWatch-首页" class="headerlink" title="StopWatch 首页"></a>StopWatch 首页</h3><p>首页显示三个异形 Icon：</p>
+<ol>
+<li><strong>说一说</strong>：Typeless/语音输入。</li>
+<li><strong>看看自己</strong>：五大基本需求确认。</li>
+<li><strong>今日身体</strong>：今日数据摘要。</li>
+</ol>
+<h3 id="五大基本需求"><a href="#五大基本需求" class="headerlink" title="五大基本需求"></a>五大基本需求</h3><ul>
+<li>困</li>
+<li>饿</li>
+<li>渴</li>
+<li>情绪</li>
+<li>身体不适</li>
+</ul>
+<p>支持简单等级或有/无选择，可以多选，保存为一次完整 <code>checkin</code>。</p>
+<h3 id="身体时间线"><a href="#身体时间线" class="headerlink" title="身体时间线"></a>身体时间线</h3><p>将两类数据按时间放在一起，但明确标记来源：</p>
+<ul>
+<li>自动数据：Apple Health。</li>
+<li>主动记录：StopWatch。</li>
+</ul>
+<p>示例：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">07:30  昨晚睡眠 6小时12分        Apple Health</span><br><span class="line">11:40  饿 · 有点烦                StopWatch</span><br><span class="line">14:20  困4/5 · 想吃甜食           StopWatch</span><br><span class="line">14:25  心率 86                    Apple Health</span><br></pre></td></tr></table></figure>
+
+<h3 id="摇晃彩蛋"><a href="#摇晃彩蛋" class="headerlink" title="摇晃彩蛋"></a>摇晃彩蛋</h3><ul>
+<li>使用 BMI270 检测明显摇晃。</li>
+<li>短震后展示一张身体提示卡。</li>
+<li>有记录时根据当天状态选卡；无数据时使用通用卡。</li>
+<li>失败或不摇晃不影响记录、摘要和打印。</li>
+<li>不做塔罗或运势，命名为“身体提示卡”或“今日身体签”。</li>
+</ul>
+<h3 id="蓝色身体观察小贴纸"><a href="#蓝色身体观察小贴纸" class="headerlink" title="蓝色身体观察小贴纸"></a>蓝色身体观察小贴纸</h3><p>打印机当前只能使用蓝色单色耗材。</p>
+<p>五行结构：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">今天的我：</span><br><span class="line">身体在说：</span><br><span class="line">我观察到：</span><br><span class="line">可以试试：</span><br><span class="line">今日身体签：</span><br></pre></td></tr></table></figure>
+
+<p>设计要求：纯蓝与留白；不用灰阶、透明度、渐变；用字号、粗细、边框和间距建立层级；IP 需提供蓝色单色线稿版。</p>
+<h2 id="4-StopWatch-设计规格"><a href="#4-StopWatch-设计规格" class="headerlink" title="4. StopWatch 设计规格"></a>4. StopWatch 设计规格</h2><ul>
+<li>官方真实屏幕：圆形 AMOLED，<code>466 × 466 px</code>。</li>
+<li>Figma 主画板：<code>466 × 466 px</code>，单位为 px，不是 mm。</li>
+<li>物理屏幕圆心：<code>(233, 233)</code>。</li>
+<li>仓库参考方案：内部居中 <code>450 × 450 px</code> UI Frame，位置 <code>x=8, y=8</code>。</li>
+<li>内部 Frame 圆心：<code>(225, 225)</code>。</li>
+<li>重要内容建议放在半径 <code>200 px</code> 内。</li>
+<li>普通视觉边界建议不超过半径 <code>209 px</code>。</li>
+<li>装饰可以延伸到半径 <code>225 px</code>。</li>
+</ul>
+<h3 id="素材原则"><a href="#素材原则" class="headerlink" title="素材原则"></a>素材原则</h3><ul>
+<li>圆、线、按钮、进度条、波形优先由 C++ 绘制。</li>
+<li>IP、插画等复杂内容使用最终显示尺寸的透明 PNG8。</li>
+<li>不在设备端解析 SVG；SVG/Figma 只作为设计源文件。</li>
+<li>不导出 2×/3× 大图再让硬件缩放。</li>
+<li>避免模糊阴影、照片纹理、大面积透明渐变。</li>
+<li>中文文字不要做成图片。</li>
+<li>动态元素必须能被一个独立的小矩形框住，矩形外内容进入页面时只画一次。</li>
+</ul>
+<h3 id="动画与刷新"><a href="#动画与刷新" class="headerlink" title="动画与刷新"></a>动画与刷新</h3><ul>
+<li>动画不只限于逐帧：优先代码动画和局部部件动画。</li>
+<li>录音时间：1fps。</li>
+<li>波形：5–8fps。</li>
+<li>等待动画：2–4fps。</li>
+<li>成功动画：3–6帧，6–10fps，持续不超过1秒。</li>
+<li>IP 动画优先只动眼睛、嘴巴或气泡。</li>
+<li>待机页面无变化时不刷新。</li>
+<li>交互结束后尽快降低亮度或熄屏。</li>
+<li>AMOLED 待机尽量使用黑色背景，减少亮色面积。</li>
+</ul>
+<p>参考仓库 <code>isalicema/m5-stopwatch-dashboard</code> 只用于理解圆屏安全区、扩大触摸热区、局部刷新和固件/Bridge 分层；不复制其代码。该仓库本身约有 6700 行固件和完整 Mac Bridge，不适合作为比赛起点。</p>
+<h2 id="5-数据架构原则"><a href="#5-数据架构原则" class="headerlink" title="5. 数据架构原则"></a>5. 数据架构原则</h2><h3 id="四类数据"><a href="#四类数据" class="headerlink" title="四类数据"></a>四类数据</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+<th>主要来源</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>measurement</code></td>
+<td>心率、HRV、睡眠、步数、腕温</td>
+<td>Apple Health</td>
+</tr>
+<tr>
+<td><code>checkin</code></td>
+<td>困、饿、渴、情绪、不适</td>
+<td>StopWatch</td>
+</tr>
+<tr>
+<td><code>activity</code></td>
+<td>吃饭、喝水、运动、服药</td>
+<td>StopWatch / HealthKit</td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td>“睡眠较少时下午更容易困”</td>
+<td>系统推导</td>
+</tr>
+</tbody></table>
+<p>客观测量与主观感受不能互相覆盖。例如“睡眠6小时12分”和“下午困4/5”是两条事件，只在分析层建立关联。</p>
+<h3 id="统一事件模型"><a href="#统一事件模型" class="headerlink" title="统一事件模型"></a>统一事件模型</h3><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;event_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;stopwatch-a3f2-1724581200&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;event_type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;checkin&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;metric&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sleepiness&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;unit&quot;</span><span class="punctuation">:</span> <span class="string">&quot;level_1_5&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;start_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026-08-25T14:20:00+09:00&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;end_at&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;source&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;system&quot;</span><span class="punctuation">:</span> <span class="string">&quot;stopwatch&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;device_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;m5-001&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;app&quot;</span><span class="punctuation">:</span> <span class="string">&quot;body-runtime&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;context&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;raw_text&quot;</span><span class="punctuation">:</span> <span class="string">&quot;下午特别困，还有点想吃甜的&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tags&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;困&quot;</span><span class="punctuation">,</span> <span class="string">&quot;想吃甜食&quot;</span><span class="punctuation">]</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;recorded_at&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2026-08-25T14:20:05+09:00&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="防止数据打架"><a href="#防止数据打架" class="headerlink" title="防止数据打架"></a>防止数据打架</h3><ul>
+<li>每条数据永远保留来源。</li>
+<li>不使用 <code>metric + time</code> 作为唯一键。</li>
+<li>优先使用 <code>source.system + source_sample_id</code>。</li>
+<li>StopWatch 在本地生成固定 <code>event_id</code>，失败重试时不能重新生成。</li>
+<li>心率、HRV、睡眠、步数以 Apple Health 为主来源。</li>
+<li>困、饿、渴、情绪、不适以 StopWatch 为主来源。</li>
+<li>不同时开启多个长期上传同一累计指标的链路，防止步数、距离、活动能量翻倍。</li>
+<li>原始事件只追加；结构化视图和每日摘要可以重新计算。</li>
+<li>AI 推导结果不能冒充客观事实。</li>
+</ul>
+<h3 id="StopWatch-同步状态"><a href="#StopWatch-同步状态" class="headerlink" title="StopWatch 同步状态"></a>StopWatch 同步状态</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pending → uploading → synced</span><br><span class="line">                  ↘ failed → retry</span><br></pre></td></tr></table></figure>
+
+<p>服务端应返回逐条 ACK：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;accepted&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;event-001&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;duplicated&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;rejected&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-Apple-Health-接入"><a href="#6-Apple-Health-接入" class="headerlink" title="6. Apple Health 接入"></a>6. Apple Health 接入</h2><p>参考 <code>KKarsyline/Collar_watch</code> 的思想，但比赛期间自行实现，不复制代码。</p>
+<p>首版指标：</p>
+<ul>
+<li>睡眠时长</li>
+<li>心率</li>
+<li>静息心率</li>
+<li>HRV</li>
+<li>步数</li>
+<li>运动时间</li>
+</ul>
+<p>后置指标：腕温、呼吸频率、血氧。</p>
+<p>同步规则：</p>
+<ol>
+<li>使用 HealthKit Anchor 增量读取。</li>
+<li>上传统一数据接口。</li>
+<li>服务端返回成功后才提交 Anchor。</li>
+<li>失败时不推进 Anchor，下次补传。</li>
+<li>服务端根据源 Sample ID 幂等去重。</li>
+<li>睡眠可以查询最近48小时完整片段并重新聚合，避免只得到半段睡眠。</li>
+</ol>
+<p>待确定：Apple Health 最终由独立 watchOS App、iPhone App、简化上传程序还是比赛 Mock 接入。</p>
+<h2 id="7-本地知识库与-Skill"><a href="#7-本地知识库与-Skill" class="headerlink" title="7. 本地知识库与 Skill"></a>7. 本地知识库与 Skill</h2><h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><ul>
+<li>本地知识库保存公共知识、来源、安全边界和提示卡。</li>
+<li>Skill 规定如何查询知识、如何表达以及哪些结论不能推断。</li>
+<li>用户健康记录不进入公共知识库。</li>
+<li>首版不用向量数据库，采用确定性标签匹配和规则排序。</li>
+</ul>
+<h3 id="Monorepo-结构"><a href="#Monorepo-结构" class="headerlink" title="Monorepo 结构"></a>Monorepo 结构</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">packages/body-knowledge/</span><br><span class="line">├── cards/</span><br><span class="line">│   ├── sleep.json</span><br><span class="line">│   ├── hunger.json</span><br><span class="line">│   ├── hydration.json</span><br><span class="line">│   ├── mood.json</span><br><span class="line">│   ├── discomfort.json</span><br><span class="line">│   └── cycle.json</span><br><span class="line">├── sources/</span><br><span class="line">│   └── sources.json</span><br><span class="line">├── safety/</span><br><span class="line">│   └── red-flags.json</span><br><span class="line">└── index.ts</span><br><span class="line"></span><br><span class="line">packages/body-observation-skill/</span><br><span class="line">├── SKILL.md</span><br><span class="line">└── references/</span><br></pre></td></tr></table></figure>
+
+<h3 id="首版知识范围"><a href="#首版知识范围" class="headerlink" title="首版知识范围"></a>首版知识范围</h3><p>准备约18–30张卡：</p>
+<ul>
+<li>困：3张</li>
+<li>饿/想吃东西：3张</li>
+<li>渴：2张</li>
+<li>情绪/压力：3张</li>
+<li>身体不适：3张</li>
+<li>女性周期：3张</li>
+<li>综合自查：1张以上</li>
+</ul>
+<p>知识卡示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sleep-energy-001&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;topic&quot;</span><span class="punctuation">:</span> <span class="string">&quot;sleep&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;睡眠不足与白天困倦&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;triggers&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;困&quot;</span><span class="punctuation">,</span> <span class="string">&quot;疲惫&quot;</span><span class="punctuation">,</span> <span class="string">&quot;睡眠不足&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;summary&quot;</span><span class="punctuation">:</span> <span class="string">&quot;睡眠时间较短时，白天更容易出现困倦和注意力下降。&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;suggestions&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;降低今天的任务强度&quot;</span><span class="punctuation">,</span> <span class="string">&quot;短暂活动或休息&quot;</span><span class="punctuation">,</span> <span class="string">&quot;今晚提前收尾&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;avoid_claims&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;不能据此判断睡眠障碍&quot;</span><span class="punctuation">,</span> <span class="string">&quot;不能断定困倦只由睡眠不足导致&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;source_ids&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;source-001&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;evidence_level&quot;</span><span class="punctuation">:</span> <span class="string">&quot;general_guidance&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">1</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="安全边界"><a href="#安全边界" class="headerlink" title="安全边界"></a>安全边界</h3><ul>
+<li>不提供诊断。</li>
+<li>不解释异常心率的具体病因。</li>
+<li>不根据单次数据判断内分泌问题。</li>
+<li>不把所有情绪和食欲变化归因于月经周期。</li>
+<li>使用“可能”“同时出现”“可以试试”，不使用“说明你”“一定是……导致”。</li>
+<li>胸痛、呼吸困难、晕厥、意识异常、持续剧烈疼痛、严重过敏等情况停止普通提示，改为明确就医提醒。</li>
+</ul>
+<h2 id="8-大模型、Function-Calling-与-MCP"><a href="#8-大模型、Function-Calling-与-MCP" class="headerlink" title="8. 大模型、Function Calling 与 MCP"></a>8. 大模型、Function Calling 与 MCP</h2><h3 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h3><p>用户计划使用 DeepSeek 或豆包，不使用 OpenAI 作为默认方案。</p>
+<p>推荐选择：</p>
+<ul>
+<li>Typeless 已输出文字：只接一个文本模型，DeepSeek 或豆包二选一。</li>
+<li>StopWatch 上传音频：豆包语音识别 + DeepSeek 文本，或全豆包方案。</li>
+<li>比赛期间不要同时让 DeepSeek 与豆包分析同一条记录。</li>
+</ul>
+<p>建议实现供应商抽象：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">LLMProvider</span> &#123;</span><br><span class="line">  <span class="title function_">extractCheckin</span>(<span class="attr">text</span>: <span class="built_in">string</span>): <span class="title class_">Promise</span>&lt;<span class="title class_">BodyCheckin</span>&gt;;</span><br><span class="line">  <span class="title function_">runObservation</span>(</span><br><span class="line">    <span class="attr">input</span>: <span class="title class_">ObservationInput</span>,</span><br><span class="line">    <span class="attr">tools</span>: <span class="title class_">ToolDefinition</span>[]</span><br><span class="line">  ): <span class="title class_">Promise</span>&lt;<span class="title class_">ObservationResult</span>&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">providers/</span><br><span class="line">├── deepseek.ts</span><br><span class="line">├── doubao.ts</span><br><span class="line">└── mock.ts</span><br></pre></td></tr></table></figure>
+
+<p>现场通过环境变量切换：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LLM_PROVIDER=deepseek</span><br></pre></td></tr></table></figure>
+
+<p>必须准备 <code>mock</code> 降级，用预置数据保证现场演示。</p>
+<h3 id="Function-Calling"><a href="#Function-Calling" class="headerlink" title="Function Calling"></a>Function Calling</h3><p>适合的工具：</p>
+<ul>
+<li><code>health_now</code>：获取当天紧凑健康摘要。</li>
+<li><code>health_timeline</code>：查询一段时间内的客观数据和主动记录。</li>
+<li><code>knowledge_search</code>：检索本地知识卡和安全边界。</li>
+<li><code>generate_sticker</code>：生成贴纸结构与预览。</li>
+</ul>
+<p>不交给模型的内容：鉴权、去重、事件ID、HealthKit Anchor、同步重试、累计指标计算、最终安全拦截、直接打印。</p>
+<h3 id="MCP"><a href="#MCP" class="headerlink" title="MCP"></a>MCP</h3><p>MCP 不用于 StopWatch 上传，也不代替 REST API。它负责把健康数据和知识库作为可复用的 Agent 工具暴露出去。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">apps/mcp-server/</span><br><span class="line">└── src/tools/</span><br><span class="line">    ├── health-now.ts</span><br><span class="line">    ├── health-timeline.ts</span><br><span class="line">    ├── knowledge-search.ts</span><br><span class="line">    └── sticker-preview.ts</span><br></pre></td></tr></table></figure>
+
+<p>即使 DeepSeek 或豆包不原生直连 MCP，也可以在 TypeScript Agent Runtime 中把 MCP 工具转换成 Function Calling Schema，执行工具后再把结果返回模型。</p>
+<h3 id="Skill、Function-Calling、MCP-分工"><a href="#Skill、Function-Calling、MCP-分工" class="headerlink" title="Skill、Function Calling、MCP 分工"></a>Skill、Function Calling、MCP 分工</h3><table>
+<thead>
+<tr>
+<th>层</th>
+<th>责任</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Skill</td>
+<td>分析步骤、语气、安全边界、输出格式</td>
+</tr>
+<tr>
+<td>Function Calling</td>
+<td>决定当前调用哪些业务工具</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>提供可复用的数据与能力</td>
+</tr>
+<tr>
+<td>本地知识库</td>
+<td>保存事实卡、来源和规则</td>
+</tr>
+<tr>
+<td>REST API</td>
+<td>设备与应用的数据通信</td>
+</tr>
+</tbody></table>
+<h2 id="9-代码结构"><a href="#9-代码结构" class="headerlink" title="9. 代码结构"></a>9. 代码结构</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">apps/</span><br><span class="line">├── web/                    # 身体时间线 Web App</span><br><span class="line">├── api/                    # 数据、Agent、打印接口</span><br><span class="line">├── mcp-server/             # Agent 可复用工具</span><br><span class="line">└── firmware/               # StopWatch C++ 固件</span><br><span class="line"></span><br><span class="line">packages/</span><br><span class="line">├── shared-schema/          # 全项目唯一数据类型</span><br><span class="line">├── body-knowledge/         # 本地知识库</span><br><span class="line">├── body-observation-skill/ # Agent 流程与表达规则</span><br><span class="line">├── feature-sdk/            # 功能模块接口</span><br><span class="line">└── ui/                     # 共享 UI 与主题</span><br><span class="line"></span><br><span class="line">plugins/</span><br><span class="line">├── voice-input/</span><br><span class="line">├── body-checkin/</span><br><span class="line">├── health-dashboard/</span><br><span class="line">├── knowledge-cards/</span><br><span class="line">├── daily-summary/</span><br><span class="line">├── sticker-print/</span><br><span class="line">└── shake-card/</span><br></pre></td></tr></table></figure>
+
+<p>这里 <code>plugins/</code> 是团队并行开发的 Feature Modules，不等于 MCP 插件。</p>
+<h2 id="10-非技术团队的插件式分工"><a href="#10-非技术团队的插件式分工" class="headerlink" title="10. 非技术团队的插件式分工"></a>10. 非技术团队的插件式分工</h2><h3 id="用户本人：架构与集成"><a href="#用户本人：架构与集成" class="headerlink" title="用户本人：架构与集成"></a>用户本人：架构与集成</h3><ul>
+<li>初始化 monorepo。</li>
+<li>定义 <code>shared-schema</code> 与 <code>feature-sdk</code>。</li>
+<li>建立 API 空壳和 Mock 数据。</li>
+<li>管理环境变量与根配置。</li>
+<li>负责固件和真实通信。</li>
+<li>审核与合并 PR。</li>
+</ul>
+<p>其他人禁止直接修改共享 Schema、核心 API、固件和根配置。</p>
+<h3 id="队友-A：Web-App"><a href="#队友-A：Web-App" class="headerlink" title="队友 A：Web App"></a>队友 A：Web App</h3><ul>
+<li>今日摘要。</li>
+<li>主客观身体时间线。</li>
+<li>数据卡片。</li>
+<li>打印入口。</li>
+<li>仅通过 Mock API 开发。</li>
+</ul>
+<h3 id="队友-B：五大需求交互"><a href="#队友-B：五大需求交互" class="headerlink" title="队友 B：五大需求交互"></a>队友 B：五大需求交互</h3><ul>
+<li>五问选择页面。</li>
+<li>状态与等级。</li>
+<li>保存成功反馈。</li>
+<li>输出固定 <code>BodyCheckinInput</code>。</li>
+</ul>
+<h3 id="队友-C：本地知识库"><a href="#队友-C：本地知识库" class="headerlink" title="队友 C：本地知识库"></a>队友 C：本地知识库</h3><ul>
+<li>知识卡。</li>
+<li>来源。</li>
+<li>安全红线。</li>
+<li>提示卡与贴纸文案。</li>
+<li>测试输入样例。</li>
+</ul>
+<h3 id="队友-D：贴纸与提示卡"><a href="#队友-D：贴纸与提示卡" class="headerlink" title="队友 D：贴纸与提示卡"></a>队友 D：贴纸与提示卡</h3><ul>
+<li>五行蓝色单色贴纸。</li>
+<li>圆屏彩色提示卡。</li>
+<li>单色线稿版。</li>
+<li>HTML/SVG 打印预览。</li>
+</ul>
+<h3 id="队友-E：语音与结构化提取"><a href="#队友-E：语音与结构化提取" class="headerlink" title="队友 E：语音与结构化提取"></a>队友 E：语音与结构化提取</h3><ul>
+<li>接收音频或文本。</li>
+<li>转写。</li>
+<li>结构化提取。</li>
+<li>10组测试语料。</li>
+</ul>
+<p>每个模块目录包含：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">plugins/&lt;module&gt;/</span><br><span class="line">├── README.md</span><br><span class="line">├── SPEC.md</span><br><span class="line">├── src/</span><br><span class="line">├── mock/</span><br><span class="line">└── tests/</span><br></pre></td></tr></table></figure>
+
+<p>统一约束：一个插件一个分支、一个 PR；不改其他目录；不增加第二套字段；不升级全局依赖；必须提供 Mock、截图和修改清单。</p>
+<h2 id="11-API-草案"><a href="#11-API-草案" class="headerlink" title="11. API 草案"></a>11. API 草案</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">POST /api/events/batch</span><br><span class="line">GET  /api/today</span><br><span class="line">GET  /api/timeline</span><br><span class="line">POST /api/transcribe</span><br><span class="line">POST /api/extract</span><br><span class="line">POST /api/sticker/preview</span><br><span class="line">POST /api/sticker/print</span><br></pre></td></tr></table></figure>
+
+<p>贴纸打印必须由用户显式点击确认，Agent 不得自动执行真实打印。</p>
+<h2 id="12-黑客松优先级"><a href="#12-黑客松优先级" class="headerlink" title="12. 黑客松优先级"></a>12. 黑客松优先级</h2><h3 id="P0：必须完成"><a href="#P0：必须完成" class="headerlink" title="P0：必须完成"></a>P0：必须完成</h3><ul>
+<li>StopWatch 三入口首页。</li>
+<li>至少一种真实主动记录方式。</li>
+<li>文本/语音转写和结构化提取。</li>
+<li>Apple Health 至少提供睡眠、心率、步数；若真链路来不及，准备可信 Mock。</li>
+<li>统一事件结构、来源标记与幂等去重。</li>
+<li>Web App 今日时间线。</li>
+<li>本地知识卡检索。</li>
+<li>身体观察输出。</li>
+<li>蓝色单色小贴纸预览和打印。</li>
+<li>模型 Mock 降级。</li>
+</ul>
+<h3 id="P1：时间允许"><a href="#P1：时间允许" class="headerlink" title="P1：时间允许"></a>P1：时间允许</h3><ul>
+<li>完整五问。</li>
+<li>主客观时间关联。</li>
+<li>卡牌模板匹配。</li>
+<li>记录编辑。</li>
+<li>断网队列和自动补传。</li>
+<li>MCP Server。</li>
+</ul>
+<h3 id="P2：展示加分"><a href="#P2：展示加分" class="headerlink" title="P2：展示加分"></a>P2：展示加分</h3><ul>
+<li>摇晃身体提示卡。</li>
+<li>IP 局部动画。</li>
+<li>更完整睡眠阶段。</li>
+<li>更多 HealthKit 指标。</li>
+<li>Skill 完整封装。</li>
+<li>向量检索（比赛后优先）。</li>
+</ul>
+<h2 id="13-实施顺序"><a href="#13-实施顺序" class="headerlink" title="13. 实施顺序"></a>13. 实施顺序</h2><ol>
+<li>创建 monorepo、Schema、插件模板和 Mock。</li>
+<li>先用文本跑通：结构化提取 → 知识检索 → 身体观察 → 贴纸。</li>
+<li>并行开发 Web、五问、知识卡和贴纸预览。</li>
+<li>实现统一事件 API 和本地存储。</li>
+<li>接 StopWatch 真实上传。</li>
+<li>接 Apple Health 或可靠演示数据。</li>
+<li>最后加入 MCP、摇晃彩蛋和动画。</li>
+</ol>
+<h2 id="14-当前待确认的技术问题"><a href="#14-当前待确认的技术问题" class="headerlink" title="14. 当前待确认的技术问题"></a>14. 当前待确认的技术问题</h2><ol>
+<li>Apple Health 最终从 watchOS App、iPhone App、简化上传程序还是 Mock 读取？</li>
+<li>StopWatch 语音是直接 Wi-Fi 上传音频、USB 传 Mac，还是只触发 Typeless？</li>
+<li>Typeless 只负责转文字，还是还负责把文字输入 Web？</li>
+<li>打印机具体型号、连接方式和接受的数据格式是什么？</li>
+<li>服务端首版是否采用 TypeScript + SQLite + Drizzle？</li>
+<li>比赛现场是否有稳定 Wi-Fi？</li>
+<li>文本模型最终选择 DeepSeek 还是豆包？</li>
+<li>是否需要在比赛现场真实展示 Apple Health 权限授权和增量同步？</li>
+</ol>
+<h2 id="15-新会话启动提示词"><a href="#15-新会话启动提示词" class="headerlink" title="15. 新会话启动提示词"></a>15. 新会话启动提示词</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">请阅读这份 handoff，并继续帮助我完成“女性运行时 × M5Stack StopWatch”黑客松项目。</span><br><span class="line"></span><br><span class="line">请遵守以下原则：</span><br><span class="line">1. 比赛项目必须从零实现，不复制参考仓库代码。</span><br><span class="line">2. 优先保证核心演示链路，不提前扩张功能。</span><br><span class="line">3. Apple Health 是客观数据，StopWatch 是主观记录，两者不互相覆盖。</span><br><span class="line">4. 本地知识库负责依据和安全边界，大模型负责理解、Function Calling 和口语化表达。</span><br><span class="line">5. 输出非诊断、温和、积极、低焦虑。</span><br><span class="line">6. 每次提出开发任务时标注 P0/P1/P2、输入输出、验收标准和允许修改的目录。</span><br><span class="line">7. 如果关键技术条件尚未确认，先指出它会影响哪些架构决策。</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A5%B3%E6%80%A7%E8%BF%90%E8%A1%8C%E6%97%B6-%C3%97-StopWatch-%E9%BB%91%E5%AE%A2%E6%9D%BE-Handoff"><span class="toc-number">1.</span> <span class="toc-text">女性运行时 × StopWatch 黑客松 Handoff</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.1.</span> <span class="toc-text">1. 项目定位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%9A%82%E5%AE%9A%E5%90%8D"><span class="toc-number">1.1.1.</span> <span class="toc-text">项目暂定名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.2.</span> <span class="toc-text">一句话介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E4%BB%B7%E5%80%BC"><span class="toc-number">1.1.3.</span> <span class="toc-text">核心价值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9C%80%E7%BB%88%E6%BC%94%E7%A4%BA%E6%95%85%E4%BA%8B"><span class="toc-number">1.2.</span> <span class="toc-text">2. 最终演示故事</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD%E8%8C%83%E5%9B%B4"><span class="toc-number">1.3.</span> <span class="toc-text">3. 产品功能范围</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#StopWatch-%E9%A6%96%E9%A1%B5"><span class="toc-number">1.3.1.</span> <span class="toc-text">StopWatch 首页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E5%A4%A7%E5%9F%BA%E6%9C%AC%E9%9C%80%E6%B1%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">五大基本需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BD%93%E6%97%B6%E9%97%B4%E7%BA%BF"><span class="toc-number">1.3.3.</span> <span class="toc-text">身体时间线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%87%E6%99%83%E5%BD%A9%E8%9B%8B"><span class="toc-number">1.3.4.</span> <span class="toc-text">摇晃彩蛋</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%93%9D%E8%89%B2%E8%BA%AB%E4%BD%93%E8%A7%82%E5%AF%9F%E5%B0%8F%E8%B4%B4%E7%BA%B8"><span class="toc-number">1.3.5.</span> <span class="toc-text">蓝色身体观察小贴纸</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-StopWatch-%E8%AE%BE%E8%AE%A1%E8%A7%84%E6%A0%BC"><span class="toc-number">1.4.</span> <span class="toc-text">4. StopWatch 设计规格</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A0%E6%9D%90%E5%8E%9F%E5%88%99"><span class="toc-number">1.4.1.</span> <span class="toc-text">素材原则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E7%94%BB%E4%B8%8E%E5%88%B7%E6%96%B0"><span class="toc-number">1.4.2.</span> <span class="toc-text">动画与刷新</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84%E5%8E%9F%E5%88%99"><span class="toc-number">1.5.</span> <span class="toc-text">5. 数据架构原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E7%B1%BB%E6%95%B0%E6%8D%AE"><span class="toc-number">1.5.1.</span> <span class="toc-text">四类数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.5.2.</span> <span class="toc-text">统一事件模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E6%AD%A2%E6%95%B0%E6%8D%AE%E6%89%93%E6%9E%B6"><span class="toc-number">1.5.3.</span> <span class="toc-text">防止数据打架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#StopWatch-%E5%90%8C%E6%AD%A5%E7%8A%B6%E6%80%81"><span class="toc-number">1.5.4.</span> <span class="toc-text">StopWatch 同步状态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Apple-Health-%E6%8E%A5%E5%85%A5"><span class="toc-number">1.6.</span> <span class="toc-text">6. Apple Health 接入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93%E4%B8%8E-Skill"><span class="toc-number">1.7.</span> <span class="toc-text">7. 本地知识库与 Skill</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.7.1.</span> <span class="toc-text">定位</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Monorepo-%E7%BB%93%E6%9E%84"><span class="toc-number">1.7.2.</span> <span class="toc-text">Monorepo 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A6%96%E7%89%88%E7%9F%A5%E8%AF%86%E8%8C%83%E5%9B%B4"><span class="toc-number">1.7.3.</span> <span class="toc-text">首版知识范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E8%BE%B9%E7%95%8C"><span class="toc-number">1.7.4.</span> <span class="toc-text">安全边界</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E3%80%81Function-Calling-%E4%B8%8E-MCP"><span class="toc-number">1.8.</span> <span class="toc-text">8. 大模型、Function Calling 与 MCP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E9%80%89%E6%8B%A9"><span class="toc-number">1.8.1.</span> <span class="toc-text">模型选择</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Function-Calling"><span class="toc-number">1.8.2.</span> <span class="toc-text">Function Calling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MCP"><span class="toc-number">1.8.3.</span> <span class="toc-text">MCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Skill%E3%80%81Function-Calling%E3%80%81MCP-%E5%88%86%E5%B7%A5"><span class="toc-number">1.8.4.</span> <span class="toc-text">Skill、Function Calling、MCP 分工</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-number">1.9.</span> <span class="toc-text">9. 代码结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E9%9D%9E%E6%8A%80%E6%9C%AF%E5%9B%A2%E9%98%9F%E7%9A%84%E6%8F%92%E4%BB%B6%E5%BC%8F%E5%88%86%E5%B7%A5"><span class="toc-number">1.10.</span> <span class="toc-text">10. 非技术团队的插件式分工</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E6%9C%AC%E4%BA%BA%EF%BC%9A%E6%9E%B6%E6%9E%84%E4%B8%8E%E9%9B%86%E6%88%90"><span class="toc-number">1.10.1.</span> <span class="toc-text">用户本人：架构与集成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-A%EF%BC%9AWeb-App"><span class="toc-number">1.10.2.</span> <span class="toc-text">队友 A：Web App</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-B%EF%BC%9A%E4%BA%94%E5%A4%A7%E9%9C%80%E6%B1%82%E4%BA%A4%E4%BA%92"><span class="toc-number">1.10.3.</span> <span class="toc-text">队友 B：五大需求交互</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-C%EF%BC%9A%E6%9C%AC%E5%9C%B0%E7%9F%A5%E8%AF%86%E5%BA%93"><span class="toc-number">1.10.4.</span> <span class="toc-text">队友 C：本地知识库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-D%EF%BC%9A%E8%B4%B4%E7%BA%B8%E4%B8%8E%E6%8F%90%E7%A4%BA%E5%8D%A1"><span class="toc-number">1.10.5.</span> <span class="toc-text">队友 D：贴纸与提示卡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%8F%8B-E%EF%BC%9A%E8%AF%AD%E9%9F%B3%E4%B8%8E%E7%BB%93%E6%9E%84%E5%8C%96%E6%8F%90%E5%8F%96"><span class="toc-number">1.10.6.</span> <span class="toc-text">队友 E：语音与结构化提取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-API-%E8%8D%89%E6%A1%88"><span class="toc-number">1.11.</span> <span class="toc-text">11. API 草案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E9%BB%91%E5%AE%A2%E6%9D%BE%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">1.12.</span> <span class="toc-text">12. 黑客松优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#P0%EF%BC%9A%E5%BF%85%E9%A1%BB%E5%AE%8C%E6%88%90"><span class="toc-number">1.12.1.</span> <span class="toc-text">P0：必须完成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P1%EF%BC%9A%E6%97%B6%E9%97%B4%E5%85%81%E8%AE%B8"><span class="toc-number">1.12.2.</span> <span class="toc-text">P1：时间允许</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#P2%EF%BC%9A%E5%B1%95%E7%A4%BA%E5%8A%A0%E5%88%86"><span class="toc-number">1.12.3.</span> <span class="toc-text">P2：展示加分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#13-%E5%AE%9E%E6%96%BD%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.13.</span> <span class="toc-text">13. 实施顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#14-%E5%BD%93%E5%89%8D%E5%BE%85%E7%A1%AE%E8%AE%A4%E7%9A%84%E6%8A%80%E6%9C%AF%E9%97%AE%E9%A2%98"><span class="toc-number">1.14.</span> <span class="toc-text">14. 当前待确认的技术问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#15-%E6%96%B0%E4%BC%9A%E8%AF%9D%E5%90%AF%E5%8A%A8%E6%8F%90%E7%A4%BA%E8%AF%8D"><span class="toc-number">1.15.</span> <span class="toc-text">15. 新会话启动提示词</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2026/08/23/20260825/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2026/08/23/20260825/&text=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2026/08/23/20260825/&is_video=false&description=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=女性运行时 × StopWatch 黑客松 Handoff&body=Check out this article: http://yoursite.com/2026/08/23/20260825/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2026/08/23/20260825/&title=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2026/08/23/20260825/&name=女性运行时 × StopWatch 黑客松 Handoff&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2026/08/23/20260825/&t=女性运行时 × StopWatch 黑客松 Handoff"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2026 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
