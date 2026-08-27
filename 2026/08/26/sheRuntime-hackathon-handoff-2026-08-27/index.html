@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="sheRuntime 黑客松 Handoff 更新时间：2026-08-27（Asia&#x2F;Tokyo）路演时间：2026-08-29当前阶段：比赛已经开始，所有代码均为比赛期间从零编写的最小技术探针。  1. 项目目标sheRuntime 是一个低负担的女性身体状态记录与解释工具。核心体验：用户通过随身 StopWatch 说一句身体感受，iPhone 自动结合 Apple Health 数据与本地">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sheRuntime 黑客松 iOS HealthKit 探针">
+<meta property="og:url" content="http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/index.html">
+<meta property="og:site_name" content="Arieslx">
+<meta property="og:description" content="sheRuntime 黑客松 Handoff 更新时间：2026-08-27（Asia&#x2F;Tokyo）路演时间：2026-08-29当前阶段：比赛已经开始，所有代码均为比赛期间从零编写的最小技术探针。  1. 项目目标sheRuntime 是一个低负担的女性身体状态记录与解释工具。核心体验：用户通过随身 StopWatch 说一句身体感受，iPhone 自动结合 Apple Health 数据与本地">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-08-26T15:08:00.000Z">
+<meta property="article:modified_time" content="2026-08-27T02:49:53.030Z">
+<meta property="article:tag" content="2026">
+<meta property="article:tag" content="hackathon">
+<meta name="twitter:card" content="summary">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>sheRuntime 黑客松 iOS HealthKit 探针</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2026/08/26/sheRuntime-hackathon-handoff/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2026/08/26/20260825/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&text=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&is_video=false&description=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=sheRuntime 黑客松 iOS HealthKit 探针&body=Check out this article: http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&name=sheRuntime 黑客松 iOS HealthKit 探针&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&t=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sheRuntime-%E9%BB%91%E5%AE%A2%E6%9D%BE-Handoff"><span class="toc-number">1.</span> <span class="toc-text">sheRuntime 黑客松 Handoff</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.</span> <span class="toc-text">1. 项目目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%B2%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%80%E7%BB%88%E6%9C%80%E5%B0%8F%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">2. 已确定的最终最小架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%8E%E7%A1%AE%E4%B8%8D%E5%81%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">明确不做</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%88%86%E5%B7%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text">网络分工</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-BLE"><span class="toc-number">1.3.</span> <span class="toc-text">3. 为什么可以使用 BLE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Monorepo-%E7%BB%93%E6%9E%84%E4%B8%8E-Git-%E8%A7%84%E5%88%99"><span class="toc-number">1.4.</span> <span class="toc-text">4. Monorepo 结构与 Git 规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B7%B2%E5%AE%8C%E6%88%90%EF%BC%9AiOS-HealthKit-%E6%8E%A2%E9%92%88"><span class="toc-number">1.5.</span> <span class="toc-text">5. 已完成：iOS HealthKit 探针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode-%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.1.</span> <span class="toc-text">Xcode 项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E9%AA%8C%E8%AF%81%E9%93%BE%E8%B7%AF"><span class="toc-number">1.5.2.</span> <span class="toc-text">已验证链路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6"><span class="toc-number">1.5.3.</span> <span class="toc-text">当前主要文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B7%B2%E5%AE%8C%E6%88%90%EF%BC%9AStopWatch-BLE-%E5%B9%BF%E6%92%AD%E6%8E%A2%E9%92%88"><span class="toc-number">1.6.</span> <span class="toc-text">6. 已完成：StopWatch BLE 广播探针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PlatformIO-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.1.</span> <span class="toc-text">PlatformIO 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E5%89%8D-BLE-%E5%B9%BF%E6%92%AD%E4%BB%A3%E7%A0%81"><span class="toc-number">1.6.2.</span> <span class="toc-text">当前 BLE 广播代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C"><span class="toc-number">1.6.3.</span> <span class="toc-text">验证结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%8B%E4%B8%80%E6%AD%A5%EF%BC%9ABLE-%E5%8F%8C%E5%90%91%E6%B6%88%E6%81%AF%E6%8E%A2%E9%92%88"><span class="toc-number">1.7.</span> <span class="toc-text">7. 下一步：BLE 双向消息探针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E7%A1%AE%E5%AE%9A-UUID"><span class="toc-number">1.7.1.</span> <span class="toc-text">已确定 UUID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%AE%9E%E6%96%BD%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.7.2.</span> <span class="toc-text">推荐实施顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%90%8E%E7%BB%AD%E6%8E%A2%E9%92%88%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.8.</span> <span class="toc-text">8. 后续探针顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-2%EF%BC%9ABLE-%E5%8F%8C%E5%90%91%E6%96%87%E5%AD%97%E6%B6%88%E6%81%AF"><span class="toc-number">1.8.1.</span> <span class="toc-text">Probe 2：BLE 双向文字消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-3%EF%BC%9A%E9%BA%A6%E5%85%8B%E9%A3%8E%E9%87%87%E6%A0%B7%E5%88%B0-PSRAM"><span class="toc-number">1.8.2.</span> <span class="toc-text">Probe 3：麦克风采样到 PSRAM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-4%EF%BC%9ABLE-%E4%BC%A0%E8%BE%93%E5%9B%BA%E5%AE%9A%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">1.8.3.</span> <span class="toc-text">Probe 4：BLE 传输固定二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-5%EF%BC%9A%E7%9C%9F%E5%AE%9E-PCM-%E2%86%92-iPhone"><span class="toc-number">1.8.4.</span> <span class="toc-text">Probe 5：真实 PCM → iPhone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-6%EF%BC%9A%E8%B1%86%E5%8C%85-ASR"><span class="toc-number">1.8.5.</span> <span class="toc-text">Probe 6：豆包 ASR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-7%EF%BC%9A%E6%A0%B8%E5%BF%83%E4%BA%A7%E5%93%81%E9%97%AD%E7%8E%AF"><span class="toc-number">1.8.6.</span> <span class="toc-text">Probe 7：核心产品闭环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-StopWatch-%E7%8A%B6%E6%80%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.9.</span> <span class="toc-text">9. StopWatch 状态设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%9C%AC%E5%9C%B0-Skill-%E4%B8%8E%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8%E6%96%B9%E5%90%91"><span class="toc-number">1.10.</span> <span class="toc-text">10. 本地 Skill 与模型调用方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E8%B7%AF%E6%BC%94%E7%AD%96%E7%95%A5"><span class="toc-number">1.11.</span> <span class="toc-text">11. 路演策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E7%BB%99%E4%B8%8B%E4%B8%80%E4%BC%9A%E8%AF%9D%E7%9A%84%E7%9B%B4%E6%8E%A5%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.12.</span> <span class="toc-text">12. 给下一会话的直接任务</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        sheRuntime 黑客松 iOS HealthKit 探针
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Arieslx</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2026-08-26T15:08:00.000Z" itemprop="datePublished">2026-08-26</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/2026/" rel="tag">2026</a>, <a class="tag-link-link" href="/tags/hackathon/" rel="tag">hackathon</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="sheRuntime-黑客松-Handoff"><a href="#sheRuntime-黑客松-Handoff" class="headerlink" title="sheRuntime 黑客松 Handoff"></a>sheRuntime 黑客松 Handoff</h1><blockquote>
+<p>更新时间：2026-08-27（Asia/Tokyo）<br>路演时间：2026-08-29<br>当前阶段：比赛已经开始，所有代码均为比赛期间从零编写的最小技术探针。</p>
+</blockquote>
+<h2 id="1-项目目标"><a href="#1-项目目标" class="headerlink" title="1. 项目目标"></a>1. 项目目标</h2><p>sheRuntime 是一个低负担的女性身体状态记录与解释工具。核心体验：用户通过随身 StopWatch 说一句身体感受，iPhone 自动结合 Apple Health 数据与本地女性健康 Skill/知识库，调用模型生成简短、积极、非诊断式的身体观察。</p>
+<p>黑客松版本不做完整语音助手。StopWatch 不播放 TTS；完成记录后通过震动和屏幕形象/表情变化给予即时反馈，完整分析结果显示在 iPhone。</p>
+<h2 id="2-已确定的最终最小架构"><a href="#2-已确定的最终最小架构" class="headerlink" title="2. 已确定的最终最小架构"></a>2. 已确定的最终最小架构</h2><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">StopWatch</span><br><span class="line">├─ 按键开始/结束录音</span><br><span class="line">├─ MEMS 麦克风采集音频</span><br><span class="line">├─ PSRAM 临时保存短音频</span><br><span class="line">├─ BLE 将音频传给 iPhone</span><br><span class="line">└─ 震动 + 屏幕形象反馈</span><br><span class="line">        ↓ BLE</span><br><span class="line">iPhone App</span><br><span class="line">├─ CoreBluetooth 接收音频</span><br><span class="line">├─ 豆包 ASR：语音转文字</span><br><span class="line">├─ HealthKit：读取身体数据</span><br><span class="line">├─ 本地 Skill/Markdown 知识库</span><br><span class="line">├─ API Key 调用 LLM</span><br><span class="line">└─ 展示完整身体观察</span><br><span class="line">        ↓ BLE 状态码</span><br><span class="line">StopWatch</span><br><span class="line">└─ 根据 SUCCESS / RETRY 等状态改变表情并震动</span><br></pre></td></tr></table></figure>
+
+<h3 id="明确不做"><a href="#明确不做" class="headerlink" title="明确不做"></a>明确不做</h3><ul>
+<li>不依赖场馆 Wi-Fi：现场网络极慢且频繁掉线。</li>
+<li>不使用个人热点：场馆规则禁止。</li>
+<li>StopWatch 不直接调用云端 API。</li>
+<li>暂不做 TypeScript 服务端、云数据库、Web App。</li>
+<li>暂不做豆包 TTS、StopWatch 语音播放。</li>
+<li>暂不做实时 BLE 麦克风；采用“录完再传”。</li>
+<li>暂不做完整多轮对话。</li>
+</ul>
+<h3 id="网络分工"><a href="#网络分工" class="headerlink" title="网络分工"></a>网络分工</h3><ul>
+<li>StopWatch 与 iPhone：BLE，本地连接，不经过场馆 Wi-Fi。</li>
+<li>iPhone 与豆包/LLM：iPhone 自身蜂窝网络。</li>
+<li>本地 Skill 与 HealthKit：留在 iPhone。</li>
+</ul>
+<h2 id="3-为什么可以使用-BLE"><a href="#3-为什么可以使用-BLE" class="headerlink" title="3. 为什么可以使用 BLE"></a>3. 为什么可以使用 BLE</h2><p>M5Stack StopWatch 产品规格页只宣传 2.4GHz Wi-Fi，没有把 BLE 列为产品功能，但主控 ESP32-S3R8 芯片内置 Bluetooth LE。</p>
+<p>已经通过本次比赛期间自己编写的最小固件，在真实设备上广播 BLE，并由 iPhone 的 nRF Connect 扫描到 <code>sheRuntime-StopWatch</code>。因此 BLE 通路已经实机确认可用。</p>
+<p>参考仓库 <code>liptoxli/M5stopwatch-vibecoding</code> 证明了 StopWatch 可以做 BLE 实时音频，但该仓库是 macOS Bridge + 实时麦克风方案。本项目受比赛规则限制，不能复制或二次开发现成仓库，只能参考架构思想并从零实现自己的协议与代码。</p>
+<h2 id="4-Monorepo-结构与-Git-规则"><a href="#4-Monorepo-结构与-Git-规则" class="headerlink" title="4. Monorepo 结构与 Git 规则"></a>4. Monorepo 结构与 Git 规则</h2><p>当前采用一个 GitHub monorepo，不创建嵌套 Git 仓库：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">she-runtime/</span><br><span class="line">├─ apps/</span><br><span class="line">│  └─ ios/</span><br><span class="line">├─ firmware/</span><br><span class="line">│  └─ stopwatch/</span><br><span class="line">├─ .gitignore</span><br><span class="line">└─ README.md</span><br></pre></td></tr></table></figure>
+
+<p>Web、Server 等目录暂时不创建，等真正实现相应功能时再随代码加入。</p>
+<p>根目录 <code>.gitignore</code> 已加入或应包含：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># macOS</span><br><span class="line">.DS_Store</span><br><span class="line"></span><br><span class="line"># Xcode</span><br><span class="line">DerivedData/</span><br><span class="line">*.xcuserstate</span><br><span class="line">xcuserdata/</span><br><span class="line">*.xccheckout</span><br><span class="line">*.moved-aside</span><br><span class="line"></span><br><span class="line"># Swift Package Manager</span><br><span class="line">.build/</span><br><span class="line">.swiftpm/</span><br><span class="line"></span><br><span class="line"># PlatformIO</span><br><span class="line">.pio/</span><br><span class="line">.pioenvs/</span><br><span class="line">.piolibdeps/</span><br><span class="line"></span><br><span class="line"># VS Code</span><br><span class="line">.vscode/</span><br></pre></td></tr></table></figure>
+
+<p>PlatformIO 自动生成的 <code>include/README</code>、<code>lib/README</code>、<code>test/README</code> 建议不提交。固件探针应提交的核心文件：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firmware/stopwatch/platformio.ini</span><br><span class="line">firmware/stopwatch/src/main.cpp</span><br></pre></td></tr></table></figure>
+
+<p>建议的 BLE 广播探针 commit：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;feat(firmware): verify StopWatch BLE advertising&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="5-已完成：iOS-HealthKit-探针"><a href="#5-已完成：iOS-HealthKit-探针" class="headerlink" title="5. 已完成：iOS HealthKit 探针"></a>5. 已完成：iOS HealthKit 探针</h2><h3 id="Xcode-项目"><a href="#Xcode-项目" class="headerlink" title="Xcode 项目"></a>Xcode 项目</h3><ul>
+<li>Product Name：<code>sheRuntime</code></li>
+<li>Team：Personal Team</li>
+<li>Bundle Identifier：类似 <code>com.arieslx.sheRuntime</code></li>
+<li>Interface：SwiftUI</li>
+<li>Storage：SwiftData</li>
+<li>CloudKit：未开启</li>
+<li>Target 已添加 <code>HealthKit</code> Capability</li>
+<li>未开启 Clinical Health Records</li>
+<li>未开启 HealthKit Background Delivery</li>
+<li>Health Share Usage Description：<code>用于读取你的步数，帮助生成身体状态摘要。</code></li>
+</ul>
+<h3 id="已验证链路"><a href="#已验证链路" class="headerlink" title="已验证链路"></a>已验证链路</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">iPhone 真机</span><br><span class="line">→ 请求 HealthKit 权限</span><br><span class="line">→ 读取当天步数</span><br><span class="line">→ SwiftUI 页面显示步数</span><br></pre></td></tr></table></figure>
+
+<p>真机调试时遇到 <code>No data available for the specified predicate</code>，已通过确认健康 App 中 <code>sheRuntime → 步数</code>读取权限，以及将 HealthKit <code>errorNoData</code> 视为 0 处理解决。最终已成功读取数据。</p>
+<h3 id="当前主要文件"><a href="#当前主要文件" class="headerlink" title="当前主要文件"></a>当前主要文件</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">apps/ios/sheRuntime/</span><br><span class="line">├─ sheRuntimeApp.swift</span><br><span class="line">├─ ContentView.swift</span><br><span class="line">├─ HealthKitManager.swift</span><br><span class="line">└─ Assets.xcassets</span><br></pre></td></tr></table></figure>
+
+<p><code>HealthKitManager.swift</code> 使用：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">import</span> HealthKit</span><br><span class="line"><span class="keyword">import</span> Combine</span><br></pre></td></tr></table></figure>
+
+<p>其职责：</p>
+<ol>
+<li>判断 HealthKit 是否可用。</li>
+<li>请求步数读取权限。</li>
+<li>使用 <code>HKStatisticsQuery</code> 查询今日累计步数。</li>
+<li>更新 <code>@Published var stepCount</code> 与 <code>statusMessage</code>。</li>
+</ol>
+<p><code>ContentView.swift</code> 当前通过：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@StateObject</span> <span class="keyword">private</span> <span class="keyword">var</span> healthKitManager <span class="operator">=</span> <span class="type">HealthKitManager</span>()</span><br></pre></td></tr></table></figure>
+
+<p>展示状态、今日步数和“连接 Apple Health”按钮。</p>
+<p>建议已有/应有 commit：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chore: initialize iOS app</span><br><span class="line">feat(ios): add HealthKit step count probe</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-已完成：StopWatch-BLE-广播探针"><a href="#6-已完成：StopWatch-BLE-广播探针" class="headerlink" title="6. 已完成：StopWatch BLE 广播探针"></a>6. 已完成：StopWatch BLE 广播探针</h2><h3 id="PlatformIO-配置"><a href="#PlatformIO-配置" class="headerlink" title="PlatformIO 配置"></a>PlatformIO 配置</h3><p>当前 <code>firmware/stopwatch/platformio.ini</code>：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[env:m5stack-stopwatch]</span></span><br><span class="line"><span class="attr">platform</span> = espressif32 @ <span class="number">6.12</span>.<span class="number">0</span></span><br><span class="line"><span class="attr">board</span> = esp32s3box</span><br><span class="line"><span class="attr">framework</span> = ardui<span class="literal">no</span></span><br><span class="line"><span class="attr">board_build.partitions</span> = default_16MB.csv</span><br><span class="line"><span class="attr">board_upload.flash_size</span> = <span class="number">16</span>MB</span><br><span class="line"><span class="attr">board_upload.maximum_size</span> = <span class="number">16777216</span></span><br><span class="line"><span class="attr">board_build.arduino.memory_type</span> = qio_opi</span><br><span class="line"><span class="attr">monitor_speed</span> = <span class="number">115200</span></span><br><span class="line"><span class="attr">build_flags</span> =</span><br><span class="line">  -DESP32S3</span><br><span class="line">  -DBOARD_HAS_PSRAM</span><br><span class="line">  <span class="attr">-DCORE_DEBUG_LEVEL</span>=<span class="number">5</span></span><br><span class="line">  <span class="attr">-DARDUINO_USB_CDC_ON_BOOT</span>=<span class="number">1</span></span><br><span class="line">  <span class="attr">-DARDUINO_USB_MODE</span>=<span class="number">1</span></span><br><span class="line"><span class="attr">lib_deps</span> =</span><br><span class="line">  <span class="attr">M5Unified</span> = https://github.com/m5stack/M5Unified</span><br><span class="line">  <span class="attr">M5GFX</span> = https://github.com/m5stack/M5GFX</span><br><span class="line">  <span class="attr">M5PM1</span> = https://github.com/m5stack/M5PM1</span><br><span class="line">  <span class="attr">M5IOE1</span> = https://github.com/m5stack/M5IOE1</span><br></pre></td></tr></table></figure>
+
+<h3 id="当前-BLE-广播代码"><a href="#当前-BLE-广播代码" class="headerlink" title="当前 BLE 广播代码"></a>当前 BLE 广播代码</h3><p><code>firmware/stopwatch/src/main.cpp</code> 当前最小实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;BLEDevice.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;BLEServer.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;BLEUtils.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *DEVICE_NAME = <span class="string">&quot;sheRuntime-StopWatch&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">const</span> <span class="type">char</span> *SERVICE_UUID =</span><br><span class="line">    <span class="string">&quot;a7f00001-4d7a-4e6b-9f30-6a8e2a14c001&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Serial.<span class="built_in">begin</span>(<span class="number">115200</span>);</span><br><span class="line">    <span class="built_in">delay</span>(<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">    Serial.<span class="built_in">println</span>();</span><br><span class="line">    Serial.<span class="built_in">println</span>(<span class="string">&quot;Starting BLE probe...&quot;</span>);</span><br><span class="line"></span><br><span class="line">    BLEDevice::<span class="built_in">init</span>(DEVICE_NAME);</span><br><span class="line">    BLEServer *server = BLEDevice::<span class="built_in">createServer</span>();</span><br><span class="line">    BLEService *service = server-&gt;<span class="built_in">createService</span>(SERVICE_UUID);</span><br><span class="line">    service-&gt;<span class="built_in">start</span>();</span><br><span class="line"></span><br><span class="line">    BLEAdvertising *advertising = BLEDevice::<span class="built_in">getAdvertising</span>();</span><br><span class="line">    advertising-&gt;<span class="built_in">addServiceUUID</span>(SERVICE_UUID);</span><br><span class="line">    advertising-&gt;<span class="built_in">setScanResponse</span>(<span class="literal">true</span>);</span><br><span class="line">    BLEDevice::<span class="built_in">startAdvertising</span>();</span><br><span class="line"></span><br><span class="line">    Serial.<span class="built_in">println</span>(<span class="string">&quot;BLE advertising started.&quot;</span>);</span><br><span class="line">    Serial.<span class="built_in">println</span>(<span class="string">&quot;Device name: sheRuntime-StopWatch&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">delay</span>(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="验证结果"><a href="#验证结果" class="headerlink" title="验证结果"></a>验证结果</h3><ul>
+<li>PlatformIO 编译成功。</li>
+<li>固件上传成功。</li>
+<li>串口端口：<code>/dev/cu.usbmodem101</code>。</li>
+<li>串口曾出现独占锁错误，通过关闭旧 Monitor/释放端口解决。</li>
+<li>PlatformIO Monitor 已成功连接，115200 8-N-1。</li>
+<li>iPhone 使用 <code>nRF Connect for Mobile</code> 扫描到 <code>sheRuntime-StopWatch</code>。</li>
+</ul>
+<p>这表示第一阶段 BLE 硬件探针已经完成。</p>
+<h2 id="7-下一步：BLE-双向消息探针"><a href="#7-下一步：BLE-双向消息探针" class="headerlink" title="7. 下一步：BLE 双向消息探针"></a>7. 下一步：BLE 双向消息探针</h2><p>下一阶段不要马上加入录音。先从零实现一个稳定的双向 BLE 通信闭环：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">StopWatch 发送 VOICE_READY</span><br><span class="line">→ sheRuntime iPhone App 收到并显示</span><br><span class="line">→ iPhone 写回 SUCCESS</span><br><span class="line">→ StopWatch 收到状态</span><br><span class="line">→ 临时先通过串口打印；之后再接震动/表情</span><br></pre></td></tr></table></figure>
+
+<h3 id="已确定-UUID"><a href="#已确定-UUID" class="headerlink" title="已确定 UUID"></a>已确定 UUID</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Service</span><br><span class="line">A7F00001-4D7A-4E6B-9F30-6A8E2A14C001</span><br><span class="line"></span><br><span class="line">StopWatch → iPhone（Notify）</span><br><span class="line">A7F00002-4D7A-4E6B-9F30-6A8E2A14C001</span><br><span class="line"></span><br><span class="line">iPhone → StopWatch（Write）</span><br><span class="line">A7F00003-4D7A-4E6B-9F30-6A8E2A14C001</span><br></pre></td></tr></table></figure>
+
+<h3 id="推荐实施顺序"><a href="#推荐实施顺序" class="headerlink" title="推荐实施顺序"></a>推荐实施顺序</h3><ol>
+<li>固件创建 Notify Characteristic 与 Write Characteristic。</li>
+<li>固件暂时定时或通过简单逻辑发送 <code>VOICE_READY</code>，不依赖实体按键。</li>
+<li>Xcode 添加蓝牙权限说明。</li>
+<li>新建 <code>BluetoothManager.swift</code>，使用 CoreBluetooth 扫描 <code>sheRuntime-StopWatch</code>。</li>
+<li>自动连接并发现上述 Service/Characteristics。</li>
+<li>订阅 Notify，收到 <code>VOICE_READY</code> 后更新 iPhone UI。</li>
+<li>iPhone 写回 <code>SUCCESS</code>。</li>
+<li>固件 Write Callback 收到后串口打印 <code>SUCCESS</code>。</li>
+<li>完整往返连续成功三次，再接 StopWatch 按键、震动与屏幕。</li>
+</ol>
+<h2 id="8-后续探针顺序"><a href="#8-后续探针顺序" class="headerlink" title="8. 后续探针顺序"></a>8. 后续探针顺序</h2><p>严格逐层验证，不要同时加入多个变量：</p>
+<h3 id="Probe-2：BLE-双向文字消息"><a href="#Probe-2：BLE-双向文字消息" class="headerlink" title="Probe 2：BLE 双向文字消息"></a>Probe 2：BLE 双向文字消息</h3><p>成功标准：<code>VOICE_READY → SUCCESS</code> 连续完成三次。</p>
+<h3 id="Probe-3：麦克风采样到-PSRAM"><a href="#Probe-3：麦克风采样到-PSRAM" class="headerlink" title="Probe 3：麦克风采样到 PSRAM"></a>Probe 3：麦克风采样到 PSRAM</h3><ul>
+<li>StopWatch 没有 SD 卡。</li>
+<li>使用 8MB PSRAM 临时保存 PCM。</li>
+<li>建议格式：16kHz、单声道、16-bit PCM。</li>
+<li>5 秒约 160KB，10 秒约 320KB。</li>
+<li>第一轮只验证录音字节数和音频有效性。</li>
+</ul>
+<h3 id="Probe-4：BLE-传输固定二进制"><a href="#Probe-4：BLE-传输固定二进制" class="headerlink" title="Probe 4：BLE 传输固定二进制"></a>Probe 4：BLE 传输固定二进制</h3><p>先传固定二进制缓冲区，iPhone 统计字节数并校验完整性；不要直接把麦克风、BLE、ASR一起调。</p>
+<p>建议最小消息类型：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">META：录音 ID、总字节、采样率</span><br><span class="line">DATA：序号 + PCM 分片</span><br><span class="line">END：传输结束</span><br><span class="line">ACK：iPhone 确认完整接收</span><br></pre></td></tr></table></figure>
+
+<h3 id="Probe-5：真实-PCM-→-iPhone"><a href="#Probe-5：真实-PCM-→-iPhone" class="headerlink" title="Probe 5：真实 PCM → iPhone"></a>Probe 5：真实 PCM → iPhone</h3><p>StopWatch 录制短 PCM，BLE 分片发送；iPhone 重组后补 WAV Header，并验证能够播放或上传。</p>
+<h3 id="Probe-6：豆包-ASR"><a href="#Probe-6：豆包-ASR" class="headerlink" title="Probe 6：豆包 ASR"></a>Probe 6：豆包 ASR</h3><p>iPhone 使用自身蜂窝网络把 WAV/PCM 提交给豆包 ASR，获得转写文字。</p>
+<h3 id="Probe-7：核心产品闭环"><a href="#Probe-7：核心产品闭环" class="headerlink" title="Probe 7：核心产品闭环"></a>Probe 7：核心产品闭环</h3><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">StopWatch 语音</span><br><span class="line">→ BLE</span><br><span class="line">→ 豆包 ASR</span><br><span class="line">→ HealthKit + 本地 Skill</span><br><span class="line">→ LLM 身体观察</span><br><span class="line">→ iPhone 展示</span><br><span class="line">→ BLE 返回 SUCCESS / RETRY</span><br><span class="line">→ StopWatch 震动 + 表情变化</span><br></pre></td></tr></table></figure>
+
+<h2 id="9-StopWatch-状态设计"><a href="#9-StopWatch-状态设计" class="headerlink" title="9. StopWatch 状态设计"></a>9. StopWatch 状态设计</h2><p>比赛版只需要少量状态：</p>
+<table>
+<thead>
+<tr>
+<th>状态</th>
+<th>屏幕反馈</th>
+<th>震动</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IDLE</td>
+<td>平静呼吸</td>
+<td>无</td>
+</tr>
+<tr>
+<td>LISTENING</td>
+<td>认真倾听</td>
+<td>开始时轻振</td>
+</tr>
+<tr>
+<td>SENDING</td>
+<td>流动/等待</td>
+<td>无</td>
+</tr>
+<tr>
+<td>PROCESSING</td>
+<td>思考表情</td>
+<td>无</td>
+</tr>
+<tr>
+<td>SUCCESS</td>
+<td>点头、放松或微笑</td>
+<td>短振两次</td>
+</tr>
+<tr>
+<td>RETRY</td>
+<td>温和困惑</td>
+<td>短振三次</td>
+</tr>
+</tbody></table>
+<p>StopWatch 不显示完整 AI 文本，不用 TTS。完整结果留在 iPhone。</p>
+<h2 id="10-本地-Skill-与模型调用方向"><a href="#10-本地-Skill-与模型调用方向" class="headerlink" title="10. 本地 Skill 与模型调用方向"></a>10. 本地 Skill 与模型调用方向</h2><p>比赛版计划将 Markdown Skill/知识卡随 iOS App 打包，本地按关键词检索相关卡片，再与 HealthKit 数据、ASR 转写一起构造 Prompt。</p>
+<p>最小结构可以是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">apps/ios/sheRuntime/</span><br><span class="line">├─ Health/</span><br><span class="line">│  └─ HealthKitManager.swift</span><br><span class="line">├─ Bluetooth/</span><br><span class="line">│  └─ BluetoothManager.swift</span><br><span class="line">├─ Knowledge/</span><br><span class="line">│  ├─ SkillLoader.swift</span><br><span class="line">│  └─ Resources/fatigue.md</span><br><span class="line">├─ AI/</span><br><span class="line">│  ├─ AIClient.swift</span><br><span class="line">│  └─ PromptBuilder.swift</span><br><span class="line">└─ ContentView.swift</span><br></pre></td></tr></table></figure>
+
+<p>普通模型 API 不会自动运行 <code>SKILL.md</code>。App 需要自己加载相关 Markdown，将选中的知识内容放入 Prompt。</p>
+<p>黑客松可采用 BYOK：在 App 内运行时输入 API Key，并保存到 iOS Keychain；禁止把 Key 硬编码进 Swift、ESP32 固件或 Git。</p>
+<h2 id="11-路演策略"><a href="#11-路演策略" class="headerlink" title="11. 路演策略"></a>11. 路演策略</h2><ul>
+<li>29 日以自己的 iPhone 真机本地运行和投屏为主。</li>
+<li>当前是 Personal Team，TestFlight 分发不是主方案。</li>
+<li>路演正式链路使用 StopWatch BLE + iPhone 蜂窝网络。</li>
+<li>准备一段完整成功流程录屏。</li>
+<li>ASR/LLM 网络失败时允许使用预置转写和本地基础观察作为明确标注的降级演示。</li>
+</ul>
+<h2 id="12-给下一会话的直接任务"><a href="#12-给下一会话的直接任务" class="headerlink" title="12. 给下一会话的直接任务"></a>12. 给下一会话的直接任务</h2><p>请继续指导并实现 <strong>Probe 2：StopWatch 与 sheRuntime iPhone App 的 BLE 双向消息</strong>。用户第一次开发 Apple App，需要逐步说明：点击哪个文件、在哪里新建文件、粘贴什么代码、如何编译、如何真机测试。不要一次引入音频、ASR或屏幕驱动。</p>
+<p>验收目标：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">StopWatch Notify：VOICE_READY</span><br><span class="line">→ iPhone sheRuntime 显示收到消息</span><br><span class="line">→ iPhone Write：SUCCESS</span><br><span class="line">→ StopWatch 串口打印收到 SUCCESS</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sheRuntime-%E9%BB%91%E5%AE%A2%E6%9D%BE-Handoff"><span class="toc-number">1.</span> <span class="toc-text">sheRuntime 黑客松 Handoff</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.</span> <span class="toc-text">1. 项目目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%B2%E7%A1%AE%E5%AE%9A%E7%9A%84%E6%9C%80%E7%BB%88%E6%9C%80%E5%B0%8F%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.</span> <span class="toc-text">2. 已确定的最终最小架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%8E%E7%A1%AE%E4%B8%8D%E5%81%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">明确不做</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%88%86%E5%B7%A5"><span class="toc-number">1.2.2.</span> <span class="toc-text">网络分工</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8-BLE"><span class="toc-number">1.3.</span> <span class="toc-text">3. 为什么可以使用 BLE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Monorepo-%E7%BB%93%E6%9E%84%E4%B8%8E-Git-%E8%A7%84%E5%88%99"><span class="toc-number">1.4.</span> <span class="toc-text">4. Monorepo 结构与 Git 规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E5%B7%B2%E5%AE%8C%E6%88%90%EF%BC%9AiOS-HealthKit-%E6%8E%A2%E9%92%88"><span class="toc-number">1.5.</span> <span class="toc-text">5. 已完成：iOS HealthKit 探针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Xcode-%E9%A1%B9%E7%9B%AE"><span class="toc-number">1.5.1.</span> <span class="toc-text">Xcode 项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E9%AA%8C%E8%AF%81%E9%93%BE%E8%B7%AF"><span class="toc-number">1.5.2.</span> <span class="toc-text">已验证链路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E5%89%8D%E4%B8%BB%E8%A6%81%E6%96%87%E4%BB%B6"><span class="toc-number">1.5.3.</span> <span class="toc-text">当前主要文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E5%B7%B2%E5%AE%8C%E6%88%90%EF%BC%9AStopWatch-BLE-%E5%B9%BF%E6%92%AD%E6%8E%A2%E9%92%88"><span class="toc-number">1.6.</span> <span class="toc-text">6. 已完成：StopWatch BLE 广播探针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PlatformIO-%E9%85%8D%E7%BD%AE"><span class="toc-number">1.6.1.</span> <span class="toc-text">PlatformIO 配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%93%E5%89%8D-BLE-%E5%B9%BF%E6%92%AD%E4%BB%A3%E7%A0%81"><span class="toc-number">1.6.2.</span> <span class="toc-text">当前 BLE 广播代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C"><span class="toc-number">1.6.3.</span> <span class="toc-text">验证结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%B8%8B%E4%B8%80%E6%AD%A5%EF%BC%9ABLE-%E5%8F%8C%E5%90%91%E6%B6%88%E6%81%AF%E6%8E%A2%E9%92%88"><span class="toc-number">1.7.</span> <span class="toc-text">7. 下一步：BLE 双向消息探针</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%B2%E7%A1%AE%E5%AE%9A-UUID"><span class="toc-number">1.7.1.</span> <span class="toc-text">已确定 UUID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A8%E8%8D%90%E5%AE%9E%E6%96%BD%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.7.2.</span> <span class="toc-text">推荐实施顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%90%8E%E7%BB%AD%E6%8E%A2%E9%92%88%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.8.</span> <span class="toc-text">8. 后续探针顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-2%EF%BC%9ABLE-%E5%8F%8C%E5%90%91%E6%96%87%E5%AD%97%E6%B6%88%E6%81%AF"><span class="toc-number">1.8.1.</span> <span class="toc-text">Probe 2：BLE 双向文字消息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-3%EF%BC%9A%E9%BA%A6%E5%85%8B%E9%A3%8E%E9%87%87%E6%A0%B7%E5%88%B0-PSRAM"><span class="toc-number">1.8.2.</span> <span class="toc-text">Probe 3：麦克风采样到 PSRAM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-4%EF%BC%9ABLE-%E4%BC%A0%E8%BE%93%E5%9B%BA%E5%AE%9A%E4%BA%8C%E8%BF%9B%E5%88%B6"><span class="toc-number">1.8.3.</span> <span class="toc-text">Probe 4：BLE 传输固定二进制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-5%EF%BC%9A%E7%9C%9F%E5%AE%9E-PCM-%E2%86%92-iPhone"><span class="toc-number">1.8.4.</span> <span class="toc-text">Probe 5：真实 PCM → iPhone</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-6%EF%BC%9A%E8%B1%86%E5%8C%85-ASR"><span class="toc-number">1.8.5.</span> <span class="toc-text">Probe 6：豆包 ASR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Probe-7%EF%BC%9A%E6%A0%B8%E5%BF%83%E4%BA%A7%E5%93%81%E9%97%AD%E7%8E%AF"><span class="toc-number">1.8.6.</span> <span class="toc-text">Probe 7：核心产品闭环</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-StopWatch-%E7%8A%B6%E6%80%81%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.9.</span> <span class="toc-text">9. StopWatch 状态设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E6%9C%AC%E5%9C%B0-Skill-%E4%B8%8E%E6%A8%A1%E5%9E%8B%E8%B0%83%E7%94%A8%E6%96%B9%E5%90%91"><span class="toc-number">1.10.</span> <span class="toc-text">10. 本地 Skill 与模型调用方向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11-%E8%B7%AF%E6%BC%94%E7%AD%96%E7%95%A5"><span class="toc-number">1.11.</span> <span class="toc-text">11. 路演策略</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#12-%E7%BB%99%E4%B8%8B%E4%B8%80%E4%BC%9A%E8%AF%9D%E7%9A%84%E7%9B%B4%E6%8E%A5%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.12.</span> <span class="toc-text">12. 给下一会话的直接任务</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&text=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&is_video=false&description=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=sheRuntime 黑客松 iOS HealthKit 探针&body=Check out this article: http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&title=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&name=sheRuntime 黑客松 iOS HealthKit 探针&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://yoursite.com/2026/08/26/sheRuntime-hackathon-handoff-2026-08-27/&t=sheRuntime 黑客松 iOS HealthKit 探针"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2026 Arieslx
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/tags/">tags</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight .code pre").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      target: function(trigger) {
+        return trigger.nextElementSibling;
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'cactus-1';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
